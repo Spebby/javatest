@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=Calculator
+comment1.params=i0\ i1\ calType
+comment1.target=Calculator(float,\ float,\ CalculateMode)
+comment2.params=i0\ i1
+comment2.target=void\ Add(float,\ float)
+comment3.params=i0\ i1
+comment3.target=void\ Subtract(float,\ float)
+comment4.params=i0\ i1
+comment4.target=void\ Multiply(float,\ float)
+comment5.params=i0\ i1
+comment5.target=void\ Divide(float,\ float)
+comment6.params=i0\ i1
+comment6.target=void\ Modulo(float,\ float)
+comment7.params=i0\ i1
+comment7.target=void\ GreaterThan(float,\ float)
+numComments=8
