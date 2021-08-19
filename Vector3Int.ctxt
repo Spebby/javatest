@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Vector3Int
+comment1.params=
+comment1.target=Vector3Int()
+comment2.params=x\ y\ z
+comment2.target=Vector3Int(int,\ int,\ int)
+comment3.params=other
+comment3.target=boolean\ equals(Vector3Int)
+numComments=4
