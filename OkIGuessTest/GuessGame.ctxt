@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=GuessGame
+comment1.params=SkipIntro
+comment1.target=void\ Play(boolean)
+comment2.params=
+comment2.target=void\ GuessGame()
+comment3.params=
+comment3.target=void\ GameEnd()
+numComments=4

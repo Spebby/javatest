@@ -1,75 +1,96 @@
-/* C# is cooler :)
- * define the class
-*/
-import java.util.Scanner;
-public class Driver
+// garbage calculator
+public class Calculator
 {   
-    // calculator mode
-    public static void main()
-    {
-        Scanner input = new Scanner(System.in);
-        
-        System.out.println("Welcome to");
-        // Prints on the same line for effect.
-        // Wait of 1/4th of a second inbetween each .
-        System.out.print(".");
-        System.out.print(".");
-        System.out.print(".");
-        System.out.println(""); // Empty line for spacing.
-        // Wait a full second
-        // It may be worth adding waits between each line to invoke the feeling of an archaic machine.
-        System.out.println("-------------------------------------------------------------------");
-        System.out.println("    ><<              ><<                ><<    ><<<<       ><< <<  ");
-        System.out.println(" ><<   ><<           ><<                ><<  ><<    ><<  ><<    ><<");
-        System.out.println("><<          ><<     ><<   ><<<><<  ><< ><<><<        ><< ><<      ");
-        System.out.println("><<        ><<  ><<  ><< ><<   ><<  ><< ><<><<        ><<   ><<    ");
-        System.out.println("><<       ><<   ><<  ><<><<    ><<  ><< ><<><<        ><<      ><< ");
-        System.out.println(" ><<   ><<><<   ><<  ><< ><<   ><<  ><< ><<  ><<     ><< ><<    ><<");
-        System.out.println("   ><<<<    ><< ><<<><<<   ><<<  ><<><<><<<    ><<<<       ><< <<  ");
-        System.out.println("-------------------------------------------------------------------");
-        System.out.println("");
-        
-        System.out.println("Enter the first Variable.");
-        double v1 = input.nextFloat();
-        // Code that prevents the rest of the code from being proccessed
-                           
-        System.out.println("Enter the final Variable.");
-        // Code that allows user to input Calculator Mode.
-        double v2 = input.nextFloat();
-        // Code that prevents the rest of the code from being proccessed
-        
-        System.out.println("Enter the Calculator Mode.");
-        System.out.println("Add(0), Subtract(1), Multiply(2), Divide(3), Remainder(4), Compair(5)");
-        // Code that allows user to input Calculator Mode.
-        int enumType = input.nextInt();
-        // Code that prevents the rest of the code from being proccessed
-        
-        
-        CalculateMode calType;
-        
-        switch(enumType)
+    public void Calculator(double i0, double i1, CalculateMode calType)
+    {   
+        switch (calType) 
         {
-            case 0:
-                Calculator calc = new Calculator(v1, v1, calType.Add);
+            case Add:
+                Add(i0, i1);
                 break;
-            case 1:
-                
+            case Subtract:
+                Subtract(i0, i1);
                 break;
-            case 2:
-                
+            case Multiply:
+                Multiply(i0, i1);
                 break;
-            case 3:
-                
+            case Divide:
+                Divide(i0, i1);
                 break;
-            case 4:
-                
+            case Remainder:
+                Modulo(i0, i1);
                 break;
-            case 5:
-                
+            case Compair:
+                GreaterThan(i0, i1);
                 break;
-            default:
-                System.out.println("ERROR! Invalid Type");
         }
     }
+    
+    public void Add(double i0, double i1)
+    {
+        double sum = i0 + i1;
+        System.out.println("The sum of " + i0 + " and " + i1 + " is " + sum);
+        
+        CalculatorManager calcMang = new CalculatorManager();
+        calcMang.Manager(true);
+    }
+    
+    public void Subtract(double i0, double i1)
+    {
+        double sum = i0 - i1;
+        System.out.println("The difference of " + i0 + " and " + i1 + " is " + sum);
+        
+        CalculatorManager calcMang = new CalculatorManager();
+        calcMang.Manager(true);
+    }
+    
+    public void Multiply(double i0, double i1)
+    {
+        double sum = i0 * i1;
+        System.out.println("The product of " + i0 + " and " + i1 + " is " + sum);
+        
+        CalculatorManager calcMang = new CalculatorManager();
+        calcMang.Manager(true);
+    }
+    
+    public void Divide(double i0, double i1)
+    {
+        double sum = i0 / i1;
+        System.out.println("The quotient of " + i0 + " and " + i1 + " is " + sum);
+        
+        CalculatorManager calcMang = new CalculatorManager();
+        calcMang.Manager(true);
+    }
+    
+    public void Modulo(double i0, double i1)
+    {
+        double sum = i0 % i1;
+        System.out.println("The remainder of " + i0 + " and " + i1 + " is " + sum);
+        
+        CalculatorManager calcMang = new CalculatorManager();
+        calcMang.Manager(true);
+    }
+    
+    public void GreaterThan(double i0, double i1)
+    {
+        CalculatorManager calcMang = new CalculatorManager();
+
+        if(i0 > i1)
+        {
+            System.out.println(i0 + " is greater than " + i1);
+        }
+        else
+        {
+            if (i1 > i0)
+            {
+                System.out.println(i1 + " is greater than " + i0);
+            }
+            else
+            {
+                System.out.println(i0 + " and " + i1 + "equal each other");
+            }    
+        }
+        
+        calcMang.Manager(true);
+    }
 }
-// Obama was here
