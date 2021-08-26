@@ -1,7 +1,0 @@
-#BlueJ class context
-comment0.target=DivRem
-comment1.params=
-comment1.target=DivRem()
-comment2.params=input0\ input1
-comment2.target=DivRem(float,\ float)
-numComments=3
