@@ -1,10 +1,12 @@
 //Imports
-import java.util.Scanner;
+import java.io.*;
+import java.lang.*;
+import java.util.*;
 
 public class GuessGame
 {
     // Not declaring status because i am a MENACE
-    int answer;
+    int Target;
     Player p1;
     Player p2;
     Player p3;
@@ -43,14 +45,14 @@ public class GuessGame
         Scanner inputInt = new Scanner(System.in);
         
         //Generate the Answer
-        answer = 0;
-        answer = (int)(Math.random() * 100) + 1;
+        Target = 0;
+        Target = (int)(Math.random() * 100) + 1;
         // "* 100" acts more like "100 posibilities". 
         // Fail safe, should never happen, but just in case.
         
-        if(answer < 0)
+        if(Target < 0)
         {
-            answer = 1;
+            Target = 1;
         }
         // Prints the Answer, for debugging.
         //System.out.println("This is a debug command. Answer is: " + answer);
@@ -130,26 +132,45 @@ public class GuessGame
         
         //Player 3 end
         p3 = new Player(name, guess);
-        System.out.println("Excelent.");
+        System.out.println("Fantastic.");
         System.out.println("");
         
         GameEnd();
     }
     
+    class SortValues implements Comparator<Player>
+    {
+        public int compare(Player p1, Player p2, Player p3)
+        {
+            return p1.getGuess() - p2.getGuess() - p3.getGuess();
+        }
+    }
+    
+    class GFG {
+  
+    // Main driver method
+        public void GFGmain()
+        {
+            Player[] arr = 
+            { 
+                new Player(p1.getName(), p1.getGuess()), 
+                new Player(p2.getName(), p2.getGuess()), 
+                new Player(p3.getName(), p3.getGuess())
+            };
+  
+            for (int i = 0; i < arr.length; i++)
+                System.out.println(arr[i]);
+  
+            // Sorting on basic as per class 1 created
+            // (user-defined)
+            Arrays.sort(arr, new SortValues());
+        }
+    }
+    
     public void GameEnd()
     {
-        System.out.print(answer + " is the answer.");
-        int[] a = {p1.getGuess(), p2.getGuess(), p3.getGuess()};
-        
-        if(a[0] > a[1]) 
-        {
-            
-        }
-        
-        switch(answers)
-        {
-            
-        }
+        System.out.println(Target + " is the answer.");
+        //int[] a = {p1.getGuess(), p2.getGuess(), p3.getGuess()}; //idk why i even made an array
         
         if(p1.getGuess() == p2.getGuess())
         {
