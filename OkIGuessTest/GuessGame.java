@@ -138,32 +138,49 @@ public class GuessGame
         GameEnd();
     }
     
-    class SortValues implements Comparator<Player>
+    // Simplify this down to a simple for loop, go from there tomorrow.
+    public class Sort
     {
-        public int compare(Player p1, Player p2, Player p3)
+        double[] findClosest(double[] dblArray) 
         {
-            return p1.getGuess() - p2.getGuess() - p3.getGuess();
+            double[] closest = new double[2];
+
+            //int diff will keep track of the best of the differences
+            //between the numbers we are compairing. Need to start off at 
+            //largest number possible.
+            double bestDiff = Double.MAX_VALUE;
+
+            //currDiff will calculate the current difference in doubles
+            double currDiff;
+
+            //You want to iterate through every value you have
+            for (int i = 0; i < dblArray.length; i++) 
+            {
+                for (int j = 0; j < dblArray.length; j++) 
+                {
+                    if (i != j) 
+                    { //You don't want it to compare to itself.
+                        //System.out.println("Subtracting: " + dblArray[i] + " - " + dblArray[j]);
+                        currDiff = Math.abs(dblArray[i] - dblArray[j]);
+                        if (currDiff < bestDiff) 
+                        {
+                            closest[0] = dblArray[i];
+                            closest[1] = dblArray[j];
+                            bestDiff = currDiff;
+                           // System.out.println("Setting closest:" + dblArray[i] + ", " + dblArray[j] + ", bestDiff: " + bestDiff);
+                        }
+                    }
+                }
+            }
+
+            return closest;
         }
-    }
-    
-    class GFG {
-  
-    // Main driver method
-        public void GFGmain()
+        
+        public void main(String[] args) 
         {
-            Player[] arr = 
-            { 
-                new Player(p1.getName(), p1.getGuess()), 
-                new Player(p2.getName(), p2.getGuess()), 
-                new Player(p3.getName(), p3.getGuess())
-            };
-  
-            for (int i = 0; i < arr.length; i++)
-                System.out.println(arr[i]);
-  
-            // Sorting on basic as per class 1 created
-            // (user-defined)
-            Arrays.sort(arr, new SortValues());
+            double[] testArray = new double[]{.7, 1.8, 1};
+            double[] resultArray = findClosest(testArray);
+            System.out.println("Closest were: " + resultArray[0] + ", " + resultArray[1]);
         }
     }
     
