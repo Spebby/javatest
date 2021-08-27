@@ -2,8 +2,9 @@
 
 public class Player
 {
-    private String name;
-    private int guess;
+    String name;
+    int guess;
+    int guessDiff;
     
     public Player(String n1, int g1)
     {
@@ -15,6 +16,11 @@ public class Player
         //Toenail length
     }
     
+    public void setDifference(int gd1)
+    {
+        guessDiff = gd1;
+    }
+    
     // Return types
     public String getName()
     {
@@ -23,5 +29,9 @@ public class Player
     public int getGuess()
     {
         return guess;
+    }
+    public int getDifference()
+    {
+        return guessDiff;    
     }
 }

@@ -2,8 +2,12 @@
 comment0.target=Player
 comment1.params=n1\ g1
 comment1.target=Player(java.lang.String,\ int)
-comment2.params=
-comment2.target=java.lang.String\ getName()
+comment2.params=gd1
+comment2.target=void\ setDifference(int)
 comment3.params=
-comment3.target=int\ getGuess()
-numComments=4
+comment3.target=java.lang.String\ getName()
+comment4.params=
+comment4.target=int\ getGuess()
+comment5.params=
+comment5.target=int\ getDifference()
+numComments=6
