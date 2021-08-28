@@ -1,38 +1,41 @@
 public class ChangeMaker {
-    double price;
-    double cash;
+    float price;
+    float cash;
     
-    public ChangeMaker (double p, double c) 
+    public ChangeMaker (float p, float c) 
     {
         price = p;
         cash = c;
     }
     
     public int[] makeChange() 
-    {
-        Manager mng = new Manager();
+    {   
+        int[] otpt = new int[5];
         
-        int[] result = new int[6];
+        // Dollars
+        float change = Math.abs(cash - price);
+        otpt[0] = (int)change;
         
-        double change = cash - price;
-        result[0] = (int)change; //Dollars
-        
-        change = change - (double)result[0]; //Cents
+        // Cents for 
+        change = Math.abs(change - (float)otpt[0]);
         int cents = (int)(change * 100);
-        result[5] = cents;
         
-        result[1] = (int)(cents / 25);
-        cents = cents - result[1] * 25;
+        // Quarters
+        otpt[1] = (int)(cents / 25);
+        cents = cents - otpt[1] * 25;
         
-        result[2] = (int)(cents / 10);
-        cents = cents - result[2] * 10;
+        // Dimes
+        otpt[2] = (int)(cents / 10);
+        cents = cents - otpt[2] * 10;
         
-        result[3] = (int)(cents / 5);
-        cents = cents - result[3] * 10;
+        // Nickles
+        otpt[3] = (int)(cents / 5);
+        cents = cents - otpt[3] * 10;
         
-        result[4] = cents;
+        // Cents lol
+        otpt[4] = cents;
         
-        mng.Manager(true);
-        return result;
+        return otpt;
     }
 }
+// Barack loved this

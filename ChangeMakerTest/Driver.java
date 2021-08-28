@@ -1,8 +1,9 @@
+// C# is better
 public class Driver 
 {
-    public static void main() 
+    public static void main(String[] args) 
     {
         Manager mng = new Manager();
-        mng.Manager(false);
+        mng.ChangeManager(false);
     }
 }
