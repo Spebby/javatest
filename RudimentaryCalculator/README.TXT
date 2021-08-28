@@ -1,0 +1,1 @@
+A simple but bad rudimetary calculator. Use this for whatever you want, I don't care about credit.

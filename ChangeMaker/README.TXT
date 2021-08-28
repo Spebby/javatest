@@ -1,0 +1,1 @@
+A simple but bad change maker. Use this for whatever you want, I don't care about credit.
