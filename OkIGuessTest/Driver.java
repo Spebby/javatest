@@ -6,7 +6,7 @@ public class Driver
     public static void main(String[] args)
     {
         // Standard startup
-        //GameManager gMng = new GameManager(); //Unneeded
+        // GameManager gMng = new GameManager(); //Unneeded
         GuessGame gGame = new GuessGame();
         
         // Start

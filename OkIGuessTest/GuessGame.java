@@ -8,6 +8,7 @@ public class GuessGame
     int guessAverage;
 
     Scanner scan = new Scanner(System.in);
+    // The original issue with the scanners was due to how they were instantiated and also how Scanner handles Ints, found a fix.
     
     Player[] pArray = new Player[3];
     
@@ -44,7 +45,7 @@ public class GuessGame
         //Generate the Answer
         Target = 0;
         Target = (int)(Math.random() * 100) + 1;
-        // "* 100" acts more like "100 posibilities". 
+        // "* 100" acts more like "100 possibilities". 
         // Fail safe, should never happen, but just in case.
         
         if(Target <= 0)
@@ -105,7 +106,7 @@ public class GuessGame
         
         //Player 2 end
         pArray[1] = new Player(name, guess);
-        System.out.println("Excelent.");
+        System.out.println("Excellent.");
         System.out.println("");
         
         //Player 2 setup
@@ -142,7 +143,7 @@ public class GuessGame
     public void GameEnd()
     {
         System.out.println(Target + " is the answer.");
-        //int[] a = {p1.getGuess(), p2.getGuess(), p3.getGuess()}; //idk why i even made an array
+        //int[] a = {p1.getGuess(), p2.getGuess(), p3.getGuess()}; //idk why i even made an array for this
         
         // Terribleness inbound
         {
@@ -161,7 +162,7 @@ public class GuessGame
             boolean[] boolExacts = new boolean[]{p1Cor, p2Cor, p3Cor};
                 
             // Check if the same
-            // Done first because other calculations are pointless if everything is the same.
+            // Done first because other calculations are pointless if everything's the same.
             {
                 if(pArray[0].getGuess() == pArray[1].getGuess() && pArray[0].getGuess() == pArray[2].getGuess())
                     GameResults("all same", boolExacts);
@@ -216,7 +217,7 @@ public class GuessGame
                 {
                     for (int i = 0; i < pArray.length; i++)
                     {
-                        System.out.println(pArray[i].getName() + " is " + pArray[i].getDifference() + " away from the Answer");
+                        System.out.println(pArray[i].getName() + " is " + pArray[i].getDifference() + " away from the answer");
                     }
                     System.out.println("");
                 }

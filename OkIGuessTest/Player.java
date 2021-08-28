@@ -9,7 +9,7 @@ public class Player
         name = n1;
         guess = g1;
         
-        //# of Tigers in private possesion idk
+        //# of Tigers in private possession idk
         //# of Kidneys
         //Toenail length
     }
