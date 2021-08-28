@@ -1,9 +1,0 @@
-#BlueJ class context
-comment0.target=Tiger
-comment1.params=n\ sp
-comment1.target=Tiger(java.lang.String,\ int)
-comment2.params=moveAmount
-comment2.target=void\ move(Vector2Int)
-comment3.params=
-comment3.target=void\ status()
-numComments=4

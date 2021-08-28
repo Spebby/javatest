@@ -1,5 +1,3 @@
-// The player will only have two characteristics. Their name and a guess, an int.
-
 public class Player
 {
     String name;

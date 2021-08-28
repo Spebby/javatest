@@ -3,7 +3,7 @@
 
 public class Driver
 {
-    public static void main()
+    public static void main(String[] args)
     {
         // Standard startup
         //GameManager gMng = new GameManager(); //Unneeded
