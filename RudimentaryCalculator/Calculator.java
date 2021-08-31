@@ -1,7 +1,7 @@
 // garbage calculator
 public class Calculator
 {   
-    public void Calculator(double i0, double i1, CalculateMode calType)
+    public void CalculatorHandler(float i0, float i1, CalculateMode calType)
     {   
         switch (calType) 
         {
@@ -26,54 +26,50 @@ public class Calculator
         }
     }
     
-    public void Add(double i0, double i1)
+    static CalculatorManager calcMang = new CalculatorManager();
+
+    static void Add(float i0, float i1)
     {
-        double sum = i0 + i1;
+        float sum = i0 + i1;
         System.out.println("The sum of " + i0 + " and " + i1 + " is " + sum);
         
-        CalculatorManager calcMang = new CalculatorManager();
         calcMang.Manager(true);
     }
     
-    public void Subtract(double i0, double i1)
+    static void Subtract(float i0, float i1)
     {
-        double sum = i0 - i1;
+        float sum = i0 - i1;
         System.out.println("The difference of " + i0 + " and " + i1 + " is " + sum);
         
-        CalculatorManager calcMang = new CalculatorManager();
         calcMang.Manager(true);
     }
     
-    public void Multiply(double i0, double i1)
+    static void Multiply(float i0, float i1)
     {
-        double sum = i0 * i1;
+        float sum = i0 * i1;
         System.out.println("The product of " + i0 + " and " + i1 + " is " + sum);
         
-        CalculatorManager calcMang = new CalculatorManager();
         calcMang.Manager(true);
     }
     
-    public void Divide(double i0, double i1)
+    static void Divide(float i0, float i1)
     {
-        double sum = i0 / i1;
+        float sum = i0 / i1;
         System.out.println("The quotient of " + i0 + " and " + i1 + " is " + sum);
         
-        CalculatorManager calcMang = new CalculatorManager();
         calcMang.Manager(true);
     }
     
-    public void Modulo(double i0, double i1)
+    static void Modulo(float i0, float i1)
     {
-        double sum = i0 % i1;
+        float sum = i0 % i1;
         System.out.println("The remainder of " + i0 + " and " + i1 + " is " + sum);
         
-        CalculatorManager calcMang = new CalculatorManager();
         calcMang.Manager(true);
     }
     
-    public void GreaterThan(double i0, double i1)
+    static void GreaterThan(float i0, float i1)
     {
-        CalculatorManager calcMang = new CalculatorManager();
 
         if(i0 > i1)
         {

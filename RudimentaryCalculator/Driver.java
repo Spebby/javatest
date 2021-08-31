@@ -4,7 +4,7 @@
 public class Driver
 {   
     // calculator mode
-    public static void main()
+    public static void main(String[] args)
     {
         CalculatorManager calcMang = new CalculatorManager();
         calcMang.Manager(false);
