@@ -24,8 +24,7 @@ public class DriverFeeder
                 System.out.print(g.numGame[i] + " & ");
             else
                 System.out.print(g.numGame[i]);
-        }   
-
+        }
         
         System.out.println("");
         System.out.println("");
@@ -35,7 +34,16 @@ public class DriverFeeder
             System.out.println("Enter the full name or the abbreviation. Capitalize the abbreviation/first letters.");
             
         String gCh = scan.nextLine();
-        
+        System.out.print('\f');
+
         g.GameManager(gCh);
+    }
+
+    // Referenced by other scripts to save myself from writing too extra uneeded lines
+    public void QuitGame()
+    {
+        System.out.print('\f');
+        System.out.print("Bye!");
+        System.exit(0);
     }
 }

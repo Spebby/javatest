@@ -46,6 +46,7 @@ public class Package
         return length;
     }
     
+    /*
     public float getX()
     {
      return sideX;
@@ -60,4 +61,5 @@ public class Package
     {
         return sideZ;
     }
+    */
 }

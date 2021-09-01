@@ -6,8 +6,27 @@ import java.util.Scanner;
 
 public class FT
 {
+    Scanner scan = new Scanner(System.in);
     public void Initialize()
     {
-        
+        System.out.println("-------------------------------------------------------------------------");
+        System.out.println("'########::'#######::'########::'########:'##::::'##:'##::: ##:'########:");
+        System.out.println(" ##.....::'##.... ##: ##.... ##:... ##..:: ##:::: ##: ###:: ##: ##.....::");
+        System.out.println(" ##::::::: ##:::: ##: ##:::: ##:::: ##:::: ##:::: ##: ####: ##: ##:::::::");
+        System.out.println(" ######::: ##:::: ##: ########::::: ##:::: ##:::: ##: ## ## ##: ######:::");
+        System.out.println(" ##...:::: ##:::: ##: ##.. ##:::::: ##:::: ##:::: ##: ##. ####: ##...::::");
+        System.out.println(" ##::::::: ##:::: ##: ##::. ##::::: ##:::: ##:::: ##: ##:. ###: ##:::::::");
+        System.out.println(" ##:::::::. #######:: ##:::. ##:::: ##::::. #######:: ##::. ##: ########:");
+        System.out.println("..:::::::::.......:::..:::::..:::::..::::::.......:::..::::..::........::");
+        System.out.println("-------------------------------------------------------------------------");
+        System.out.println();
+        System.out.println("Welcome to the Fortune Telling Tent, your destiny fortold!");
+        System.out.println();
+        System.out.print("Enter a Number: ");
+        String c = scan.nextLine();
+
+
     }
+
+    
 }
