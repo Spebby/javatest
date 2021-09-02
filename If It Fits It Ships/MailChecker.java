@@ -30,20 +30,12 @@ public class MailChecker
         float girth = p1.getGirth();
 
         if (weight > 70 && (girth + length) > 100)
-        {
             System.out.println("The package is " + (weight - 70) + " pounds too heavy and " + ((girth + length) - 100) + " inches too large.");
-        }
         else if(weight <= 70 && (girth + length) > 100)
-        {
             System.out.println("The package is " + ((girth + length) - 100) + " inches too large.");
-        }
         else if(weight > 70 && (girth + length) <= 100)
-        {
             System.out.println("The package is " + (weight - 70) + " pounds too heavy.");
-        }
         else
-        {
             System.out.println("Package may be shipped first class.");
-        }
     }
 }

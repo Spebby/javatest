@@ -13,6 +13,7 @@ public class DriverFeeder
         }
         else
         {
+            System.out.print('\f');
             System.out.println("Welcome back!");
         }
         

@@ -1,7 +1,7 @@
 // This is a handler script
 public class Games 
 {   
-    public String[] numGame = new String[]{"Rock Paper Scissors", "Fortune Teller", "Coin Flip"};
+    public String[] numGame = new String[]{"Rock Paper Scissors", "Fortune Teller", "Coin Flip", "OK I Guess"};
     
     public void GameManager(String gameChoice)
     {
@@ -25,13 +25,11 @@ public class Games
                 CoinFlip cp = new CoinFlip();
                 cp.Initialize();
                 break;
-                /*
-            case "":
-            case "":
-                = new ();
-                .Initialize();
+            case "OK I GUESS":
+            case "OIG":
+                GuessGame oig = new GuessGame();
+                oig.Play();
                 break;
-                */
         }
     }
 }

@@ -8,6 +8,8 @@ public class RPS
     
     public void Initialize()
     {
+        System.out.print('\f');
+        
         System.out.println("-------------------------------------------");
         System.out.println("  -----------  -----------  ------------");
         System.out.println("  ***********  ************ ************");
@@ -34,8 +36,6 @@ public class RPS
     {
         int c = rpsmng.getChoice();
         int cmp = (int)(Math.random() * 3);
-        System.out.println(cmp + " computer choice");
-        System.out.println(c + " player choice");
         
         switch(c)
         {
@@ -43,19 +43,19 @@ public class RPS
                 System.out.println("You chose Rock and your opponent entered ");
                 if(cmp == 0)
                 {
-                    System.out.print("Rock.");
+                    System.out.print("Rock. ");
                     System.out.println("Draw!");
                     break;
                 }
                 else if(cmp == 1)
                 {
-                    System.out.print("Paper.");       
+                    System.out.print("Paper. ");       
                     System.out.println("You Lose!");
                     break;
                 }
                 else
                 {
-                    System.out.print("Scissors.");
+                    System.out.print("Scissors. ");
                     System.out.println("You Win!");
                     break;
                 }
@@ -63,19 +63,19 @@ public class RPS
                 System.out.println("You chose Paper and your opponent entered ");
                 if(cmp == 0)
                 {
-                    System.out.print("Rock.");
+                    System.out.print("Rock. ");
                     System.out.println("You Win!");
                     break;
                 }
                 else if(cmp == 1)
                 {
-                    System.out.print("Paper.");       
+                    System.out.print("Paper. ");       
                     System.out.println("Draw!");
                     break;
                 }
                 else
                 {
-                    System.out.print("Scissors.");
+                    System.out.print("Scissors. ");
                     System.out.println("You Lose!");
                     break;
                 }
@@ -83,19 +83,19 @@ public class RPS
                 System.out.println("You chose Scissors and your opponent entered ");
                 if(cmp == 0)
                 {
-                    System.out.print("Rock.");
+                    System.out.print("Rock. ");
                     System.out.println("You Lose!");
                     break;
                 }
                 else if(cmp == 1)
                 {
-                    System.out.print("Paper.");       
+                    System.out.print("Paper. ");       
                     System.out.println("You Win!");
                     break;
                 }
                 else
                 {
-                    System.out.print("Scissors.");
+                    System.out.print("Scissors. ");
                     System.out.println("Draw!");
                     break;
                 }
@@ -108,28 +108,22 @@ public class RPS
         System.out.println("Would you like to play again or choose another game?");
         System.out.println("Enter \"Yes\" to play again and No to choose another game. To quit, type anything else");
         String input = scan.nextLine(); // Reusing variable
-        scan = null;
 
         System.out.println();
-
+        
         DriverFeeder df = new DriverFeeder();
-        switch(input)
-        {
-            case "Yes":
-            case "Y":
-            case "y":
+        
+        if(input.toLowerCase().charAt(0) == 'y')
                 Initialize();
-                break;
-            case "No":
-            case "N":
-            case "n":
-                df.main(true);
-                df = null;
-                break;
-            default:
-                df.QuitGame();
-                df = null;
-                break;
+        else if(input.toLowerCase().charAt(0) == 'n')
+        {
+            df.main(true);
+            df = null;
+        }
+        else
+        {
+            df.QuitGame();
+            df = null;
         }
     }
 }

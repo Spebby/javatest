@@ -4,21 +4,19 @@ public class RPSManager
     
     public RPSManager(String c)
     {
+        c = c.toUpperCase();
         switch(c)
         {
-            case "Rock":
+            case "ROCK":
             case "R":
-            case "r":
                 choice = 0;
                 break;
-            case "Paper":
+            case "PAPER":
             case "P":
-            case "p":
                 choice = 1;
                 break;
-            case "Scissors":
+            case "SCISSORS":
             case "S":
-            case "s":
                 choice = 2;
                 break;
             default:

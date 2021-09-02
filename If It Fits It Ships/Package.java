@@ -3,16 +3,16 @@ public class Package
     float weight;
     float girth;
     float length;
-    float sideX;
-    float sideY;
-    float sideZ;
+    //float sideX;
+    //float sideY;
+    //float sideZ;
     
     public Package(float wt, float x, float y, float z)
     {
         weight = wt;
-        sideX = x;
-        sideY = y;
-        sideZ = z;
+        //sideX = x;
+        //sideY = y;
+        //sideZ = z;
         
         if(x >= y && x >= z)
         {
