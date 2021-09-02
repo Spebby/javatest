@@ -5,21 +5,22 @@ public class Games
     
     public void GameManager(String gameChoice)
     {
+        gameChoice = gameChoice.toUpperCase();
         System.out.println(""); // Simple line space so each game doesn't have to do it.
         switch(gameChoice)
         {
             // Simple fallthrough.
-            case "Rock Paper Scissors":
+            case "ROCK PPAPER SCISSORS":
             case "RPS":
                 RPS rps = new RPS();
                 rps.Initialize();
                 break;
-            case "Fortune Teller":
+            case "FORTUNE TELLER":
             case "FT":
                 FT ft = new FT();
                 ft.Initialize();
                 break;
-            case "Coin Flip":
+            case "COIN FLIP":
             case "CF":
                 CoinFlip cp = new CoinFlip();
                 cp.Initialize();
