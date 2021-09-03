@@ -1,8 +1,9 @@
 // This is a handler script
 public class Games 
 {   
-    public String[] numGame = new String[]{"Rock Paper Scissors", "Fortune Teller", "Coin Flip", "OK I Guess"};
-    
+    public String[] numGame = new String[]{"Rock Paper Scissors", "Fortune Teller", "Coin Flip", "OK I Guess", "Dunk Tank", "Dead Man's Hand"};
+    // Russian Roulet is planned :)
+
     public void GameManager(String gameChoice)
     {
         gameChoice = gameChoice.toUpperCase();
@@ -30,6 +31,15 @@ public class Games
                 GuessGame oig = new GuessGame();
                 oig.Play();
                 break;
+            case "DUNK TANK":
+            case "DT":
+                DunkTank dt = new DunkTank();
+                dt.Initialize();
+            case "DEAD MAN'S HAND":
+            case "DEAD MANS HAND":
+            case "DMH":
+                DMH dmh = new DMH();
+                dmh.Initialize();
         }
     }
 }

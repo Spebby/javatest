@@ -1,0 +1,1 @@
+A collection of text based games I made for Comp Sci. A slightly modified "OK I Guess" is included in here.

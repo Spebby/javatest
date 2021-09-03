@@ -473,7 +473,7 @@ public class FT
         
         System.out.println();
         System.out.println("Would you like to play again or choose another game?");
-        System.out.println("Enter \"Yes\" to play again and No to choose another game. To quit, type anything else");
+        System.out.println("Enter \"Yes\" to play again and \"No\"  to choose another game. To quit, type anything else");
         String input = scan.nextLine();
 
         System.out.println();

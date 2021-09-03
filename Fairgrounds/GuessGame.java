@@ -266,7 +266,7 @@ public class GuessGame
         System.out.println("");
         
         System.out.println("Would you like to play again or choose another game?");
-        System.out.println("Enter \"Yes\" to play again and No to choose another game. To quit, type anything else");
+        System.out.println("Enter \"Yes\" to play again and \"No\"  to choose another game. To quit, type anything else");
         String i = scan.nextLine();
 
         System.out.println();
