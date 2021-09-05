@@ -11,13 +11,13 @@ public class DMH
         System.out.print('\f');
         
         System.out.println("----------------------------------------------------------------------------------------------------------------------------------");
-        System.out.println("       d8b                        d8b                                                    d8b                                d8b");
-        System.out.println("      88P                        88P                                                    ?88                                88P");
-        System.out.println("     d88                        d88                                                      88b                              d88");
-        System.out.println(" d888888   d8888b d888b8b   d888888        88bd8b,d88b  d888b8b    88bd88b  .d888b,      888888b  d888b8b    88bd88b  d888888");
-        System.out.println("d8P' ?88  d8b_,dPd8P' ?88  d8P' ?88        88P'`?8P'?8bd8P' ?88    88P' ?8b ?8b,         88P `?8bd8P' ?88    88P' ?8bd8P' ?88");
-        System.out.println("88b  ,88b 88b    88b  ,88b 88b  ,88b      d88  d88  88P88b  ,88b  d88   88P   `?8b      d88   88P88b  ,88b  d88   88P88b  ,88b");
-        System.out.println("`?88P'`88b`?888P'`?88P'`88b`?88P'`88b    d88' d88'  88b`?88P'`88bd88'   88b`?888P'     d88'   88b`?88P'`88bd88'   88b`?88P'`88b");
+        System.out.println("        d8b                        d8b                                                    d8b                                d8b");
+        System.out.println("       88P                        88P                                                    ?88                                88P");
+        System.out.println("      d88                        d88                                                      88b                              d88");
+        System.out.println("  d888888   d8888b d888b8b   d888888        88bd8b,d88b  d888b8b    88bd88b  .d888b,      888888b  d888b8b    88bd88b  d888888");
+        System.out.println(" d8P' ?88  d8b_,dPd8P' ?88  d8P' ?88        88P'`?8P'?8bd8P' ?88    88P' ?8b ?8b,         88P `?8bd8P' ?88    88P' ?8bd8P' ?88");
+        System.out.println(" 88b  ,88b 88b    88b  ,88b 88b  ,88b      d88  d88  88P88b  ,88b  d88   88P   `?8b      d88   88P88b  ,88b  d88   88P88b  ,88b");
+        System.out.println(" `?88P'`88b`?888P'`?88P'`88b`?88P'`88b    d88' d88'  88b`?88P'`88bd88'   88b`?888P'     d88'   88b`?88P'`88bd88'   88b`?88P'`88b");
         System.out.println("----------------------------------------------------------------------------------------------------------------------------------");
         System.out.println();
         System.out.println("Welcome to Dead Man's Hand. The Dead Man's favourite coin is placed into the tenant's left hand,");
