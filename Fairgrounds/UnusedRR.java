@@ -3,7 +3,7 @@
 //import java.util.Scanner;
 
 // Play until you die, at the end of the game say how many rounds the player lives.
-public class RussianRoulette
+public class UnusedRR
 {
     /*
     Scanner scan = new Scanner(System.in);
