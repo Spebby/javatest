@@ -1,8 +1,9 @@
 // This is a handler script
+import java.util.Scanner;
+
 public class Games 
 {   
-    public String[] numGame = new String[]{"Rock Paper Scissors", "Fortune Teller", "Coin Flip", "OK I Guess", "Dunk Tank", "Dead Man's Hand"};
-    // Russian Roulet is planned :)
+    public String[] numGame = new String[]{"Rock Paper Scissors", "Fortune Teller", "Coin Flip", "OK I Guess", "Dunk Tank", "Dead Man's Hand"}; //Russian Roulette // Russian Roulette is brokey
 
     public void GameManager(String gameChoice)
     {
@@ -35,11 +36,34 @@ public class Games
             case "DT":
                 DunkTank dt = new DunkTank();
                 dt.Initialize();
+                break;
             case "DEAD MAN'S HAND":
             case "DEAD MANS HAND":
             case "DMH":
                 DMH dmh = new DMH();
                 dmh.Initialize();
+                break;
+            /*
+            case "RUSSIAN ROULETTE":
+            case "RR":
+                RussianRoulette rr = new RussianRoulette();
+                rr.Initialize();
+                break;
+            */
+            case "NO":
+            case "N":
+                System.out.print('\f');
+                System.out.print("Bye!");
+                System.exit(0);
+                break;
+            default:
+                System.out.println("Invalid game, pick again.");
+                Scanner scan = new Scanner(System.in);
+                String gCh = scan.nextLine();
+                GameManager(gCh);
+                break;
         }
+        
+        System.out.print('\f');
     }
 }

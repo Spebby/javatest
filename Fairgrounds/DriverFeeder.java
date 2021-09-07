@@ -33,9 +33,10 @@ public class DriverFeeder
         
         if(!SkipIntro)
             System.out.println("Enter the full name or the abbreviation. Capitalize the abbreviation/first letters.");
+        
+        System.out.println("Enter \"No\" if you wish to quit.");
             
         String gCh = scan.nextLine();
-        System.out.print('\f');
 
         g.GameManager(gCh);
     }

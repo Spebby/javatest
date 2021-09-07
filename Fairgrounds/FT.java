@@ -471,26 +471,6 @@ public class FT
         System.out.println();
         System.out.println("I hope that was insightful.");
         
-        System.out.println();
-        System.out.println("Would you like to play again or choose another game?");
-        System.out.println("Enter \"Yes\" to play again and \"No\"  to choose another game. To quit, type anything else");
-        String input = scan.nextLine();
-
-        System.out.println();
         
-        DriverFeeder df = new DriverFeeder();
-        
-        if(input.toLowerCase().charAt(0) == 'y')
-                Initialize();
-        else if(input.toLowerCase().charAt(0) == 'n')
-        {
-            df.main(true);
-            df = null;
-        }
-        else
-        {
-            df.QuitGame();
-            df = null;
-        }
     }
 }

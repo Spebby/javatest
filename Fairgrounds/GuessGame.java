@@ -17,20 +17,6 @@ public class GuessGame
         System.out.print('\f');
         
         System.out.println("Welcome to \"Okay I Guess\", a game where three players guess a number between 1 and 100.");
-        System.out.println("Would you like to get started? yes or no");
-        String i = scan.nextLine();
-            
-        if(i.toLowerCase().charAt(0) == 'y')
-        {
-            System.out.println("Then let the game begin!");
-            System.out.println("");
-        }
-        else
-        {
-           System.out.print('\f');
-           System.out.print("Bye!");
-            System.exit(0); 
-        }
         
         StartGame();
     }
