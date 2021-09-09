@@ -41,7 +41,7 @@ public class DriverFeeder
         g.GameManager(gCh);
     }
 
-    // Referenced by other scripts to save myself from writing too extra uneeded lines
+    // Referenced by other scripts to save myself from writing extra uneeded lines
     public void QuitGame()
     {
         System.out.print('\f');

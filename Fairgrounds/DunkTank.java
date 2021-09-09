@@ -42,32 +42,37 @@ public class DunkTank
 
     void Game(int i)
     {
-        int Target = 0;
-        Target = (int)(Math.random() * 50) + 1;
-        float Leniency = (float)(Math.random() * 1); // float because I'm a rebel >:) no + 1 since i'm using this as a percent.
+        int Target = (int)(Math.random() * 50) + 1;
+        int Leniency = (int)(Math.random() * 5) + 1; // float because I'm a rebel >:) no + 1 since i'm using this as a percent.
         boolean r;
         
-        // Double check the "Lived/Died within" print, funky math happing there.
+        System.out.println("Leniency = " + Leniency);
+        
         System.out.println(Target);
-        System.out.println("The dunking range is " + (Target - Math.round((5 * Leniency))) + "-" + (Target + Math.round((5 * Leniency))) + " Units.");
-        // Creates a sort of "Range" for the dunking. Will adjust exact values later, perhaps an lieniency scale?
-        if(i >= Target - Math.round((5 * Leniency)) && i <= Target + Math.round((5 * Leniency)))
+        System.out.println("The dunking range is " + (Target - Leniency) + "-" + (Target + Leniency) + " Units.");
+        // Creates a sort of "Range" for the dunking.
+        if(i >= Target - Leniency && i <= Target + Leniency)
         {
             System.out.println("The clown has been dunked! Impending Doom has been rescheduled.");
-            if(Target > i)
-                System.out.println("You slew the clown within " + Math.abs((i - Math.round((Target - (5 * Leniency))))) + " Units of the monster's life.");
+            /* // There was some really funky math happening here. i have no idea what was causing it, so just commenting this out, wasn't required
+            if(Target == i)
+                System.out.println("You hit the clown dead on, the monster is slain!");
+            else if(Target > i)
+                System.out.println("You slew the clown within " + Math.abs((i - (Target - Leniency))) + " Units of the monster's life.");
             else
-                System.out.println("You slew the clown within " + Math.abs((i - (Target + Math.round((5 * Leniency))))) + " Units of the monster's life.");
-            // Math abs'n and rounding so I don't have any funky negatives or decimals. 
+                System.out.println("You slew the clown within " + Math.abs((i - (Target + Leniency))) + " Units of the monster's life.");            
+                */
             r = true;
         }
         else
         {
             System.out.println("The clown lives. Impending Doom approaches.");
+            /* // funky buggy math
             if(Target > i)
-                System.out.println("The clown lives within " + Math.abs((i - Math.round((Target - (5 * Leniency))))) + " Units of its life.");
+                System.out.println("The clown lives within " + Math.abs((i - (Target - Leniency))) + " Units of its life.");
             else
-            System.out.println("The clown lives within " + Math.abs((i - Math.round((Target + (5 * Leniency))))) + " Units of its life.");
+                System.out.println("The clown lives within " + Math.abs((i - (Target + Leniency))) + " Units of its life.");
+            */
             r = false;
         }
 
@@ -78,13 +83,9 @@ public class DunkTank
     {
         System.out.println();
         if(Result)
-        {
             System.out.println("The clown breathes no more, you may rest easy until you're called upon once more.");
-        }
         else
-        {
             System.out.println("The pestilence rots this world, he continues to breathe, you have failed the world.");
-        }
         
         System.out.println();
         System.out.println("Anyways, would you like to play again or choose another game?");
