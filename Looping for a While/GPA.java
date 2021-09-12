@@ -18,7 +18,7 @@ public class GPA extends Driver
         while(true)
         {
             float c = scan.nextFloat();
-            if(c == 10)
+            if(c <= 10)
                 break;
             else if(c <= 4)
             {
