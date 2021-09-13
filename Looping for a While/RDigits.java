@@ -1,4 +1,4 @@
-public class RDigits extends Driver
+public class RDigits extends DriverFeeder
 {
     public void Initialize()
     {
