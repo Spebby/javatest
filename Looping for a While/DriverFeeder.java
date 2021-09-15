@@ -7,9 +7,13 @@ public class DriverFeeder
     
     public void main(boolean SkipIntro) //String[] args
     {
+        System.out.print('\f');
         
         if(!SkipIntro)
+        {
             System.out.println("Welcome to the oddest most boring collection of micro-programs.");
+            System.out.println("Source code can be found at https://github.com/Spebby/javatest");
+        }
         else
             System.out.println("Welcome back.");
         
@@ -17,7 +21,7 @@ public class DriverFeeder
         for(int i = 0; i < options.length; i++)
         {
             if(i != options.length - 1)
-                System.out.print(options[i] + " & ");
+                System.out.print(options[i] + ", ");
             else
                 System.out.print(options[i]);
         }
@@ -49,7 +53,7 @@ public class DriverFeeder
             case "CPrime":
             case "CHECKING IF PRIME":
                 CPrime cp = new CPrime();
-                cp.Initialize();
+                cp.Initialize(false);
                 break;
             case "ATS":
             case "AVERAGE TEST SCORE":
@@ -84,14 +88,20 @@ public class DriverFeeder
     {
         System.out.println("Would you like to Restart the program?");
         System.out.println("If yes, enter \"Yes\", if you'd like to select another program, enter \"No\".");
-        System.out.println("If you'd like to quit, enter \"Quit\" or anything other than \"Yes\" or \"No\".");
+        System.out.println("If you'd like to quit, enter \"Quit\".");
         String c = scan.nextLine();
         c = c.toUpperCase();
         
         if(c.charAt(0) == 'Y')
+        {
+            System.out.print('\f');
             Initialize();
+        }
         else if (c.charAt(0) == 'N')
+        {
+            System.out.print('\f');
             main(true);
+        }
         else
             Quit();
     }
