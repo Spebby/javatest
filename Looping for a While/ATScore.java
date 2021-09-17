@@ -14,6 +14,7 @@ public class ATScore extends DriverFeeder
         
         float c;
         float total = 0;
+        float lowest = 100;
         int numofEnt = 0;
         while(true)
         {
@@ -23,10 +24,15 @@ public class ATScore extends DriverFeeder
             if(c > 100)
                 c = 100;
             total += c;
+            lowest = Math.min(lowest, c);
             numofEnt++;
         }
         String Nulled = scan.nextLine();
         Nulled = null;
+
+        // ignore lowest score
+        total = (total - lowest);
+        numofEnt -= 1;
         
         CalcATScore(total, numofEnt);
     }
