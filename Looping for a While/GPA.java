@@ -85,9 +85,9 @@ public class GPA extends DriverFeeder
                     System.out.println("Invalid entry, enter something valid.");
                     break;
             }
-            System.out.println(gp);
+            //System.out.println(gp);
         }
-        System.out.println("gp: " + gp + " gnum: " + gnum);
+        //System.out.println("gp: " + gp + " gnum: " + gnum);
         System.out.println();
         
         CalcGPA(gp, gnum);

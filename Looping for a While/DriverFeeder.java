@@ -55,7 +55,9 @@ public class DriverFeeder
                 CPrime cp = new CPrime();
                 cp.Initialize(false);
                 break;
+            case "AT":
             case "ATS":
+            case "ATSCORE":
             case "AVERAGE TEST SCORE":
                 ATScore ats = new ATScore();
                 ats.Initialize();
