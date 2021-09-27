@@ -3,36 +3,26 @@ import java.util.Scanner;
 public class DriverFeeder
 {
     Scanner scan = new Scanner(System.in);
-    
-    protected Player p1;
-    protected Player p2;
-    
-    public void main(boolean SkipIntro)
+
+    public void main()
     {
-        if(!SkipIntro)
-        {
-            System.out.println("Welcome to Apologetics, a simple game with a non-sensical title.");
-            System.out.println("Apologetics is a two player dice game in which you race to 40.");
-            System.out.println("Roll a 12, and you loose a turn. Roll a 7 and you move on back.");
-            System.out.println("But, if you land a 2, your next roll will be doubled.");
-            System.out.println("With all that said, let's get playing. But first, we need your names.");
-            
-            System.out.println();
-            System.out.print("Player 1, enter your name: ");
-            String pn = scan.nextLine();
-            p1 = new Player(pn, 0, 0, 0, false);
-            System.out.println();
-            System.out.print("Player 2, enter your name: ");
-            pn = scan.nextLine();
-            p1 = new Player(pn, 0, 0, 0, false);
-            System.out.println();
-        }
-        else
-            System.out.println("Let's go again, shall we?");
-        
-        System.out.println();
         DiceGame dg = new DiceGame();
-        dg.Play();
+        
+        System.out.println("Welcome to Apologetics, a simple game with a non-sensical title.");
+        System.out.println("Apologetics is a two player dice game in which you race to 40.");
+        System.out.println("Roll a 12, and you loose a turn. Roll a 7 and you move on back.");
+        System.out.println("But, if you land a 2, your next roll will be doubled.");
+        System.out.println("With all that said, let's get playing. But first, we need your names.");
+            
+        System.out.println();
+        System.out.print("Player 1, enter your name: ");
+        String pn = scan.nextLine();
+        Player p1 = new Player(pn, 0, 0, 0, false);
+        System.out.print("Player 2, enter your name: ");
+        pn = scan.nextLine();
+        Player p2 = new Player(pn, 0, 0, 0, false);
+            
+        dg.dStart(p1, p2);
     }
     
     protected void Loop()
@@ -46,10 +36,15 @@ public class DriverFeeder
         if(c.charAt(0) == 'Y')
         {
             System.out.print('\f');
-            Play();
+            Play(true);
         }
         else
             Quit();
+    }
+    
+    void Play(boolean something) //ignore :))))
+    {
+        Quit();
     }
     
     protected void Quit()
@@ -57,10 +52,5 @@ public class DriverFeeder
         System.out.print('\f');
         System.out.print("Bye!");
         System.exit(0);
-    }
-    
-    void Play() // ignore B)))
-    {
-        Quit();
     }
 }

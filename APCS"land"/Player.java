@@ -5,8 +5,7 @@ public class Player
     int lastRoll;
     int numRolls; // number of rolls
     boolean dNextRoll;
-    
-    int[] rollData = new int[]{Position, lastRoll, numRolls};
+    int[] rollData;
     
     public Player(String n1, int p, int lRoll, int nRoll, boolean dnRoll)
     {
@@ -15,6 +14,7 @@ public class Player
         lastRoll = lRoll;
         numRolls = nRoll;
         dNextRoll = dnRoll;
+        rollData = new int[]{Position, lastRoll, numRolls};
     }
     
     public String getName()
