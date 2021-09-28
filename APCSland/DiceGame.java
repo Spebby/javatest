@@ -1,9 +1,13 @@
-public class DiceGame extends DriverFeeder
+import java.util.Scanner;
+
+public class DiceGame
 {
     int turn = 0;
+    int numTurn = 0;
     Player[] pArray = new Player[2];
     public void dStart(Player p1, Player p2)
     {
+        System.out.println();
         pArray[0] = p1;
         pArray[1] = p2;
         
@@ -14,23 +18,29 @@ public class DiceGame extends DriverFeeder
     {
         if(!Initialize)
         {
-            System.out.println(pArray[turn] + " rolled a " + pArray[turn].getData()[1] + " and moved to " + pArray[turn].getData()[0] + ".");
+            if(pArray[turn].getData()[1] != 0)
+                System.out.println(pArray[turn].getName() + " rolled a " + pArray[turn].getData()[1] + " and moved to " + pArray[turn].getData()[0] + ".");
+            else if(pArray[turn].getDNRoll())
+                System.out.println(pArray[turn].getName() + " rolled a 2, they'll get a double next turn.");
+            else
+                System.out.println(pArray[turn].getName() + " rolled zero, they stay put.");
+
+            numTurn++;
             
-            if(pArray[turn].getData()[0] < 40)
+            if(pArray[turn].getData()[0] > 40)
                 EndGame();
             
             turn++;
-            if(turn < 1)
+            if(turn > 1)
                 turn = 0;
         }
-        System.out.println(pArray[turn].getName() + ", it's your turn!");
+        //System.out.println(pArray[turn].getName() + ", it's your turn!"); // too spamy
         
         RollDice(pArray[turn]);
     }
     
     void RollDice(Player p)
     {
-        System.out.println(p.getName());
         int roll = 0;
         roll = (int)(Math.random() * 11) + 2; // 2 at mininum
         if(p.getDNRoll())
@@ -65,6 +75,7 @@ public class DiceGame extends DriverFeeder
     
     void EndGame()
     {
+        System.out.println("It took " + numTurn + " turns for the game to end.");
         System.out.println(pArray[turn].getName() + " wins with a " + Math.abs(pArray[0].getData()[0] - pArray[1].getData()[0]) + " lead!");
         System.out.println("Congradulations " + pArray[turn].getName() + "!");
         // Reset the players.
@@ -75,5 +86,31 @@ public class DiceGame extends DriverFeeder
         turn = 0;
         
         Loop();
+    }
+
+    Scanner scan = new Scanner(System.in);
+
+    void Loop()
+    {
+        System.out.println("Would you like to Restart the program?");
+        System.out.println("If yes, enter \"Yes\".");
+        System.out.println("If you'd like to quit, enter \"Quit\" or \"No\".");
+        String c = scan.nextLine();
+        c = c.toUpperCase();
+        
+        if(c.charAt(0) == 'Y')
+        {
+            System.out.print('\f');
+            Play(true);
+        }
+        else
+            Quit();
+    }
+
+    void Quit()
+    {
+        System.out.print('\f');
+        System.out.print("Bye!");
+        System.exit(0);
     }
 }

@@ -24,33 +24,4 @@ public class DriverFeeder
             
         dg.dStart(p1, p2);
     }
-    
-    protected void Loop()
-    {
-        System.out.println("Would you like to Restart the program?");
-        System.out.println("If yes, enter \"Yes\".");
-        System.out.println("If you'd like to quit, enter \"Quit\" or \"No\".");
-        String c = scan.nextLine();
-        c = c.toUpperCase();
-        
-        if(c.charAt(0) == 'Y')
-        {
-            System.out.print('\f');
-            Play(true);
-        }
-        else
-            Quit();
-    }
-    
-    void Play(boolean something) //ignore :))))
-    {
-        Quit();
-    }
-    
-    protected void Quit()
-    {
-        System.out.print('\f');
-        System.out.print("Bye!");
-        System.exit(0);
-    }
 }
