@@ -43,6 +43,8 @@ public class DiceGame
     {
         int roll = 0;
         roll = (int)(Math.random() * 11) + 2; // 2 at mininum
+        // to more accurately simulate rolling dice, it would be better to roll twice, then add it together.
+
         if(p.getDNRoll())
             roll *= 2;
         
