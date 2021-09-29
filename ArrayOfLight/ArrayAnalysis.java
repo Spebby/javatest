@@ -51,12 +51,20 @@ public class ArrayAnalysis extends MonoBehavior
     
     void anlAverage()
     {
+        int c = 0;
+        for(int i = 0; i < iArray.length; i++)
+        {
+            c += iArray[i];
+        }
         
+        System.out.println("The average is " + (c/iArray.length) + ".");
+        Loop();
     }
     
     void anlRange()
     {
         System.out.println("The range is " + Math.abs(iRange[0] - iRange[1]) + ".");
+        Loop();
     }
     
     void anlOdd()
@@ -80,6 +88,7 @@ public class ArrayAnalysis extends MonoBehavior
                 System.out.print(odd.get(i));
         }
         System.out.print(" were odd.");
+        System.out.println();
         Loop();
     }
     
