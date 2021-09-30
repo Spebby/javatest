@@ -10,7 +10,7 @@ Order of experiments:
 7. APCSLand
 8. Array of Light
 
-###### These will not be updated after they're done unless something really bothers me.
+#### These will not be updated after they're done unless something really bothers me.
 
 This is public as I hope to detail my "journey" from a fairly incompitent programmer, to a competent programmer. And who knows, maybe you'll learn something too.
 
