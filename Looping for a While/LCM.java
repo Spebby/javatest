@@ -10,10 +10,6 @@ public class LCM extends DriverFeeder
         b = scan.nextInt();
         lcm = (a > b) ? a : b;
         
-        // java jank
-        String Nulled = scan.nextLine();
-        Nulled = null;
-        
         // While loop never ends until LCM perfectly divides a & b. If the loop fails,
         // 1 is added to LCM and it tries again.
         while(true)

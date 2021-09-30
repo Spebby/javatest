@@ -11,11 +11,7 @@ public class CPrime extends DriverFeeder
         int num = scan.nextInt();
         num = Math.abs(num);
         if(num <= 0)
-        {
-            String Nulled = scan.nextLine();
-            Nulled = null;
             LoopProgram();
-        }
         PrimeCalculator(num);
     }
     

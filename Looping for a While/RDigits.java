@@ -7,9 +7,6 @@ public class RDigits extends DriverFeeder
         
         int number = 0, reverse = 0;
         number = scan.nextInt();
-        // java jank
-        String Nulled = scan.nextLine();
-        Nulled = null;
         
         while(number != 0)   
         {  

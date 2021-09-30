@@ -88,10 +88,11 @@ public class DriverFeeder
     
     protected void LoopProgram()
     {
+        String c = scan.nextLine();
         System.out.println("Would you like to Restart the program?");
         System.out.println("If yes, enter \"Yes\", if you'd like to select another program, enter \"No\".");
         System.out.println("If you'd like to quit, enter \"Quit\".");
-        String c = scan.nextLine();
+        c = scan.nextLine();
         c = c.toUpperCase();
         
         if(c.charAt(0) == 'Y')

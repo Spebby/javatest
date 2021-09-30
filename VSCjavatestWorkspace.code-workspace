@@ -20,6 +20,9 @@
 		},
 		{
 			"path": "APCSland"
+		},
+		{
+			"path": "ArrayOfLight"
 		}
 	],
 	"settings": {}

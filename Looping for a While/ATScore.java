@@ -27,8 +27,6 @@ public class ATScore extends DriverFeeder
             lowest = Math.min(lowest, c);
             numofEnt++;
         }
-        String Nulled = scan.nextLine();
-        Nulled = null;
 
         // ignore lowest score
         total = (total - lowest);
