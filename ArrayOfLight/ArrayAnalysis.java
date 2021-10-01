@@ -45,14 +45,20 @@ public class ArrayAnalysis extends MonoBehavior
         if(in.charAt(0) == 'Y')
         {
             System.out.print("The numbers generated are: ");
-            PrintList(iArray, null); // Send to a function to improve invisibility.
+            
+            // Java doesn't have support for Generic Arrays, have to do this instead.
+            String[] siArray = new String[iLength];
+            for (int i = 0; i < iArray.length; i++)
+                siArray[i] = String.valueOf(iArray[i]);
+            PrintList(siArray);
             System.out.println();
         }
 
         System.out.println("Now that all the numbers have been generated, what program would you like to select?");
         System.out.println();
         System.out.print("Programs avaliable: ");
-        PrintOptions();
+        PrintList(appName);
+        System.out.println();
         System.out.print("Input your choice: ");
         in = scan.nextLine();
         in = in.toUpperCase();
@@ -76,6 +82,7 @@ public class ArrayAnalysis extends MonoBehavior
         Loop();
     }
     
+
     void anlOdd()
     {
         ArrayList<Integer> odd = new ArrayList<Integer>();
@@ -83,10 +90,17 @@ public class ArrayAnalysis extends MonoBehavior
         for(int i = 0; i < iArray.length; i++)
             if(iArray[i] % 2 != 0) // fills array with all odd numbers in the origianl array.
                 odd.add(iArray[i]);
-        
+        int[] oArray = odd.stream().mapToInt(i -> i).toArray();
+
+
         System.out.println("Out of " + iArray.length + " numbers, only " + odd.size() + " were odd.");
         System.out.print("Of those, ");
-        PrintList(null, odd); // Send to a function to improve invisibility.
+
+        // Java doesn't have support for Generic Arrays, have to do this instead.
+        String[] soArray = new String[oArray.length];
+            for (int i = 0; i < oArray.length; i++)
+                soArray[i] = String.valueOf(oArray[i]);
+        PrintList(soArray); // Send to a function to improve read ability.
 
         System.out.print(" were odd.");
         System.out.println();
@@ -108,7 +122,7 @@ public class ArrayAnalysis extends MonoBehavior
         {
             System.out.println("What program do you want to switch to?");
             System.out.print("Programs avaliable: ");
-            PrintOptions();
+            PrintList(appName);
             System.out.println();
         
             System.out.print("Input your choice: ");
@@ -123,39 +137,14 @@ public class ArrayAnalysis extends MonoBehavior
             Quit();
     }
 
-    void PrintOptions()
+    public <T> void PrintList(T[] array)
     {
-        for(int i = 0; i < appName.length ; i++) // prints each number in the array. proper formating included.
+        for(int i = 0; i < array.length ; i++) // prints each number in the array. proper formating included.
         {
-            if(i != appName.length - 1)
-                System.out.print(appName[i] + ", ");
+            if(i != array.length - 1)
+                System.out.print(array[i] + ", ");
             else
-                System.out.print(appName[i]);
-        }
-        System.out.println();
-    }
-
-    void PrintList(int[] cArray, ArrayList<Integer> bArray)
-    {
-        if(cArray != null)
-        {
-            for(int i = 0; i < cArray.length ; i++) // prints each number in the array. proper formating included.
-            {
-                if(i != cArray.length - 1)
-                    System.out.print(cArray[i] + ", ");
-                else
-                    System.out.print(cArray[i]);
-            }
-        }
-        else if(bArray != null)
-        {
-            for(int i = 0; i < bArray.size() ; i++) // prints each number in the array. proper formating included.
-            {
-                if(i != bArray.size() - 1)
-                    System.out.print(bArray.get(i) + ", ");
-                else
-                    System.out.print(bArray.get(i));
-            }
+                System.out.print(array[i]);
         }
     }
 }
