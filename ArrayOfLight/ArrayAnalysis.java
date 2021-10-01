@@ -6,7 +6,6 @@ public class ArrayAnalysis extends MonoBehavior
 {
     int[] iArray = new int[0];
     int[] iRange = new int[2];
-    int iLength;
     String[] appName = new String[]{"Average", "Range", "Odd"};
 
     Map<Character, Command> options = new HashMap<Character, Command>();
@@ -24,7 +23,7 @@ public class ArrayAnalysis extends MonoBehavior
 
         System.out.println();
         System.out.print("How many numbers should the range generate? ");
-        iLength = scan.nextInt();
+        int iLength = scan.nextInt();
         iArray = new int[iLength];
         System.out.print("What's the smallest possible number integer in the range? ");
         iRange[0] = scan.nextInt();
