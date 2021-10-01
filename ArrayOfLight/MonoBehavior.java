@@ -14,4 +14,15 @@ public class MonoBehavior // inheritance script
     {
         void _Command();
     }
+
+    protected <T> void PrintList(T[] array)
+    {
+        for(int i = 0; i < array.length ; i++) // prints each number in the array. proper formating included.
+        {
+            if(i != array.length - 1)
+                System.out.print(array[i] + ", ");
+            else
+                System.out.print(array[i]);
+        }
+    }
 }

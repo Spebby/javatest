@@ -1,6 +1,7 @@
 import java.util.HashMap;
 import java.util.Map;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class ArrayAnalysis extends MonoBehavior
 {
@@ -36,6 +37,7 @@ public class ArrayAnalysis extends MonoBehavior
         // iRange[0] is Min, iRange[1] is Max
         for(int i = 0; i < iArray.length; i++) // Fills iArray wil random variables within range.
             iArray[i] = (int)(Math.random() * (iRange[1] - iRange[0])) + iRange[0];
+        Arrays.sort(iArray);
             
         System.out.println();
         System.out.print("Would you like to see all the numbers in the array? Y/N: ");
@@ -111,8 +113,8 @@ public class ArrayAnalysis extends MonoBehavior
         System.out.println();
         System.out.println("Would you like to choose another program, or change the array?");
         System.out.println("If you'd like to choose another program, enter \"Yes\".");
-        System.out.println("If you'd like to change the array, enter \"Change\".");
-        System.out.println("If you'd like to quit, enter \"Quit\" or \"No\".");
+        System.out.println("To change the array, enter \"Change\".");
+        System.out.println("To quit, enter \"Quit\" or \"No\".");
         String c = scan.nextLine();
         c = c.toUpperCase();
         
@@ -134,16 +136,5 @@ public class ArrayAnalysis extends MonoBehavior
             Initialize(true);
         else
             Quit();
-    }
-
-    public <T> void PrintList(T[] array)
-    {
-        for(int i = 0; i < array.length ; i++) // prints each number in the array. proper formating included.
-        {
-            if(i != array.length - 1)
-                System.out.print(array[i] + ", ");
-            else
-                System.out.print(array[i]);
-        }
     }
 }
