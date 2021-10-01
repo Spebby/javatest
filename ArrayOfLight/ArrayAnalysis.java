@@ -2,12 +2,13 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.text.DecimalFormat;
 
 public class ArrayAnalysis extends MonoBehavior
 {
     int[] iArray = new int[0];
     int[] iRange = new int[2];
-    String[] appName = new String[]{"Average", "Range", "Odd"};
+    String[] appName = new String[]{"Average", "Range", "Odd", "Selection"};
 
     Map<Character, Command> options = new HashMap<Character, Command>();
 
@@ -20,8 +21,8 @@ public class ArrayAnalysis extends MonoBehavior
             options.put('A', new Command() { public void _Command() { anlAverage(); }; }); // Average
             options.put('R', new Command() { public void _Command() { anlRange(); }; }); // Range
             options.put('O', new Command() { public void _Command() { anlOdd(); }; }); // Odd
+            options.put('S', new Command() { public void _Command() { anlSelection(); }; }); // Selection        }
         }
-
         System.out.println();
         System.out.print("How many numbers should the range generate? ");
         int iLength = scan.nextInt();
@@ -69,11 +70,12 @@ public class ArrayAnalysis extends MonoBehavior
     
     void anlAverage()
     {
-        int c = 0;
+        DecimalFormat median = new DecimalFormat("###.###");
+        float c = 0;
         for(int i = 0; i < iArray.length; i++)
             c += iArray[i];
         
-        System.out.println("The average is " + (c/iArray.length) + ".");
+        System.out.println("The average is " + median.format(c/iArray.length) + ".");
         Loop();
     }
     
@@ -105,6 +107,29 @@ public class ArrayAnalysis extends MonoBehavior
 
         System.out.print(" were odd.");
         System.out.println();
+        Loop();
+    }
+    
+    void anlSelection()
+    {
+        System.out.println();
+        System.out.print("Choose the number you want to check for: ");
+        int c = scan.nextInt();
+        String s = scan.nextLine(); // ignore, java jank
+        int cnum = 0;
+        
+        if(c < iRange[0])
+            c = iRange[0];
+        else if(c > iRange[1])
+            c = iRange[1];
+        
+        for(int i = 0; i < iArray.length; i++)
+        {
+            if(c == iArray[i])
+                cnum++;
+        }
+    
+        System.out.println("There are " + cnum + " instances of " + c + " in the range.");    
         Loop();
     }
     
