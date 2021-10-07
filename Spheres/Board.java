@@ -1,35 +1,38 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 
 public class Board extends JPanel
 {
-    private Ball ball;
-    private Ball ball2;
+    Dimension scrnSize = Toolkit.getDefaultToolkit().getScreenSize();
+    Rectangle winSize = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
+    int tbH = scrnSize.height - winSize.height;
     
-    private RGB bColour = new RGB(162, 61, 155);
-    private Vector2Int size = new Vector2Int(1000, 600);
+    Ball ball;
+    Ball ball2;
     
+    RGB BG;
+    Vector2Int boardSize = new Vector2Int(scrnSize.width, scrnSize.height - tbH);
+
     public Board()
-        {
+    {
+        BG = new RGB(162, 61, 155);
         this.setLayout(null);
-        this.setBackground(new Color(bColour.r, bColour.g, bColour.b));
-        this.setPreferredSize(new Dimension(size.x, size.y));
+        this.setBackground(new Color(BG.r, BG.g, BG.b));
+        this.setPreferredSize(new Dimension(boardSize.x, boardSize.y));
             
-        ball = new Ball();
-        ball2 = new Ball();
+        ball = new Ball(this);
+        ball2 = new Ball(this);
     }
     
     public void go()
-    {        
+    {
         while(true)
         {
-            ball.Move();
-            ball2.Move();
+            ball.Move(boardSize);
+            ball2.Move(boardSize);
             this.repaint();
-            try
-            {
-                Thread.sleep(10);
-            } catch (InterruptedException ex){}
+            try {Thread.sleep(10);} catch (InterruptedException ex){}
         }
     }
     
@@ -38,5 +41,5 @@ public class Board extends JPanel
         super.paintComponent(page);
         ball.Draw(page);
         ball2.Draw(page);
-    }    
+    }
 }
