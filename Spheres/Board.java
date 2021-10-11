@@ -10,6 +10,7 @@ public class Board extends JPanel
     
     Ball ball;
     Ball ball2;
+    Ball[] balls = {ball, ball2};
     
     RGB BG;
     Vector2Int boardSize = new Vector2Int(scrnSize.width, scrnSize.height - tbH);
@@ -20,13 +21,13 @@ public class Board extends JPanel
         this.setLayout(null);
         this.setBackground(new Color(BG.r, BG.g, BG.b));
         this.setPreferredSize(new Dimension(boardSize.x, boardSize.y));
-            
+        
         ball = new Ball(this);
         ball2 = new Ball(this);
     }
     
     public void go()
-    {
+    {       
         while(true)
         {
             ball.Move(boardSize);
