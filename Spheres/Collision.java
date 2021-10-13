@@ -1,14 +1,29 @@
 public class Collision
 {
-    /*public boolean Collision(Ball ball, Ball ball2)
-    {
-        double xDiff = ball.getPosition().x - ball2.getPosition().x;
-        double yDiff = ball.getPosition().y - ball2.getPosition().y;
-        
-        double distance = Math.sqrt((Math.pow(xDiff, 2) + Math.pow(yDiff, 2)));
-        
-        boolean collided = Math.abs((ball.getPos().x - ball2.getPos().x)^2) + Math.abs((ball.getPos().y - ball2.getPos().y)^2) <= (ball.getRadius + ball2.getRadius)^2;
+    ShrinkHandler s = new ShrinkHandler();
 
-        return distance < (ball.getRadius() + ball2.getRadius());
-    }*/
+    public void CollDetection(Ball[] balls)
+    {
+        for (int i = 0; i < balls.length; i++) if(balls[i].getActive())
+        {
+            for (int j = i + 1; j < balls.length; j++) if(balls[j].getActive())
+            {
+                int xDif = (balls[i].getPos().x + balls[i].getSize()/2) - (balls[j].getPos().x + balls[j].getSize()/2);
+                int yDif = (balls[i].getPos().y + balls[i].getSize()/2) - (balls[j].getPos().y + balls[j].getSize()/2);
+                double dist = Math.sqrt((xDif * xDif) + (yDif * yDif));
+                if(dist <= balls[i].getSize()/2 + balls[j].getSize()/2)
+                {
+                    balls[i].Bounce('B');
+                    balls[j].Bounce('B');
+                    
+                    s.Shrink(balls[i], ((int)(Math.random() * 125) + 50));
+                    s.Shrink(balls[j], ((int)(Math.random() * 125) + 50));
+                }
+            }
+            else
+                j++;
+        }
+        else
+            i++;
+    }
 }

@@ -6,58 +6,53 @@ public class Ball
     
     Vector2Int pos;
     Vector2Int inc;
-    int radius;
+    int size;
     RGB rgb;
     Color colour;
+    boolean active;
     
     public Ball(Board b)
     {
         board = b;
+        active = true;
         pos = new Vector2Int((int)(Math.random() * 800), (int)(Math.random() * 400));
         inc = new Vector2Int((int)(Math.random() * 7) - 3, (int)(Math.random() * 7) - 3);
-        radius = ((int)(Math.random() * 150) + 50);
+        size = ((int)(Math.random() * 150) + 50);
         rgb = new RGB( (int)(Math.random() * 256), (int)(Math.random() * 256), (int)(Math.random() * 256));
         colour = new Color (rgb.r, rgb.g, rgb.b);
     }
     
     public void Move(Vector2Int bd)
     {
-        while(true)
-        {
-            pos.x += inc.x;
-            pos.y += inc.y;
-            
-            //FindNearest();
-            
-            // Rewrite collision system to be based on actual colliders, rather than dimensions
-            if(pos.x < 0 || pos.x > bd.x - radius)
-                Collision('X');
-            if(pos.y < 0 || pos.y > bd.y - radius)
-                Collision('Y');
-        }
+        pos.x += inc.x;
+        pos.y += inc.y;
+        
+        if(pos.x < 0 || pos.x > bd.x - size)
+            Bounce('X');
+        if(pos.y < 0 || pos.y > bd.y - size)
+            Bounce('Y');
     }
     
-    void Collision(char c)
+    public void Bounce(char c)
     {
-        /*
-        if(c == 0)
+        switch(c)
         {
-            ball2 = 
-            if((pos.x - ball2.getPos().x)^2 + (pos.y - ball2.getPos().y)^2 <= (radius + ball2.getRadius())^2)
-            {
-                
-            }
-        }*/
-        if(c == 'X')
-            inc.x = -inc.x;
-        if(c == 'Y')
-            inc.y = -inc.y;
+            case 'X':
+                inc.x = -inc.x;
+                break;
+            case 'Y':
+                inc.y = -inc.y;
+            case 'B':
+                inc.x = -inc.x;
+                inc.y = -inc.y;
+                break;
+        }
     }
     
     public void Draw(Graphics page)
     {
         page.setColor(colour);
-        page.fillOval(pos.x, pos.y, radius, radius);
+        page.fillOval(pos.x, pos.y, size, size);
     }
     
     public Vector2Int getPos()
@@ -65,8 +60,13 @@ public class Ball
         return pos;
     }
     
-    public int getRadius()
+    public int getSize()
     {
-        return radius;
+        return size;
+    }
+    
+    public boolean getActive()
+    {
+        return active;
     }
 }

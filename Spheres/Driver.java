@@ -12,6 +12,6 @@ public class Driver
         frame.getContentPane().add(board);
         frame.pack();
         frame.setVisible(true);
-        board.go();
+        board.Go();
     }
 }

@@ -1,3 +1,4 @@
+import java.awt.event.KeyEvent;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -14,6 +15,9 @@ public class Board extends JPanel
     
     RGB BG;
     Vector2Int boardSize = new Vector2Int(scrnSize.width, scrnSize.height - tbH);
+    
+    Collision coll = new Collision();
+    BallSpawner bs = new BallSpawner();
 
     public Board()
     {
@@ -26,15 +30,21 @@ public class Board extends JPanel
         ball2 = new Ball(this);
     }
     
-    public void go()
+    public void Go()
     {       
         while(true)
         {
-            ball.Move(boardSize);
-            ball2.Move(boardSize);
+            for(int i = 0; i < balls.length; i++)
+                balls[i].Move(boardSize);
+            coll.CollDetection(balls);
             this.repaint();
             try {Thread.sleep(10);} catch (InterruptedException ex){}
         }
+    }
+    
+    public void keyPressed(KeyEvent e) 
+    {
+        bs.Spawn(balls, this);
     }
     
     public void paintComponent(Graphics page)
