@@ -15,7 +15,7 @@ public class Ball
     {
         board = b;
         active = true;
-        // Pos is the position, vel is the velocity
+        // Pos is the position, vel is the velocity. Give random variables.
         pos = new Vector2Int((int)(Math.random() * b.getBSize().x) - (size + 50), (int)(Math.random() * b.getBSize().y) - (size + 50));
         // Incase something goes very very wrong
         if(pos.x >= b.getBSize().x - (size + 100) || pos.x <= 0 + (size + 100))
@@ -24,16 +24,14 @@ public class Ball
             pos.y = 0;
 
         vel = new Vector2Int((int)(Math.random() * 7) - 3, (int)(Math.random() * 7) - 3);
-        // Incase velocity = 0 on any axis
+        // Incase velocity = 0 on any axis, always want some movement
         if(vel.x == 0)
             vel.x++;
         if(vel.y == 0)
             vel.y++;
-        System.out.println(vel.x + " " + vel.y + " Position: " + pos.x + " " + pos.y);
-
-        size = ((int)(Math.random() * 150) + 50);
+        size = ((int)(Math.random() * 150) + 50); // The spheres have the same x & y dimensions
         rgb = new RGB( (int)(Math.random() * 256), (int)(Math.random() * 256), (int)(Math.random() * 256));
-        colour = new Color (rgb.r, rgb.g, rgb.b);
+        colour = new Color (rgb.r, rgb.g, rgb.b); // Vector 3
     }
     
     public void Move(Vector2Int bd)
@@ -47,8 +45,10 @@ public class Ball
             Bounce('Y');
     }
     
+    // Consider making this its own class, SRP and all.
     public void Bounce(char c)
     {
+        // X = X-Axis, Y = Y-Axis, B = Both
         switch(c)
         {
             case 'X':
@@ -66,6 +66,7 @@ public class Ball
         }
     }
     
+    // Make a more dyanmic drawing script
     public void Draw(Graphics page)
     {
         page.setColor(colour);
