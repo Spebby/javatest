@@ -1,4 +1,4 @@
-public class RGB
+public class RGB // just a Vector3
 {
     // I want to use these freely, no encapsulation
     public int r;
