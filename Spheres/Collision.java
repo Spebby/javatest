@@ -20,6 +20,7 @@ public class Collision
                     balls.get(i).Bounce('B');
                     balls.get(j).Bounce('B');
                     
+                    // SFactor acts as a percentage, it's supposed to be a decimal. 
                     s.Shrink(balls.get(i), (balls.get(i).size * 0.2f) * SFactor);
                     s.Shrink(balls.get(j), (balls.get(i).size * 0.2f) * SFactor);
                 }
