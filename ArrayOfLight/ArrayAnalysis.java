@@ -115,7 +115,6 @@ public class ArrayAnalysis extends MonoBehavior
         System.out.println();
         System.out.print("Choose the number you want to check for: ");
         int c = scan.nextInt();
-        String s = scan.nextLine(); // ignore, java jank
         int cnum = 0;
         
         if(c < iRange[0])
@@ -140,7 +139,8 @@ public class ArrayAnalysis extends MonoBehavior
         System.out.println("If you'd like to choose another program, enter \"Yes\".");
         System.out.println("To change the array, enter \"Change\".");
         System.out.println("To quit, enter \"Quit\" or \"No\".");
-        String c = scan.nextLine();
+        String c = scan.nextLine(); // two for java jank
+        c = scan.nextLine();
         c = c.toUpperCase();
         
         System.out.print('\f');

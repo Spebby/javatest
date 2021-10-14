@@ -1,7 +1,7 @@
-import java.awt.event.KeyEvent;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.KeyEvent;
+import java.util.ArrayList;
 
 public class Board extends JPanel
 {
@@ -9,10 +9,8 @@ public class Board extends JPanel
     Rectangle winSize = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
     int tbH = scrnSize.height - winSize.height;
     
-    Ball ball;
-    Ball ball2;
-    Ball[] balls = {ball, ball2};
-    
+    ArrayList<Ball> balls = new ArrayList<Ball>();
+
     RGB BG;
     Vector2Int boardSize = new Vector2Int(scrnSize.width, scrnSize.height - tbH);
     
@@ -26,31 +24,34 @@ public class Board extends JPanel
         this.setBackground(new Color(BG.r, BG.g, BG.b));
         this.setPreferredSize(new Dimension(boardSize.x, boardSize.y));
         
-        ball = new Ball(this);
-        ball2 = new Ball(this);
+        bs.Spawn(balls, 20, this);
     }
     
     public void Go()
     {       
         while(true)
         {
-            for(int i = 0; i < balls.length; i++)
-                balls[i].Move(boardSize);
-            coll.CollDetection(balls);
+            for(int i = 0; i < balls.size(); i++)
+                balls.get(i).Move(boardSize);
+            coll.CollDetection(balls, .5f);
             this.repaint();
             try {Thread.sleep(10);} catch (InterruptedException ex){}
         }
     }
-    
-    public void keyPressed(KeyEvent e) 
+
+    // this doesn't work
+    public void keyPressed(KeyEvent key) 
     {
-        bs.Spawn(balls, this);
+        if (key.getKeyCode() == KeyEvent.VK_SPACE) 
+            bs.Spawn(balls, 1, this);
     }
     
     public void paintComponent(Graphics page)
     {
         super.paintComponent(page);
-        ball.Draw(page);
-        ball2.Draw(page);
+        for(int i = 0; i < balls.size(); i++)
+                balls.get(i).Draw(page);
     }
+
+    public Vector2Int getBSize() { return boardSize; }
 }
