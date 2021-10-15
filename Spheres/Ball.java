@@ -16,12 +16,12 @@ public class Ball
         board = b;
         active = true;
         // Pos is the position, vel is the velocity. Give random variables.
-        pos = new Vector2Int((int)(Math.random() * b.getBSize().x) - (size + 50), (int)(Math.random() * b.getBSize().y) - (size + 50));
+        pos = new Vector2Int((int)(Math.random() * b.getBSize().x) - (size + 100), (int)(Math.random() * b.getBSize().y) - (size + 100));
         // Incase something goes very very wrong
         if(pos.x >= b.getBSize().x - (size + 100) || pos.x <= 0 + (size + 100))
-            pos.x = 0;
+            pos.x = (int)(Math.random() * b.getBSize().x) - (size + 300);
         if(pos.y >= b.getBSize().y - (size + 100) || pos.y <= 0 + (size + 100))
-            pos.y = 0;
+            pos.y = (int)(Math.random() * b.getBSize().x) - (size + 300);
 
         vel = new Vector2Int((int)(Math.random() * 7) - 3, (int)(Math.random() * 7) - 3);
         // Incase velocity = 0 on any axis, always want some movement

@@ -1,6 +1,6 @@
 public class ShrinkHandler
 {
-    int cutoff = 30;
+    int cutoff = 10;
     public void Shrink(Ball ball, float amount)
     {
         Math.round(ball.size -= amount);

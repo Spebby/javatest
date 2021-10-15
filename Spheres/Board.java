@@ -21,14 +21,14 @@ public class Board extends JPanel
     Collision coll = new Collision();
     BallSpawner bs = new BallSpawner();
 
-    public Board()
+    public Board(int amount)
     {
         BG = new RGB(162, 61, 155);
         this.setLayout(null);
         this.setBackground(new Color(BG.r, BG.g, BG.b));
         this.setPreferredSize(new Dimension(boardSize.x, boardSize.y));
         
-        bs.Spawn(balls, 20, this);
+        bs.Spawn(balls, amount, this);
     }
     
     public void Go()
