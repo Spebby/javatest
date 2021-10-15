@@ -1,9 +1,9 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.KeyEvent;
+import java.awt.event.*;
 import java.util.ArrayList;
 
-public class Board extends JPanel
+public class Board extends JPanel implements KeyListener
 {
     // Get the size of the screen.
     Dimension scrnSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -28,7 +28,9 @@ public class Board extends JPanel
         this.setBackground(new Color(BG.r, BG.g, BG.b));
         this.setPreferredSize(new Dimension(boardSize.x, boardSize.y));
         
+        this.addKeyListener(this);
         bs.Spawn(balls, amount, this);
+        this.setFocusable(true);
     }
     
     public void Go()
@@ -45,11 +47,48 @@ public class Board extends JPanel
 
     // this doesn't work
     // Want to be able to type "1" and spawn 1 ball, "6" to spawn 6.
-    public void keyPressed(KeyEvent key) 
+    public void keyPressed(KeyEvent event) 
     {
-        if (key.getKeyCode() == KeyEvent.VK_SPACE) 
-            bs.Spawn(balls, 1, this);
+        // 49 - 57 = 1-9
+        switch(event.getKeyCode())
+        {
+            case KeyEvent.VK_1:
+                bs.Spawn(balls, 1, this);
+                break;
+            case KeyEvent.VK_2:
+                bs.Spawn(balls, 2, this);
+                break;
+            case KeyEvent.VK_3:
+                bs.Spawn(balls, 3, this);
+                break;
+            case KeyEvent.VK_4:
+                bs.Spawn(balls, 4, this);
+                break;
+            case KeyEvent.VK_5:
+                bs.Spawn(balls, 5, this);
+                break;
+            case KeyEvent.VK_6:
+                bs.Spawn(balls, 6, this);
+                break;
+            case KeyEvent.VK_7:
+                bs.Spawn(balls, 7, this);
+                break;
+            case KeyEvent.VK_8:
+                bs.Spawn(balls, 8, this);
+                break;
+            case KeyEvent.VK_9:
+                bs.Spawn(balls, 9, this);
+                break;
+            default:
+                break;
+        }
     }
+    
+    public void keyReleased( KeyEvent event )
+    {}
+    
+    public void keyTyped( KeyEvent event )
+    {}
     
     public void paintComponent(Graphics page) // Repaint the balls
     {
