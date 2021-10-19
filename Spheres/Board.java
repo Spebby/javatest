@@ -45,11 +45,8 @@ public class Board extends JPanel implements KeyListener
         }
     }
 
-    // this doesn't work
-    // Want to be able to type "1" and spawn 1 ball, "6" to spawn 6.
     public void keyPressed(KeyEvent event) 
     {
-        // 49 - 57 = 1-9
         switch(event.getKeyCode())
         {
             case KeyEvent.VK_1:
