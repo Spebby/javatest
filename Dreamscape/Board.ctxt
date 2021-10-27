@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Board
+comment1.params=amount
+comment1.target=Board(int)
+comment2.params=
+comment2.target=void\ Go()
+comment3.params=page
+comment3.target=void\ paintComponent(java.awt.Graphics)
+comment4.params=
+comment4.target=Vector2Int\ getBSize()
+numComments=5
