@@ -10,6 +10,8 @@ Order of experiments:
 7. APCSLand
 8. Array of Light
 9. Spheres
+10. Terraria Name Generator
+11. Baby Game
 
 ### These will not be updated after they're done unless something really bothers me.
 
