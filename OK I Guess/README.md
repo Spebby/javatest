@@ -9,3 +9,5 @@ Do fill the array at the top of the script and do not have any self existing "Pl
 into the array, if looping, just overwrite the old one. instead of writing "p1.getName()", you'd write something like "pArray[0].getName()".
 This ended up working, and while it's less "clean" feeling than a bunch of self existing objects, it does work, and it probably fixed another 
 bug I had yet to encounter due to looping.
+
+edit like 2 months later: alternatively you could just use ArrayLists instead of being a fucking idiot (like me)
