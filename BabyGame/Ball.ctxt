@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=Ball
+comment1.params=b
+comment1.target=Ball(Board)
+comment2.params=bd
+comment2.target=void\ Move(Vector2Int)
+comment3.params=page
+comment3.target=void\ Draw(java.awt.Graphics)
+comment4.params=
+comment4.target=Vector2Int\ getPos()
+comment5.params=
+comment5.target=int\ getSize()
+comment6.params=
+comment6.target=boolean\ getActive()
+numComments=7

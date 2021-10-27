@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.target=Collision
+comment1.params=balls\ SFactor
+comment1.target=void\ CollDetection(java.util.ArrayList,\ float)
+numComments=2
