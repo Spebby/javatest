@@ -28,36 +28,36 @@ public class NameGenerator
     String Result;
     public void Generate(int amount)
     {
-        int c;
-        int t;
+        int type;
+        int the;
         for(int i = 0; i < amount; i++)
         {
             Result = "";
-            c = (int)(Math.random() * 2);
-            t = (int)(Math.random() * 2);
-            if(c == 0) { AL(c, t); }
-            else { LN(t); }
+            type = (int)(Math.random() * 2);
+            the = (int)(Math.random() * 3);
+            if(type >= 1) { AL(type, the); }
+            else { LN(the); }
             System.out.println(Result);
         }
     }
     
     // <Adjective> <Location> ( & <Noun>)
-    String AL(int c, int t)
+    String AL(int type, int the)
     {
-        if(t == 0)
+        if(the == 0)
             Result = "The ";
         Result += (Adjective[(int)(Math.random() * Adjective.length - 1)] + " ");
         Result += (Location[(int)(Math.random() * Location.length - 1)]);
-        if(c == 0) {
+        if(type == 0) {
             Result += " of ";
             Result += (Noun[(int)(Math.random() * Noun.length - 1)]); }
         return Result;
     }
     
     // <Location> <Noun>
-    String LN(int t)
+    String LN(int the)
     {
-        if(t == 0) { Result = "The "; }
+        if(the == 0) { Result = "The "; }
         Result += (Location[(int)(Math.random() * Location.length - 1)] + " ");
         Result += (Noun[(int)(Math.random() * Noun.length - 1)]);
         return Result;

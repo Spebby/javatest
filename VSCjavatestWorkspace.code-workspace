@@ -26,6 +26,12 @@
 		},
 		{
 			"path": "Spheres"
+		},
+		{
+			"path": "BabyGame"
+		},
+		{
+			"path": "TerrariaNameGenerator"
 		}
 	],
 	"settings": {}
