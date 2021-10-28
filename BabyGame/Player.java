@@ -8,7 +8,7 @@ public class Player extends JPanel implements KeyListener
     
     public Player(Board b)
     {
-        pobj = new Ball(b);
+        pobj = new Ball(b, this);
         this.addKeyListener(this);
     }
     
@@ -32,12 +32,11 @@ public class Player extends JPanel implements KeyListener
                 break;
         }
     }
-    
-    public void keyReleased( KeyEvent event )
+    public void keyReleased(KeyEvent event) { pobj.SetVel(new Vector2Int(0, 0)); }
+    public void keyTyped(KeyEvent event) {}
+
+    public void Kill()
     {
-        pobj.SetVel(new Vector2Int(0, 0));
+
     }
-    
-    public void keyTyped( KeyEvent event )
-    {}
 }

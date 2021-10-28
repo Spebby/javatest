@@ -2,7 +2,7 @@ import javax.swing.*;
 
 public class Driver
 {
-    public static void main()
+    public static void main(String[] args)
     {
         JFrame frame = new JFrame("BABY GAME");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -11,6 +11,7 @@ public class Driver
         frame.getContentPane().add(board);
         frame.pack();
         frame.setVisible(true);
-        board.Go();
+        Start s = new Start();
+        s.Reset();
     }
 }

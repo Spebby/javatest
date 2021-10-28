@@ -32,6 +32,9 @@
 		},
 		{
 			"path": "TerrariaNameGenerator"
+		},
+		{
+			"path": "Dreamscape"
 		}
 	],
 	"settings": {}

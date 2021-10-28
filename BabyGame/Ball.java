@@ -3,6 +3,7 @@ import java.awt.*;
 public class Ball
 {
     Board board;
+    Player player;
     
     Vector2Int pos;
     Vector2Int vel;
@@ -11,11 +12,12 @@ public class Ball
     Color colour;
     boolean active;
     
-    public Ball(Board b)
+    public Ball(Board b, Player p)
     {
+        player = p;
         board = b;
         active = true;
-        pos = new Vector2Int(b.getBSize().x - (size + 100), b.getBSize().y - (size + 100));
+        pos = new Vector2Int(b.getBSize().x/2, 150);
         vel = new Vector2Int(0,0);
         size = ((int)(Math.random() * 150) + 50); // The spheres have the same x & y dimensions
         rgb = new RGB( (int)(Math.random() * 256), (int)(Math.random() * 256), (int)(Math.random() * 256));
