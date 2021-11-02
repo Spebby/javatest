@@ -28,7 +28,7 @@ Let me break down specifically why this code sucks.
 5. Limited Cargo Cult Programming (cobbled together from stack overflow results online, modified a fair amount of it myself or rewrote it, but there are some cases in the code)
 6. God Objects/Managers
 7. Feeder Classes to side step Static restrictions
-8. Never using Static
+8. Never using Static (even when it would be beneficial to use them)
 9. Overuse & misuse of Inheritance
 10. someother stuff idk
 
