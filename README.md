@@ -24,11 +24,12 @@ Let me break down specifically why this code sucks.
 1. It doesn't implement any __SOLID__ or __OOD__ principles (at least not on purpose) until *at least* "Spheres". 
 2. I overuse Switch statements when I'd be better using a Hashmap or something else. I stop doing this in "Array of Light"
 3. Overly Long lines and God Objects
-4. Limited Cargo Cult Programming (cobbled together from stack overflow results online, modified a fair amount of it myself or rewrote it, but there are some cases in the code)
-5. God Objects/Managers
-6. Feeder Classes to side step Static restrictions
-7. Never using Static
-8. Overuse & misuse of Inheritance
-9. someother stuff idk
+4. Obsession with making short classes have less lines no matter how much it destroys readability
+5. Limited Cargo Cult Programming (cobbled together from stack overflow results online, modified a fair amount of it myself or rewrote it, but there are some cases in the code)
+6. God Objects/Managers
+7. Feeder Classes to side step Static restrictions
+8. Never using Static
+9. Overuse & misuse of Inheritance
+10. someother stuff idk
 
 Originally programmed in BlueJ & VSCode.
