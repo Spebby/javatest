@@ -1,21 +1,25 @@
-/*
 import java.util.*;
 import java.lang.Object;
 public class SmoothColours
 {
-    RGBA t;
-    void NewTarget() { t = new RGBA((int)(Math.random() * 256), (int)(Math.random() * 256), (int)(Math.random() * 256), 255); }
-    
-    void SmoothColours(RGBA c)
+    // Steps between fading from one colour to another.
+    private static final int FadeSteps = 25;
+
+    private void Smooth(RGBA rgb, RGBA target, int FadeSteps) throws InterruptedException 
     {
-       double lerp(c.r, t.r, new var);
-       
-       c.r = (int)(c.r + (t.r - c.r) * time);
-       c.g = (int)(c.g + (t.g - c.g) * time);
-       c.b = (int)(c.b + (t.b - c.b) * time);
-       
-        if(c.r == t.r && c.g == t.g && c.b == t.b)
-            NewTarget();
+        int dRed = target.r - rgb.r;
+        int dGreen = target.g - rgb.g;
+        int dBlue = target.b - rgb.b;
+        if (dRed != 0 || dGreen != 0 || dBlue != 0) 
+        {
+            // Do it in n steps.
+            for (int i = 0; i <= FadeSteps; i++) 
+            {
+                rgb.r += ((target.r * i) / FadeSteps);
+                rgb.g += ((target.g * i) / FadeSteps);
+                rgb.b += ((target.b * i) / FadeSteps);
+                Thread.sleep(34); // in miliseconds
+            }
+        }
     }
 }
-*/

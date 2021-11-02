@@ -2,13 +2,17 @@ import java.util.ArrayList;
 
 public class BallSpawner
 {
-    public void Spawn(ArrayList<Ball> balls, int amount, Board b)
+    Vector2Int pos = new Vector2Int(0,0);
+    public void Spawn(ArrayList<Ball> balls, boolean RandomVelocity, Board b)
     {
-        for(int i = 0; i < amount; i++)
+        while(true)
         {
-            Ball b0 = new Ball(b);
+            // 3,9 is a placeholder for now
+            Ball b0 = new Ball(b, pos, new Vector2Int(3, 9), RandomVelocity);
             balls.add(b0);
-            //System.out.println("ball spawned: " + i);
         }
     }
+    
+    public Vector2Int GetPos() { return pos; }
+    public Vector2Int SetPos(int x, int y) { pos.x = x; pos.y = y; return pos; }
 }
