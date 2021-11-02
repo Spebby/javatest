@@ -3,8 +3,8 @@ public class Start
     GameManager gm;
     public void Reset(Board board)
     {
-        board.go();
-        Player p = new Player();
+        board.Go();
+        Player player = new Player(board);
         gm = new GameManager();
     }
 

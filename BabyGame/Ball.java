@@ -36,8 +36,8 @@ public class Ball
         page.fillOval(pos.x, pos.y, size, size);
     }
 
-    public Vector2Int getPos() { return pos; }
-    public void setVel(Vector2Int velo) { vel = velo; }
-    public int getSize() { return size; }
-    public boolean getActive() { return active; }
+    public Vector2Int GetPos() { return pos; }
+    public void SetVel(Vector2Int velo) { vel = velo; }
+    public int GetSize() { return size; }
+    public boolean GetActive() { return active; }
 }

@@ -28,13 +28,13 @@
 			"path": "Spheres"
 		},
 		{
-			"path": "BabyGame"
-		},
-		{
 			"path": "TerrariaNameGenerator"
 		},
 		{
 			"path": "Dreamscape"
+		},
+		{
+			"path": "BabyGame"
 		}
 	],
 	"settings": {}

@@ -1,3 +1,4 @@
+/*
 import java.util.*;
 import java.lang.Object;
 public class SmoothColours
@@ -17,3 +18,4 @@ public class SmoothColours
             NewTarget();
     }
 }
+*/

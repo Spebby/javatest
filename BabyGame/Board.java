@@ -1,6 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
+//import java.awt.event.*;
 import java.util.ArrayList;
 
 public class Board extends JPanel
@@ -28,8 +28,6 @@ public class Board extends JPanel
         this.setPreferredSize(new Dimension(boardSize.x, boardSize.y));
         
         this.setFocusable(true);
-        
-        Player player = new Player(this);
     }
     
     public void Go()

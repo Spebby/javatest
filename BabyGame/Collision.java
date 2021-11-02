@@ -6,16 +6,16 @@ public class Collision
     
     public void CollDetection(ArrayList<Ball> balls, float SFactor)
     {
-        for (int i = 0; i < balls.size(); i++) if(balls.get(i).getActive() == true) // 
+        for (int i = 0; i < balls.size(); i++) if(balls.get(i).GetActive() == true) // 
         {
-            for (int j = i + 1; j < balls.size(); j++) if(balls.get(j).getActive() == true)
+            for (int j = i + 1; j < balls.size(); j++) if(balls.get(j).GetActive() == true)
             {
                 // xDif and yDif are calculated with a half baked Pythagora's theorum 
-                int xDif = (balls.get(i).getPos().x + balls.get(i).getSize()/2) - (balls.get(j).getPos().x + balls.get(j).getSize()/2);
-                int yDif = (balls.get(i).getPos().y + balls.get(i).getSize()/2) - (balls.get(j).getPos().y + balls.get(j).getSize()/2);
+                int xDif = (balls.get(i).GetPos().x + balls.get(i).GetSize()/2) - (balls.get(j).GetPos().x + balls.get(j).GetSize()/2);
+                int yDif = (balls.get(i).GetPos().y + balls.get(i).GetSize()/2) - (balls.get(j).GetPos().y + balls.get(j).GetSize()/2);
                 double dist = Math.sqrt((xDif * xDif) + (yDif * yDif));
                 // If the distance of the balls is less than the size of the balls, they bounce off each other and Shrink
-                if(dist <= balls.get(i).getSize()/2 + balls.get(j).getSize()/2)
+                if(dist <= balls.get(i).GetSize()/2 + balls.get(j).GetSize()/2)
                 {
                     // die
                 }

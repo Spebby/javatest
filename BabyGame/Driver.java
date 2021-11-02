@@ -12,6 +12,6 @@ public class Driver
         frame.pack();
         frame.setVisible(true);
         Start s = new Start();
-        s.Reset();
+        s.Reset(board);
     }
 }
