@@ -12,7 +12,7 @@ public class Board extends JPanel
     Vector2Int boardSize = new Vector2Int(scrnSize.width, scrnSize.height - tbH);
     
     ArrayList<Ball> balls = new ArrayList<Ball>();
-    BallSpawner[] bsc = new BallSpawner[2];
+    BallSpawner[] bsc = new BallSpawner[3];
 
     public Board()
     {
@@ -21,41 +21,37 @@ public class Board extends JPanel
         this.setBackground(new Color(BG.r, BG.g, BG.b));
         this.setPreferredSize(new Dimension((int)boardSize.x, (int)boardSize.y));
         this.setFocusable(true);
-        System.out.println("test2");
 
         for(int i = 0; i < bsc.length; i++) // Create Ball Spawners
         {
-            bsc[i] = new BallSpawner();
-            System.out.println("it1");
-            bsc[i].Spawn(balls, this);
-            System.out.println("it2");
+            bsc[i] = new BallSpawner(this);
             
             int x; int y;
             // spawn points are located outside of the board and spew balls into the board
             // decides if this is an x sided or y sided spawner
-            if((int)Math.random() * 2 > 0)
+            if((byte)(Math.random() * 2) > 0)
             {
-                if((int)Math.random() * 2 > 0) {x = boardSize.x + 100;}
+                if((byte)Math.random() * 2 > 0) {x = boardSize.x + 100;}
                 else {x = (boardSize.x * -1) - 100;}
                 y = (int)Math.random() * (boardSize.y + 200) - 100; 
             }
             else
             {
-                if((int)Math.random() * 2 > 0) {y = boardSize.y + 100;}
+                if((byte)(Math.random() * 2) > 0) {y = boardSize.y + 100;}
                 else {y = (boardSize.y * -1) - 100;}
-                x = (int)Math.random() * (boardSize.x + 200) - 100;
+                x = (int)(Math.random() * (boardSize.x + 200)) - 100;
             } 
             bsc[i].SetPos(x, y);
         }
-        System.out.println("test4");
     }
     
     public void Go()
     {
-        System.out.println("GOOO");
         while(true)
         {
-            for(int i = 0; i < bsc.length; i++)
+            for(byte i = 0; i < bsc.length; i++)
+                bsc[i].Spawn(balls);
+            for(int i = 0; i < balls.size(); i++)
                 balls.get(i).Move(boardSize);
 
             this.repaint();
@@ -65,10 +61,9 @@ public class Board extends JPanel
     public void paintComponent(Graphics page)
     {
         super.paintComponent(page);
-        for(int i = 0; i < bsc.length; i++) 
+        for(int i = 0; i < balls.size(); i++) 
             balls.get(i).Draw(page);
     }
     public void RemoveBall(Ball ball) { balls.remove(ball); }// this should be its own class due to SRP but i am too lazy rn
-
     public Vector2Int getBSize(){ return boardSize; }
 }
