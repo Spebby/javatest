@@ -15,20 +15,18 @@ public class Ball
     public Ball(Board b, Vector2Int p, Vector2 v, RGBA r)
     {   
         board = b; active = true; pos = p; sPos = p;
-        double speed = Math.random() * 2;
         rgb = r;
 
-        vel.x = (int)(v.x * (Math.random() * 1.25f)) * speed;
-        vel.y = (int)(v.y * (Math.random() * 1.25f)) * speed;
-
+        vel = v;
+        //System.out.println( v.x + " " + v.y );
         size = ((int)(Math.random() * 150) + 50);
         colour = new Color (rgb.r, rgb.g, rgb.b);
     }
     
     public void Move(Vector2Int bd) 
     { 
-        pos.x += (int)vel.x; pos.y += (int)vel.y; size--;
-        if(size <= 5) { active = false; board.RemoveBall(this); }
+        pos.x += vel.x; pos.y += vel.y; size--;
+        if(size <= 5) { active = false; board.RemoveBall(this); } // pos.x = 9^999; pos.y = 9^999;
     }
     public void Draw(Graphics page)
     {
