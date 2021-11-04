@@ -3,8 +3,7 @@ import java.util.ArrayList;
 public class BallSpawner
 {
     Vector2Int pos = new Vector2Int(0,0);
-    ArrayList<Ball> balls = new ArrayList<Ball>();
-    public void Spawn(Board b)
+    public void Spawn(ArrayList<Ball> balls, Board b)
     {
         // Add code that figures out which direction the centre of the screen is, then start spewing balls that direciton
         Vector2 SA = new Vector2(b.boardSize.x - pos.x, b.boardSize.y - pos.y);
@@ -22,5 +21,4 @@ public class BallSpawner
     
     public Vector2Int GetPos() { return pos; }
     public Vector2Int SetPos(int x, int y) { pos.x = x; pos.y = y; return pos; }
-    public ArrayList<Ball> GetBalls() { return balls; }
 }

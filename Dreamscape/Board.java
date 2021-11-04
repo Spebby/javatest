@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 
 public class Board extends JPanel
 {
@@ -10,6 +11,7 @@ public class Board extends JPanel
     RGBA BG;
     Vector2Int boardSize = new Vector2Int(scrnSize.width, scrnSize.height - tbH);
     
+    ArrayList<Ball> balls = new ArrayList<Ball>();
     BallSpawner[] bsc = new BallSpawner[2];
 
     public Board()
@@ -18,11 +20,12 @@ public class Board extends JPanel
         this.setLayout(null);
         this.setBackground(new Color(BG.r, BG.g, BG.b));
         this.setPreferredSize(new Dimension((int)boardSize.x, (int)boardSize.y));
-        
+        this.setFocusable(true);
+
         for(int i = 0; i < bsc.length; i++) // Create Ball Spawners
         {
             bsc[i] = new BallSpawner();
-            bsc[i].Spawn(this);
+            bsc[i].Spawn(balls, this);
             
             int x; int y;
             // spawn points are located outside of the board and spew balls into the board
@@ -41,18 +44,14 @@ public class Board extends JPanel
             } 
             bsc[i].SetPos(x, y);
         }
-        this.setFocusable(true);
     }
     
     public void Go()
     {
         while(true)
         {
-            // I'm doing this instead of having 1 global list for more control over groups of balls, and in case I want to make
-            // Special interactions with balls based on their spawner.
             for(int i = 0; i < bsc.length; i++)
-                for(int t = 0; t < bsc[i].GetBalls().size(); t++)
-                    bsc[i].GetBalls().get(t).Move(boardSize);
+                balls.get(i).Move(boardSize);
 
             this.repaint();
             try {Thread.sleep(10);} catch (InterruptedException ex){}
@@ -63,8 +62,7 @@ public class Board extends JPanel
     {
         super.paintComponent(page);
         for(int i = 0; i < bsc.length; i++) 
-            for(int t = 0; t < bsc[i].GetBalls().size(); t++) 
-                bsc[i].GetBalls().get(t).Draw(page);
+            balls.get(i).Draw(page);
     }
 
     public Vector2Int getBSize(){ return boardSize; }
