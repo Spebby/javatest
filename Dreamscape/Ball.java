@@ -19,7 +19,7 @@ public class Ball
         rgb = r;
 
         vel.x = (int)(v.x * (Math.random() * 1.25f)) * speed;
-        vel.y = (int)(v.y * (Math.random() * 1.25f)) * speed;}
+        vel.y = (int)(v.y * (Math.random() * 1.25f)) * speed;
 
         size = ((int)(Math.random() * 150) + 50);
         colour = new Color (rgb.r, rgb.g, rgb.b);
