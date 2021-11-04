@@ -21,11 +21,14 @@ public class Board extends JPanel
         this.setBackground(new Color(BG.r, BG.g, BG.b));
         this.setPreferredSize(new Dimension((int)boardSize.x, (int)boardSize.y));
         this.setFocusable(true);
+        System.out.println("test2");
 
         for(int i = 0; i < bsc.length; i++) // Create Ball Spawners
         {
             bsc[i] = new BallSpawner();
+            System.out.println("it1");
             bsc[i].Spawn(balls, this);
+            System.out.println("it2");
             
             int x; int y;
             // spawn points are located outside of the board and spew balls into the board
@@ -44,10 +47,12 @@ public class Board extends JPanel
             } 
             bsc[i].SetPos(x, y);
         }
+        System.out.println("test4");
     }
     
     public void Go()
     {
+        System.out.println("GOOO");
         while(true)
         {
             for(int i = 0; i < bsc.length; i++)
@@ -57,13 +62,13 @@ public class Board extends JPanel
             try {Thread.sleep(10);} catch (InterruptedException ex){}
         }
     }
-    
     public void paintComponent(Graphics page)
     {
         super.paintComponent(page);
         for(int i = 0; i < bsc.length; i++) 
             balls.get(i).Draw(page);
     }
+    public void RemoveBall(Ball ball) { balls.remove(ball); }// this should be its own class due to SRP but i am too lazy rn
 
     public Vector2Int getBSize(){ return boardSize; }
 }

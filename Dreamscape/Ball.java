@@ -27,10 +27,8 @@ public class Ball
     
     public void Move(Vector2Int bd) 
     { 
-        pos.x += (int)vel.x; pos.y += (int)vel.y; 
-        size--;
-        if(size <= 5)
-            active = false;
+        pos.x += (int)vel.x; pos.y += (int)vel.y; size--;
+        if(size <= 5) { active = false; board.RemoveBall(this); }
     }
     public void Draw(Graphics page)
     {
