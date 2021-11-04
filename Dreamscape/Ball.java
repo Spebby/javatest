@@ -12,16 +12,14 @@ public class Ball
     RGBA rgb; Color colour;
     boolean active;
     
-    public Ball(Board b, Vector2Int p, Vector2 v, RGBA r, boolean RandomVel)
+    public Ball(Board b, Vector2Int p, Vector2 v, RGBA r)
     {   
         board = b; active = true; pos = p; sPos = p;
         double speed = Math.random() * 2;
         rgb = r;
 
-        if(RandomVel){ // Rewrite this to work with Spawner's Angles
-            vel.x = (int)(v.x * (Math.random() * 1.25f)) * speed;
-            vel.y = (int)(v.y * (Math.random() * 1.25f)) * speed;} 
-        else {vel.x = v.x * speed; vel.x = v.x * speed;}
+        vel.x = (int)(v.x * (Math.random() * 1.25f)) * speed;
+        vel.y = (int)(v.y * (Math.random() * 1.25f)) * speed;}
 
         size = ((int)(Math.random() * 150) + 50);
         colour = new Color (rgb.r, rgb.g, rgb.b);

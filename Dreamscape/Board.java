@@ -21,10 +21,8 @@ public class Board extends JPanel
         
         for(int i = 0; i < bsc.length; i++) // Create Ball Spawners
         {
-            boolean c;
-            if((int)Math.random() * 2 > 0) { c = true; } else { c = false; }
             bsc[i] = new BallSpawner();
-            bsc[i].Spawn(c, this);
+            bsc[i].Spawn(this);
             
             int x; int y;
             // spawn points are located outside of the board and spew balls into the board
@@ -46,7 +44,7 @@ public class Board extends JPanel
         this.setFocusable(true);
     }
     
-    public void Go() throws InterruptedException
+    public void Go()
     {
         while(true)
         {

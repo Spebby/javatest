@@ -25,8 +25,5 @@ public class RPSManager
         }
     }
     
-    public int getChoice()
-    {
-        return choice;
-    }
+    public int getChoice() { return choice; }
 }

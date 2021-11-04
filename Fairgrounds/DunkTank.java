@@ -30,9 +30,7 @@ public class DunkTank
             i = Math.abs(i);
             //Abs incase someone though it would be funny to put somerthing like "-20"
             if(i == 0)
-            {
                 i = 1;
-            }
         }
         if(i < 50)
             i = 50;

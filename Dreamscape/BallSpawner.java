@@ -4,7 +4,7 @@ public class BallSpawner
 {
     Vector2Int pos = new Vector2Int(0,0);
     ArrayList<Ball> balls = new ArrayList<Ball>();
-    public void Spawn(boolean RandomVelocity, Board b)
+    public void Spawn(Board b)
     {
         // Add code that figures out which direction the centre of the screen is, then start spewing balls that direciton
         Vector2 SA = new Vector2(b.boardSize.x - pos.x, b.boardSize.y - pos.y);
@@ -15,7 +15,7 @@ public class BallSpawner
         while(true)
         {
             for(int i = 0; i < balls.size(); i++) if(balls.get(i).GetActive() != true) { balls.remove(i); i--; } // cleaner
-            Ball b0 = new Ball(b, pos, SA, rgb, RandomVelocity);
+            Ball b0 = new Ball(b, pos, SA, rgb);
             balls.add(b0);
         }
     }

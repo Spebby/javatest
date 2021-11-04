@@ -14,22 +14,9 @@ public class GuessGamePlayer
         //Toenail length
     }
     
-    public void setDifference(int gd1)
-    {
-        guessDiff = gd1;
-    }
-    
-    // Return types
-    public String getName()
-    {
-        return name;
-    }    
-    public int getGuess()
-    {
-        return guess;
-    }
-    public int getDifference()
-    {
-        return guessDiff;    
-    }
+    public void setDifference(int gd1) { guessDiff = gd1; }
+
+    public String getName() { return name; }    
+    public int getGuess() { return guess; }
+    public int getDifference() { return guessDiff; }
 }

@@ -99,15 +99,13 @@ public class FTManager
         switch(Month)
         {
             case 2:
-                if(d >= 30)
-                    d = 29;
+                if(d >= 30) { d = 29; }
                 break;
             case 4:
             case 6:
             case 9:
             case 11:
-                if(d >= 31)
-                    d = 30;
+                if(d >= 31) { d = 30; }
                 break;
             default:
                 d = 30;
@@ -117,18 +115,7 @@ public class FTManager
         Day = d;
     }
 
-    public int GetDay()
-    {
-        return Day;
-    }
-
-    public int GetMonth()
-    {
-        return Month;
-    }
-
-    public int GetNature()
-    {
-        return Nature;
-    }
+    public int GetDay() { return Day;}
+    public int GetMonth() { return Month; }
+    public int GetNature() { return Nature; }
 }

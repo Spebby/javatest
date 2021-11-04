@@ -8,9 +8,7 @@ public class DriverFeeder
     public void main(boolean SkipIntro)
     {
         if(!SkipIntro)
-        {
             System.out.println("Welcome to the fair!");
-        }
         else
         {
             System.out.print('\f');
