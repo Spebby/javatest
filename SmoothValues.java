@@ -1,12 +1,9 @@
-import java.util.*;
-import java.lang.Object;
-public class SmoothColours
+// I don't have a project/use for this at the moment, but I also don't want to throw this out.
+public class SmoothValues
 {
-    // Steps between fading from one colour to another.
-    private static final int FadeSteps = 25;
-
-    private void Smooth(RGBA rgb, RGBA target, int FadeSteps) throws InterruptedException 
+    public void Smooth(RGBA rgb, RGBA target, int FadeSteps) throws InterruptedException 
     {
+        if(FadeSteps == 0) { FadeSteps = 25; } // Defaults to 25 if unset
         int dRed = target.r - rgb.r;
         int dGreen = target.g - rgb.g;
         int dBlue = target.b - rgb.b;

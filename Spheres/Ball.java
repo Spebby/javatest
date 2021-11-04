@@ -29,9 +29,9 @@ public class Ball
             vel.x++;
         if(vel.y == 0)
             vel.y++;
-        size = ((int)(Math.random() * 150) + 50); // The spheres have the same x & y dimensions
+        size = ((int)(Math.random() * 150) + 50);
         rgb = new RGB( (int)(Math.random() * 256), (int)(Math.random() * 256), (int)(Math.random() * 256));
-        colour = new Color (rgb.r, rgb.g, rgb.b); // Vector 3
+        colour = new Color (rgb.r, rgb.g, rgb.b);
     }
     
     public void Move(Vector2Int bd)

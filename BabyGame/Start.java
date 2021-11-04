@@ -4,7 +4,7 @@ public class Start
     public void Reset(Board board)
     {
         board.Go();
-        Player player = new Player(board);
+        //Player player = new Player(board);
         gm = new GameManager();
     }
 
