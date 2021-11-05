@@ -11,7 +11,8 @@ public class Ball
     int size;
     RGBA rgb; Color colour;
     boolean active;
-    
+    float speed = (float)(Math.random() * 2) + 1;
+
     public Ball(Board b, Vector2Int p, Vector2 v, RGBA r)
     {   
         board = b; active = true; pos = p; sPos = p;
