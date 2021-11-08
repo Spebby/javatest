@@ -12,22 +12,20 @@ public class Board extends JPanel
     Vector2Int boardSize = new Vector2Int(scrnSize.width, scrnSize.height - tbH);
     
     ArrayList<Ball> balls = new ArrayList<Ball>();
-    BallSpawner[] bsc = new BallSpawner[4];
+    BallSpawner bs;
     
     public Board()
     {
-        System.out.println("Boardsize: " + boardSize.x + " " + boardSize.y);
+        //System.out.println("Boardsize: " + boardSize.x + " " + boardSize.y);
         BG = new RGBA(66, 69, 73, 255);
         this.setLayout(null);
         this.setBackground(new Color(BG.r, BG.g, BG.b));
         this.setPreferredSize(new Dimension((int)boardSize.x, (int)boardSize.y));
         this.setFocusable(true);
                 
-        for(int i = 0; i < bsc.length; i++) // Create Ball Spawners
-        {
-            Vector2Int v = GenerateBSPos();
-            bsc[i] = new BallSpawner(this, new Vector2Int(v.x, v.y));
-        }
+        bs = new BallSpawner(this);
+        int c = 0;
+        while(c < 500) { bs.Spawn(balls); c++; }
     }
     
     public void Go()
@@ -35,21 +33,11 @@ public class Board extends JPanel
         int counter = 0;
         while(true)
         {
-            for(byte i = 0; i < bsc.length; i++)
-                bsc[i].Spawn(balls);
+            bs.Spawn(balls);
             for(int i = 0; i < balls.size(); i++)
                 balls.get(i).Move(boardSize);
 
-            this.repaint();
-            counter++;
-            if(counter >= 1000)
-            {
-                counter = 0;
-                Vector2Int v = GenerateBSPos();
-                for(byte i = 0; i < bsc.length; i++)
-                    bsc[i].SetPos(v.x, v.y);
-                System.out.println("Regenerated BSPos");
-            }    
+            this.repaint();  
             try {Thread.sleep(10);} catch (InterruptedException ex){}
         }
     }
