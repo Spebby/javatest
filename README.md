@@ -13,6 +13,7 @@ Order of experiments:
 10. Terraria Name Generator
 11. Baby Game
 12. Dreamscape
+13. FrankenScentence
 
 ### These will not be updated after they're done unless something really bothers me.
 
