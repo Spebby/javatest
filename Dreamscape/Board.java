@@ -30,7 +30,6 @@ public class Board extends JPanel
     
     public void Go()
     {
-        int counter = 0;
         while(true)
         {
             bs.Spawn(balls);

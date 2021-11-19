@@ -14,6 +14,7 @@ public class StringUtil
         String phrase;
         return phrase;
     }
+    
     public String PigLatin()
     {
         String phrase = "";
@@ -21,10 +22,11 @@ public class StringUtil
         // this should also just work fine with a single word, double check.
         for(int i = 0; i < words.size(); i++)
         {
-            if(words.get(i).hasVowel())
+            String _temp = words.get(i).GetWord();
+            if(words.get(i).HasVowel())
             {
                 // If the vowel is the first letter, add "yay", other wise make the vowel the first letter and move the removed words to the back of the word + "ay"
-                if(words.get(i).WhereIsVowel() == 0) temp = (words.get(i).GetWord() += "yay");
+                if(words.get(i).WhereIsVowel() == 0) temp = (_temp += "yay");
                 else
                 {
                     String holder = "";
@@ -34,7 +36,7 @@ public class StringUtil
                         if(j < words.get(i).WhereIsVowel())
                         {
                             holder += words.get(i).GetWord().charAt(j);
-                            temp = (words.get(i).GetWord().charAt(j) -= words.get(i).GetWord().charAt(j));
+                            temp = temp.substring(0, j) + temp.substring(j + 1);
                         }
                         else temp += (holder += "ay");
                     }
@@ -42,9 +44,11 @@ public class StringUtil
                 }
             }
             // no complexity if there's no vowel :)
-            else temp = (words.get(i).GetWord() += "ay");
+            else temp = (_temp += "ay");
+            
             phrase += (temp += " ");
             temp = "";
+            if(i + 1 == words.size()) phrase += ".";
         }
         return phrase;
     }

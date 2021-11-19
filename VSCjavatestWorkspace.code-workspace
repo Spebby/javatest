@@ -35,6 +35,15 @@
 		},
 		{
 			"path": "BabyGame"
+		},
+		{
+			"path": "FrankenSentence"
+		},
+		{
+			"path": "Fauxku"
+		},
+		{
+			"path": "PLPalindrome"
 		}
 	],
 	"settings": {}

@@ -6,7 +6,7 @@ public class StringSplitter
     public StringSplitter(String s)
     {
         String temp = "";
-        int index = 0;
+        int index = 0; // not used
         for(int i = 0; i < s.length(); i++)
         {
             if(s.charAt(i) != ' ') temp += s.charAt(i);
