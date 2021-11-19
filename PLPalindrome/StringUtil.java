@@ -11,7 +11,7 @@ public class StringUtil
     
     public String Palindrome()
     {
-        String phrase;
+        String phrase = "";
         return phrase;
     }
     
@@ -40,7 +40,6 @@ public class StringUtil
                         }
                         else temp += (holder += "ay");
                     }
-                    System.out.println(temp);
                 }
             }
             // no complexity if there's no vowel :)

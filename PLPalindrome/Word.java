@@ -2,7 +2,7 @@ public class Word
 {
     String _word;
     boolean hasVowel = true;
-    int fVowel;
+    int fVowel = 0;
     char[] vowels = new char[]{'a', 'e', 'i', 'o', 'u' };
     
     public Word(String w)
@@ -16,9 +16,9 @@ public class Word
                 if(_word.toLowerCase().charAt(i) == vowels[j]) 
                 {
                     done = true;
+                    fVowel = i;
                     break;
                 }
-                fVowel = i;
             }
             if(done) break;
             if((i + 1) == _word.length() && !done) hasVowel = false;
