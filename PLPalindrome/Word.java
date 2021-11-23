@@ -26,16 +26,20 @@ public class Word
             if((i + 1) == _word.length() && !done) 
                 hasVowel = false;
         }
+        
         /*
-        if("\\p{IsPunctuation}".contains(_word.substring(_word.length())))
+        if(_word.contains("\\p{IsPunctuation}"))
         {
             hasPunct = true;
             _cPunct = _word.charAt(_word.length());
             System.out.println(HasPunct() + " " + GetPunct());
-        }*/
+        }
+        else
+            System.out.println("how");
+            */ // brokey
     }
     
-    public int WhereIsVowel() { return fVowel; }
+    public int vowelIndex() { return fVowel; }
     public String ToString() { return _word; } 
     public boolean HasVowel() { return hasVowel; }
     public boolean HasPunct() { return hasPunct; }

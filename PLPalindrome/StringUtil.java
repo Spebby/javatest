@@ -20,7 +20,7 @@ public class StringUtil
             if(words.get(i).HasVowel())
             {
                 // If the vowel is the first letter, add "yay", other wise make the vowel the first letter and move the removed words to the back of the word + "ay"
-                if(words.get(i).WhereIsVowel() == 0) 
+                if(words.get(i).vowelIndex() == 0) 
                     temp = (_temp += "yay");
                 else
                 {
@@ -30,13 +30,13 @@ public class StringUtil
                     for(int j = 0; j < words.get(i).ToString().length(); j++)
                     {
                         // should stop short of the first vowel.
-                        if(j < words.get(i).WhereIsVowel())
+                        if(j < words.get(i).vowelIndex())
                         {
                             if(Character.isUpperCase(words.get(i).ToString().charAt(j)))
                                 isUppercase = true;
                             holder += words.get(i).ToString().toLowerCase().charAt(j);
                         }
-                        else if (j == words.get(i).WhereIsVowel())
+                        else if (j == words.get(i).vowelIndex())
                         {
                             if(isUppercase)
                                 temp += (_temp.toUpperCase().charAt(j) + _temp.substring(j + 1));

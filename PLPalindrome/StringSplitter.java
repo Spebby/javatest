@@ -46,11 +46,6 @@ public class StringSplitter
         }
         else // otherwise, make the whole string a word
             words.add(new Word(s));
-
-        // debug
-        System.out.println("Split " + s + " into " + words.size() + " words!");
-        for(int i = 0; i < words.size(); i++)
-            System.out.print(words.get(i) + " ");
     }
     
     public ArrayList<Word> ReturnSplit() { return words; }
