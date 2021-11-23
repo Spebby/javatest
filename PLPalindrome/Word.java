@@ -2,6 +2,8 @@ public class Word
 {
     String _word;
     boolean hasVowel = true;
+    boolean hasPunct = false;
+    char _cPunct;
     int fVowel = 0;
     char[] vowels = new char[]{'a', 'e', 'i', 'o', 'u' };
     
@@ -21,11 +23,21 @@ public class Word
                 }
             }
             if(done) break;
-            if((i + 1) == _word.length() && !done) hasVowel = false;
+            if((i + 1) == _word.length() && !done) 
+                hasVowel = false;
         }
+        /*
+        if("\\p{IsPunctuation}".contains(_word.substring(_word.length())))
+        {
+            hasPunct = true;
+            _cPunct = _word.charAt(_word.length());
+            System.out.println(HasPunct() + " " + GetPunct());
+        }*/
     }
     
     public int WhereIsVowel() { return fVowel; }
-    public String GetWord() { return _word; } 
+    public String ToString() { return _word; } 
     public boolean HasVowel() { return hasVowel; }
+    public boolean HasPunct() { return hasPunct; }
+    public char GetPunct() { return _cPunct; }
 }
