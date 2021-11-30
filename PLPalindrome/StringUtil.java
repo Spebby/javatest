@@ -3,8 +3,10 @@ import java.util.ArrayList;
 public class StringUtil
 {
     ArrayList<Word> words;
+    String base;
     public StringUtil(String s)
     {
+        base = s;
         StringSplitter ss = new StringSplitter(s);
         words = ss.ReturnSplit();
     }
@@ -64,7 +66,11 @@ public class StringUtil
 
     public String Palindrome()
     {
+        char[] temp = base.toCharArray();
         String phrase = "";
+        for(int i = temp.length - 1; i >= 0; i--)
+            phrase += temp[i];
+
         return phrase;
     }
 }

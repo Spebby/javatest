@@ -21,7 +21,6 @@ public class StringSplitter
         // if spaces, split the words
         if(hasSpace)
         {
-            //System.out.println("Has " + spaceCount + " Space(s)");
             for(int i = 0; i < s.length(); i++)
             {
                 if(spaceCount > 0)
@@ -30,14 +29,14 @@ public class StringSplitter
                         temp += s.charAt(i);
                     else
                     {
-                        words.add(new Word(temp)); //System.out.println(temp);
+                        words.add(new Word(temp));
                         spaceCount--;
                         temp = "";
                     }
                 }
                 else
                 {
-                    words.add(new Word(s.substring(i))); //System.out.println(s.substring(i));
+                    words.add(new Word(s.substring(i)));
                     spaceCount--;
                     temp = "";
                     break;

@@ -13,6 +13,7 @@ public class Word
         for(int i = 0; i < _word.length(); i++)
         {
             boolean done = false;
+            // Checks if word has a vowel, and sets its index is.
             for(int j = 0; j < vowels.length; j++)
             {
                 if(_word.toLowerCase().charAt(i) == vowels[j]) 
@@ -26,17 +27,6 @@ public class Word
             if((i + 1) == _word.length() && !done) 
                 hasVowel = false;
         }
-        
-        /*
-        if(_word.contains("\\p{IsPunctuation}"))
-        {
-            hasPunct = true;
-            _cPunct = _word.charAt(_word.length());
-            System.out.println(HasPunct() + " " + GetPunct());
-        }
-        else
-            System.out.println("how");
-            */ // brokey
     }
     
     public int vowelIndex() { return fVowel; }
