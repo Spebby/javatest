@@ -3,7 +3,8 @@ import java.util.ArrayList;
 public class StringUtil
 {
     ArrayList<Word> words;
-    String base;
+    String base = "";
+    boolean isPalindrome = false;
     public StringUtil(String s)
     {
         base = s;
@@ -11,7 +12,7 @@ public class StringUtil
         words = ss.ReturnSplit();
     }
     
-    public String PigLatin()
+    public void PigLatin()
     {
         String phrase = "";
         String temp = "";
@@ -61,16 +62,22 @@ public class StringUtil
 
             temp = "";
         }
-        return phrase;
+        System.out.println("Pig Latin: " + phrase);
     }
 
-    public String Palindrome()
+    public void Palindrome()
     {
         char[] temp = base.toCharArray();
         String phrase = "";
         for(int i = temp.length - 1; i >= 0; i--)
             phrase += temp[i];
 
-        return phrase;
+        if(phrase.toLowerCase().equals(base.toLowerCase()))
+        {
+            isPalindrome = true;
+            System.out.println(phrase + " is a Palindrome.");
+        }
+        else
+            System.out.println(phrase + " is not a Palindrome.");
     }
 }
