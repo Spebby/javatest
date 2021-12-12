@@ -44,6 +44,9 @@
 		},
 		{
 			"path": "PLPalindrome"
+		},
+		{
+			"path": "TextAnalyzer"
 		}
 	],
 	"settings": {}

@@ -1,0 +1,1 @@
+Reads a file included in this folder. Prints info based on what's read.
