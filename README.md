@@ -13,7 +13,10 @@ Order of experiments:
 10. Terraria Name Generator
 11. Baby Game
 12. Dreamscape
-13. FrankenScentence
+13. Franken Scentence
+14. Fauxku
+15. Pig Latin Palindrome
+16. Text Analyzer
 
 ### These will not be updated after they're done unless something really bothers me.
 
@@ -23,14 +26,15 @@ Feel free to do whatever you want with the code. I don't know why you'd want any
 
 Let me break down specifically why this code sucks. 
 1. It doesn't implement any __SOLID__ or __OOD__ principles (at least not on purpose) until *at least* "Spheres". 
-2. I overuse Switch statements when I'd be better using a Hashmap or something else. I stop doing this in "Array of Light"
-3. Overly Long lines and God Objects
-4. Obsession with making short classes have less lines no matter how much it destroys readability
-5. Limited Cargo Cult Programming (cobbled together from stack overflow results online, modified a fair amount of it myself or rewrote it, but there are some cases in the code)
-6. God Objects/Managers
-7. Feeder Classes to side step Static restrictions
-8. Never using Static (even when it would be beneficial to use them)
-9. Overuse & misuse of Inheritance
-10. someother stuff idk
+2. Overuse of Switch statements when a Hashmap would be better
+3. Use of For Loops instead of inbuilt functions for simple tasks (ex. IndexOf/Substring)
+4. Overly long lines and God Objects
+5. Obsession with making short classes have less lines no matter how much it destroys readability (i have stopped doing this)
+6. Limited Cargo Cult Programming (cobbled together from stack overflow results online, modified a fair amount of it myself or rewrote it, but there are some cases in the code)
+7. God Objects/Managers
+8. Feeder Classes to side step Static restrictions
+9. Never using Static (even when it would be beneficial to use them)
+10. Misuse of Inheritance
+11. someother stuff idk
 
 Originally programmed in BlueJ & VSCode.
