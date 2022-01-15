@@ -3,7 +3,7 @@ A compilation of simple experiement born from playing with Java for the first fe
 
 I've divided these up into Semiester blocks.
 
-Order of experiments:
+Block 1
 1. RudimentaryCalculator
 2. ChangeMaker
 3. OK I Guess
@@ -21,6 +21,7 @@ Order of experiments:
 15. Pig Latin Palindrome
 16. Text Analyzer
 
+Block 2
 1. ThreeSorts
 
 ### These will not be updated after they're done unless something really bothers me.
