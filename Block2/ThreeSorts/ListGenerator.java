@@ -16,7 +16,7 @@ public class ListGenerator
         for (int i = 0; i < size; i++)
             list2[i] = list[i];
 
-        System.out.println(); System.out.print("Generated List: "); Print.PrintIntList(list2);
+        System.out.print("Generated List: "); Print.PrintIntList(list2);
         System.out.println();
         return list; 
     }

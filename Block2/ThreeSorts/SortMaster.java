@@ -16,7 +16,7 @@ public class SortMaster extends HashCommand
         String in;
 
         Scanner scan = new Scanner(System.in);
-        System.out.println("Enter number of items in list: ");
+        System.out.print("Enter number of items in list: ");
 
         int size = scan.nextInt(); in = scan.nextLine(); // java bug workaround
         list = ListGenerator.GenerateList(size);
