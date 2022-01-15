@@ -1,5 +1,8 @@
 # javatest
 A compilation of simple experiement born from playing with Java for the first few times in my Computer Science class. These are just my attempts at completing the labs.
+
+I've divided these up into Semiester blocks.
+
 Order of experiments:
 1. RudimentaryCalculator
 2. ChangeMaker
@@ -17,6 +20,8 @@ Order of experiments:
 14. Fauxku
 15. Pig Latin Palindrome
 16. Text Analyzer
+
+1. ThreeSorts
 
 ### These will not be updated after they're done unless something really bothers me.
 

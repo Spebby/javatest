@@ -1,53 +1,15 @@
 {
 	"folders": [
 		{
-			"path": "OK I Guess"
+			"path": "Block1"
 		},
 		{
-			"path": "ChangeMaker"
-		},
-		{
-			"path": "RudimentaryCalculator"
-		},
-		{
-			"path": "If it Fits it Ships"
-		},
-		{
-			"path": "Fairgrounds"
-		},
-		{
-			"path": "Looping for a While"
-		},
-		{
-			"path": "APCSland"
-		},
-		{
-			"path": "ArrayOfLight"
-		},
-		{
-			"path": "Spheres"
-		},
-		{
-			"path": "TerrariaNameGenerator"
-		},
-		{
-			"path": "Dreamscape"
-		},
-		{
-			"path": "BabyGame"
-		},
-		{
-			"path": "FrankenSentence"
-		},
-		{
-			"path": "Fauxku"
-		},
-		{
-			"path": "PLPalindrome"
-		},
-		{
-			"path": "TextAnalyzer"
+			"path": "Block2"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"java.project.sourcePaths": [
+			"."
+		]
+	}
 }
