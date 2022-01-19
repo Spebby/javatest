@@ -15,8 +15,10 @@
  * @author APCS Development Committee
  * @author Cay Horstmann */
 
-package GridWorld;
+package GridWorld.Viewport;
 import java.util.ArrayList;
+
+import GridWorld.Location;
 import GridWorld.Abstracts.AbstractGrid;
 import java.util.*;
 

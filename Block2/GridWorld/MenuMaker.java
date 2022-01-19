@@ -49,6 +49,7 @@ import javax.swing.event.DocumentListener;
 import GridWorld.Viewport.DisplayMap;
 import GridWorld.Viewport.FormLayout;
 import GridWorld.Viewport.Grid;
+import GridWorld.Viewport.WorldFrame;
 
 // Makes the menus for constructing new occupants and grids, and for invoking methods on existing occupants.
 public class MenuMaker<T>

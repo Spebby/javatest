@@ -62,25 +62,11 @@ public class ColorEditor extends PropertyEditorSupport
     {
         private Color color;
 
-        public Color getColor()
-        {
-            return color;
-        }
-
-        public SolidColorIcon(Color c)
-        {
-            color = c;
-        }
-
-        public int getIconWidth()
-        {
-            return WIDTH;
-        }
-
-        public int getIconHeight()
-        {
-            return HEIGHT;
-        }
+        public Color getColor() { return color; }
+        public SolidColorIcon(Color c) { color = c; }
+        // this should be a vector2int instead, don't want to refactor @thom
+        public int getIconWidth() { return WIDTH; }
+        public int getIconHeight() { return HEIGHT; }
 
         public void paintIcon(Component c, Graphics g, int x, int y)
         {
@@ -98,19 +84,11 @@ public class ColorEditor extends PropertyEditorSupport
     private static class RandomColorIcon implements ColorIcon
     {
         public Color getColor()
-        {
-            return new Color((int) (Math.random() * 256 * 256 * 256));
-        }
-
+            { return new Color((int) (Math.random() * 256 * 256 * 256)); }
         public int getIconWidth()
-        {
-            return WIDTH;
-        }
-
+            { return WIDTH; }
         public int getIconHeight()
-        {
-            return HEIGHT;
-        }
+            { return HEIGHT; }
 
         public void paintIcon(Component c, Graphics g, int x, int y)
         {
@@ -133,9 +111,21 @@ public class ColorEditor extends PropertyEditorSupport
     private JComboBox combo;
 
     private static Color[] colorValues =
-        { Color.BLACK, Color.BLUE, Color.CYAN, Color.DARK_GRAY, Color.GRAY,
-                Color.GREEN, Color.LIGHT_GRAY, Color.MAGENTA, Color.ORANGE,
-                Color.PINK, Color.RED, Color.WHITE, Color.YELLOW };
+    { 
+        Color.BLACK,
+        Color.BLUE,
+        Color.CYAN,
+        Color.DARK_GRAY,
+        Color.GRAY,
+        Color.GREEN,
+        Color.LIGHT_GRAY,
+        Color.MAGENTA,
+        Color.ORANGE,
+        Color.PINK,
+        Color.RED,
+        Color.WHITE,
+        Color.YELLOW
+    };
 
     private static ColorIcon[] colorIcons;
 

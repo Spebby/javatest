@@ -21,11 +21,10 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Set;
 import java.util.TreeSet;
-
 import javax.swing.JFrame;
-
 import GridWorld.Viewport.BoundedGrid;
 import GridWorld.Viewport.Grid;
+import GridWorld.Viewport.WorldFrame;
 
 // A World is the mediator between a grid and the GridWorld GUI. */
 public class World<T>
@@ -56,9 +55,6 @@ public class World<T>
         addGridClass("info.gridworld.grid.UnboundedGrid");
     }
 
-    /**
-     * Constructs and shows a frame for this world.
-     */
     public void show()
     {
         if (frame == null)
@@ -70,85 +66,67 @@ public class World<T>
             frame.repaint();
     }
 
-    /**
-     * Gets the grid managed by this world.
-     * @return the grid
-     */
+    /* Gets the grid managed by this world.
+     * @return the grid */
     public Grid<T> getGrid()
     {
         return gr;
     }
 
-    /**
-     * Sets the grid managed by this world.
-     * @param newGrid the new grid
-     */
+    /* Sets the grid managed by this world.
+     * @param newGrid the new grid */
     public void setGrid(Grid<T> newGrid)
     {
         gr = newGrid;
         repaint();
     }
 
-    /**
-     * Sets the message to be displayed in the world frame above the grid.
-     * @param newMessage the new message
-     */
+    /* Sets the message to be displayed in the world frame above the grid.
+     * @param newMessage the new message */
     public void setMessage(String newMessage)
     {
         message = newMessage;
         repaint();
     }
 
-    /**
-     * Gets the message to be displayed in the world frame above the grid.
-     * @return the message
-     */
+    /* Gets the message to be displayed in the world frame above the grid.
+     * @return the message */
     public String getMessage()
     {
         return message;
     }
 
-    /**
-     * This method is called when the user clicks on the step button, or when
-     * run mode has been activated by clicking the run button.
-     */
+    /* This method is called when the user clicks on the step button, or when
+     * run mode has been activated by clicking the run button. */
     public void step()
     {
         repaint();
     }
 
-    /**
-     * This method is called when the user clicks on a location in the
-     * WorldFrame.
-     * 
+    /* This method is called when the user clicks on a location in the WorldFrame.
      * @param loc the grid location that the user selected
      * @return true if the world consumes the click, or false if the GUI should
-     * invoke the Location->Edit menu action
-     */
+     * invoke the Location->Edit menu action */
     public boolean locationClicked(Location loc)
     {
         return false;
     }
     
-    /**
-     * This method is called when a key was pressed. Override it if your world wants
+    /* This method is called when a key was pressed. Override it if your world wants
      * to consume some keys (e.g. "1"-"9" for Sudoku). Don't consume plain arrow keys,
      * or the user loses the ability to move the selection square with the keyboard.   
      * @param description the string describing the key, in 
      * <a href="http://java.sun.com/javase/6/docs/api/javax/swing/KeyStroke.html#getKeyStroke(java.lang.String)">this format</a>. 
      * @param loc the selected location in the grid at the time the key was pressed
      * @return true if the world consumes the key press, false if the GUI should
-     * consume it.
-     */
+     * consume it. */
     public boolean keyPressed(String description, Location loc)
     {
         return false;
     }
 
-    /**
-     * Gets a random empty location in this world.
-     * @return a random empty location
-     */
+    /* Gets a random empty location in this world.
+     * @return a random empty location */
     public Location getRandomEmptyLocation()
     {
         Grid<T> gr = getGrid();
@@ -194,22 +172,18 @@ public class World<T>
         }
     }
 
-    /**
-     * Adds an occupant at a given location.
+    /* Adds an occupant at a given location.
      * @param loc the location
-     * @param occupant the occupant to add
-     */
+     * @param occupant the occupant to add */
     public void add(Location loc, T occupant)
     {
         getGrid().put(loc, occupant);
         repaint();
     }
 
-    /**
-     * Removes an occupant from a given location.
+    /* Removes an occupant from a given location.
      * @param loc the location
-     * @return the removed occupant, or null if the location was empty
-     */
+     * @return the removed occupant, or null if the location was empty */
     public T remove(Location loc)
     {
         T r = getGrid().remove(loc);
@@ -226,30 +200,24 @@ public class World<T>
         gridClassNames.add(className);
     }
 
-    /**
-     * Adds a class to be shown when clicking on an empty location.
-     * @param className the name of the occupant class
-     */
+    /* Adds a class to be shown when clicking on an empty location.
+     * @param className the name of the occupant class */
     public void addOccupantClass(String className)
     {
         occupantClassNames.add(className);
     }
 
-    /**
-     * Gets a set of grid classes that should be used by the world frame for
+    /* Gets a set of grid classes that should be used by the world frame for
      * this world.
-     * @return the set of grid class names
-     */
+     * @return the set of grid class names */
     public Set<String> getGridClasses()
     {
         return gridClassNames;
     }
 
-    /**
-     * Gets a set of occupant classes that should be used by the world frame for
+    /* Gets a set of occupant classes that should be used by the world frame for
      * this world.
-     * @return the set of occupant class names
-     */
+     * @return the set of occupant class names */
     public Set<String> getOccupantClasses()
     {
         return occupantClassNames;
@@ -261,9 +229,7 @@ public class World<T>
             frame.repaint();
     }
 
-    /**
-     * Returns a string that shows the positions of the grid occupants.
-     */
+    /* Returns a string that shows the positions of the grid occupants. */
     public String toString()
     {
         String s = "";

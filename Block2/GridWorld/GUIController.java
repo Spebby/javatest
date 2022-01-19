@@ -35,6 +35,7 @@ import javax.swing.event.ChangeListener;
 import GridWorld.Viewport.DisplayMap;
 import GridWorld.Viewport.Grid;
 import GridWorld.Viewport.GridPanel;
+import GridWorld.Viewport.WorldFrame;
 
 import javax.swing.*;
 

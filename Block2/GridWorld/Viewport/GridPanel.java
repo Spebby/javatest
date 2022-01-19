@@ -48,8 +48,7 @@ import javax.swing.Timer;
 import javax.swing.ToolTipManager;
 
 import GridWorld.Location;
-import GridWorld.PseudoInfiniteViewport;
-import GridWorld.PseudoInfiniteViewport.Pannable;
+import GridWorld.Viewport.PseudoInfiniteViewport.Pannable;
 
 /**
  * A <code>GridPanel</code> is a panel containing a graphical display of the

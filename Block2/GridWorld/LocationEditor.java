@@ -1,5 +1,3 @@
-package GridWorld;
-
 /* AP(r) Computer Science GridWorld Case Study:
  * Copyright(c) 2005-2006 Cay S. Horstmann (http://horstmann.com)
  *
@@ -15,21 +13,15 @@ package GridWorld;
  * @author Cay Horstmann */
 
  
-
+package GridWorld;
 //import info.gridworld.grid.Location;
-
 import java.awt.Component;
 import java.beans.PropertyEditorSupport;
 import java.text.NumberFormat;
 import javax.swing.JFormattedTextField;
 import javax.swing.JPanel;
 
-/**
- * A property editor for the Location type. <br />
- * This code is not tested on the AP CS A and AB exams. It contains GUI
- * implementation details that are not intended to be understood by AP CS
- * students.
- */
+// A property editor for the Location type.
 public class LocationEditor extends PropertyEditorSupport
 {
     private JFormattedTextField rowField = new JFormattedTextField(NumberFormat

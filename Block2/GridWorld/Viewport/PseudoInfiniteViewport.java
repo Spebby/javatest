@@ -14,26 +14,19 @@
  * @author Julie Zelenski
  * @author Cay Horstmann */
 
-package GridWorld;
+package GridWorld.Viewport;
 import java.awt.Point;
 import java.awt.Dimension;
 import java.awt.Color;
 import javax.swing.*;
 
-/* A <code>PseudoInfiniteViewport</code> is a <code>JViewport</code>
- * subclass that translates scroll actions into pan actions across an unbounded
- * view. <br />
- * This code is not tested on the AP CS A and AB exams. It contains GUI
- * implementation details that are not intended to be understood by AP CS
- * students. */
+/* A PseudoInfiniteViewport is a JViewport subclass that translates scroll actions into pan actions across an unbounded view. */
 
 public class PseudoInfiniteViewport extends JViewport
 {
-    /**
-     * The Pannable interface contains those methods the view installed in a
+    /* The Pannable interface contains those methods the view installed in a
      * PseudoInfiniteViewport needs to support to enable panning behavior along
-     * with scrolling.
-     */
+     * with scrolling. */
     public interface Pannable
     {
         void panBy(int hDelta, int vDelta);
@@ -46,21 +39,17 @@ public class PseudoInfiniteViewport extends JViewport
     private JScrollPane scrollParent;
     private Point panPoint = new Point(0, 0);
 
-    /**
-     * Construct a new PseudoInfiniteViewport object for the given scrollpane.
-     * @param parent the JScrollPane for which this will be the viewport
-     */
+    /* Construct a new PseudoInfiniteViewport object for the given scrollpane.
+     * @param parent the JScrollPane for which this will be the viewport */
     public PseudoInfiniteViewport(JScrollPane parent)
     {
         scrollParent = parent;
         setBackground(Color.lightGray);
     }
 
-    /**
-     * Sets the view position (upper left) to a new point. Overridden from
+    /* Sets the view position (upper left) to a new point. Overridden from
      * JViewport to do a pan, instead of scroll, on an unbounded view.
-     * @param pt the Point to become the upper left
-     */
+     * @param pt the Point to become the upper left */
     public void setViewPosition(Point pt)
     {
         boolean isAdjusting = scrollParent.getVerticalScrollBar()
@@ -95,20 +84,16 @@ public class PseudoInfiniteViewport extends JViewport
             getPannableView().showPanTip(); // briefly show tip
     }
 
-    /**
-     * Returns current view position (upper left). Overridden from JViewport to
-     * use pan center point for unbounded view.
-     */
+    /* Returns current view position (upper left). Overridden from JViewport to
+     * use pan center point for unbounded view. */
     public Point getViewPosition()
     {
         return (viewIsUnbounded() ? getPanCenterPoint() : super
                 .getViewPosition());
     }
 
-    /**
-     * Returns current view size. Overridden from JViewport to use preferred
-     * virtual size for unbounded view.
-     */
+    /* Returns current view size. Overridden from JViewport to use preferred
+     * virtual size for unbounded view. */
     public Dimension getViewSize()
     {
         return (viewIsUnbounded() ? getView().getPreferredSize() : super

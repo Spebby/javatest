@@ -15,7 +15,7 @@
  * @author Chris Nevison
  * @author Cay Horstmann */
 
-package GridWorld;
+package GridWorld.Viewport;
 //import info.gridworld.grid.Grid;
 //import info.gridworld.grid.Location;
 //import info.gridworld.world.World;
@@ -58,9 +58,10 @@ import javax.swing.KeyStroke;
 import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
 
-import GridWorld.Viewport.DisplayMap;
-import GridWorld.Viewport.Grid;
-import GridWorld.Viewport.GridPanel;
+import GridWorld.GUIController;
+import GridWorld.Location;
+import GridWorld.MenuMaker;
+import GridWorld.World;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;

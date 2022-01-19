@@ -17,7 +17,7 @@ import java.awt.Color;
 
 import GridWorld.Actors.Actor;
 
-// A <code>Flower</code> is an actor that darkens over time. Some actors drop flowers as they move.
+// An actor that darkens over time. Some actors drop flowers as they move.
 
 public class Flower extends Actor
 {
