@@ -16,9 +16,6 @@
  * @author Cay Horstmann */
 
 package GridWorld.Viewport;
-//import info.gridworld.grid.Grid;
-//import info.gridworld.grid.Location;
-//import info.gridworld.world.World;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -61,18 +58,11 @@ import javax.swing.event.HyperlinkListener;
 import GridWorld.GUIController;
 import GridWorld.Location;
 import GridWorld.MenuMaker;
-import GridWorld.World;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
 
-/**
- * The WorldFrame displays a World and allows manipulation of its occupants.
- * <br />
- * This code is not tested on the AP CS A and AB exams. It contains GUI
- * implementation details that are not intended to be understood by AP CS
- * students.
- */
+// The WorldFrame displays a World and allows manipulation of its occupants.
 public class WorldFrame<T> extends JFrame
 {
     private GUIController<T> control;

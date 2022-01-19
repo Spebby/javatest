@@ -12,7 +12,7 @@
  * 
  * @author Cay Horstmann */
 
-package GridWorld;
+package GridWorld.Viewport;
 //import info.gridworld.grid.BoundedGrid;
 //import info.gridworld.grid.Grid;
 //import info.gridworld.grid.Location;
@@ -22,9 +22,8 @@ import java.util.Random;
 import java.util.Set;
 import java.util.TreeSet;
 import javax.swing.JFrame;
-import GridWorld.Viewport.BoundedGrid;
-import GridWorld.Viewport.Grid;
-import GridWorld.Viewport.WorldFrame;
+
+import GridWorld.Location;
 
 // A World is the mediator between a grid and the GridWorld GUI. */
 public class World<T>

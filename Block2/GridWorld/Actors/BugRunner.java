@@ -22,7 +22,7 @@ import GridWorld.Objects.Rock;
  * BoxBugRunner (in the boxBug folder) for an example. */
 public class BugRunner
 {
-    public static void main()
+    public static void main(String[] args)
     {
         ActorWorld world = new ActorWorld();
         

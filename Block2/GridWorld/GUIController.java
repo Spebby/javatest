@@ -35,15 +35,12 @@ import javax.swing.event.ChangeListener;
 import GridWorld.Viewport.DisplayMap;
 import GridWorld.Viewport.Grid;
 import GridWorld.Viewport.GridPanel;
+import GridWorld.Viewport.World;
 import GridWorld.Viewport.WorldFrame;
 
 import javax.swing.*;
 
-/* The GUIController controls the behavior in a WorldFrame. <br />
- * This code is not tested on the AP CS A and AB exams. It contains GUI
- * implementation details that are not intended to be understood by AP CS
- * students. */
-
+// The GUIController controls the behavior in a WorldFrame.
 public class GUIController<T>
 {
     public static final int INDEFINITE = 0, FIXED_STEPS = 1, PROMPT_STEPS = 2;

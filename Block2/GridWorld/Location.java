@@ -43,6 +43,18 @@ public class Location implements Comparable
     public static final int WEST = 270;
     public static final int NORTHWEST = 315;
 
+    // Board Locations
+    public static final Vector2Int TOP = new Vector2Int(0, 4);
+    public static final Vector2Int TOPRIGHT = new Vector2Int(0, 9);
+    public static final Vector2Int TOPLEFT = new Vector2Int(0, 0);
+    public static final Vector2Int CENTRE = new Vector2Int(4, 4);
+    public static final Vector2Int CENTRERIGHT = new Vector2Int(4, 9);
+    public static final Vector2Int CENTRELEFT = new Vector2Int(4, 0);
+    public static final Vector2Int BOTTOM = new Vector2Int(9, 4);
+    public static final Vector2Int BOTTOMRIGHT = new Vector2Int(9, 9);
+    public static final Vector2Int BOTTOMLEFT = new Vector2Int(9, 0);
+
+
     /* Constructs a location with given row and column coordinates.
      * @param r the row
      * @param c the column */

@@ -29,19 +29,12 @@ import GridWorld.Abstracts.AbstractDisplay;
 
 import java.awt.Rectangle;
 
-/**
- * The DefaultDisplay draws the object's text property with a background color
- * given by the object's color property. <br />
- * This code is not tested on the AP CS A and AB exams. It contains GUI
- * implementation details that are not intended to be understood by AP CS
- * students.
- */
+/* The DefaultDisplay draws the object's text property with a background color given by the object's color property. */
 public class DefaultDisplay implements Display
 {
     private static final int MAX_TEXT_LENGTH = 8;
 
-    /**
-     * Draw the given object. This implementation draws a string with
+    /* Draw the given object. This implementation draws a string with
      * a background color. The background color is the value
      * of the color property, or, if there is no such property
      * and the object is an instance of Color, the object itself.
@@ -51,8 +44,7 @@ public class DefaultDisplay implements Display
      * @param obj object we want to draw
      * @param comp component on which to draw
      * @param g2 drawing surface
-     * @param rect rectangle in which to draw
-     */
+     * @param rect rectangle in which to draw */
     public void draw(Object obj, Component comp, Graphics2D g2, Rectangle rect)
     {
         Color color = (Color) AbstractDisplay.getProperty(obj, "color");

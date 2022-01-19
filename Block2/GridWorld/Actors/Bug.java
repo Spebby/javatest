@@ -16,7 +16,6 @@ package GridWorld.Actors;
 //import info.gridworld.grid.Grid;
 //import info.gridworld.grid.Location;
 import java.awt.Color;
-
 import GridWorld.Location;
 import GridWorld.Objects.Flower;
 import GridWorld.Viewport.Grid;
@@ -24,13 +23,11 @@ import GridWorld.Viewport.Grid;
 // A Bug is an actor that can move and turn. It drops flowers as it moves.
 public class Bug extends Actor
 {
+    // Overload
     public Bug()
     {
         setColor(Color.RED);
     }
-
-    /* Constructs a bug of a given color.
-     * @param bugColor the color for this bug */
     public Bug(Color bugColor)
     {
         setColor(bugColor);
@@ -55,6 +52,7 @@ public class Bug extends Actor
         Grid<Actor> gr = getGrid();
         if (gr == null)
             return;
+            
         Location loc = getLocation();
         Location next = loc.getAdjacentLocation(getDirection());
         if (gr.isValid(next))
@@ -70,9 +68,7 @@ public class Bug extends Actor
     public boolean canMove()
     {
         Grid<Actor> gr = getGrid();
-        if (gr == null)
-            return false;
-
+        if (gr == null) return false;
         Location loc = getLocation();
         Location next = loc.getAdjacentLocation(getDirection());
         if (!gr.isValid(next))

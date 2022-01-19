@@ -19,8 +19,8 @@ package GridWorld.Actors;
 import java.util.ArrayList;
 
 import GridWorld.Location;
-import GridWorld.World;
 import GridWorld.Viewport.Grid;
+import GridWorld.Viewport.World;
 
 // An ActorWorld is occupied by actors.
 public class ActorWorld extends World<Actor>
