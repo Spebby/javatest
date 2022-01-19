@@ -6,7 +6,9 @@
 
 package GridWorld.Actors;
 import java.awt.Color;
-import GridWorld.Location;
+
+import GridWorld.Core.Location;
+import GridWorld.Core.Vector2Int;
 import GridWorld.Objects.Rock;
 import GridWorld.Viewport.Grid;
 
@@ -17,33 +19,33 @@ public class SpiralBug extends Bug
         super(Color.GREEN);
         switch((int)(Math.random() * 4)) {
             case 0:
-                setDirection(Location.NORTHWEST); break;
+                setLocation(Location.TOPRIGHT); break;
             case 1:
-                setDirection(Location.NORTHEAST); break;
+                setLocation(Location.TOPLEFT); break;
             case 2:
-                setDirection(Location.SOUTHWEST); break;
+                setLocation(Location.BOTTOMRIGHT); break;
             case 3:
-                setDirection(Location.SOUTHEAST); break;
+                setLocation(Location.BOTTOMLEFT); break;
         }
     }
-    public SpiralBug(Color bugColor)
+    /*public SpiralBug(Color bugColor)
     {
         super(bugColor);
         switch((int)(Math.random() * 4)) {
             case 0:
-                setDirection(Location.NORTHWEST); break;
+                setLocation(Location.TOPRIGHT); break;
             case 1:
-                setDirection(Location.NORTHEAST); break;
+                setLocation(Location.TOPLEFT); break;
             case 2:
-                setDirection(Location.SOUTHWEST); break;
+                setLocation(Location.BOTTOMRIGHT); break;
             case 3:
-                setDirection(Location.SOUTHEAST); break;
+                setLocation(Location.BOTTOMLEFT); break;
         }
-    }
-    public SpiralBug(Color bugColor, int loc)
+    }*/
+    public SpiralBug(Color bugColor, Vector2Int loc)
     {
         super(bugColor);
-        setDirection(Location.NORTHWEST);
+        setLocation(loc);
     }
     public void act()
     {

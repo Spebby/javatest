@@ -47,7 +47,7 @@ import javax.swing.SwingUtilities;
 import javax.swing.Timer;
 import javax.swing.ToolTipManager;
 
-import GridWorld.Location;
+import GridWorld.Core.Location;
 import GridWorld.Viewport.PseudoInfiniteViewport.Pannable;
 
 /**

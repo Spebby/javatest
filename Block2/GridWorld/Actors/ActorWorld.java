@@ -18,7 +18,7 @@ package GridWorld.Actors;
 //import info.gridworld.world.World;
 import java.util.ArrayList;
 
-import GridWorld.Location;
+import GridWorld.Core.Location;
 import GridWorld.Viewport.Grid;
 import GridWorld.Viewport.World;
 

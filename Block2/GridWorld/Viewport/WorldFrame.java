@@ -55,9 +55,7 @@ import javax.swing.KeyStroke;
 import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
 
-import GridWorld.GUIController;
-import GridWorld.Location;
-import GridWorld.MenuMaker;
+import GridWorld.Core.Location;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;

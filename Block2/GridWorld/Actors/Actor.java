@@ -17,7 +17,8 @@ package GridWorld.Actors;
 //import info.gridworld.grid.Location;
 import java.awt.Color;
 
-import GridWorld.Location;
+import GridWorld.Core.Location;
+import GridWorld.Core.Vector2Int;
 import GridWorld.Viewport.Grid;
 
 // An Actor is an entity with a color and direction that can act.
@@ -42,18 +43,22 @@ public class Actor
         { color = newColor; }
     public int getDirection() 
         { return direction; }
-
     public void setDirection(int newDirection)
     {
         direction = newDirection % Location.FULL_CIRCLE;
         if (direction < 0)
             direction += Location.FULL_CIRCLE;
     }
+    public Location getLocation() 
+        { return location; }
+    public void setLocation(Vector2Int loc)
+        { 
+            Location newLoc = new Location(loc.x, loc.y);
+            grid.put(newLoc, this);
+        }
 
     public Grid<Actor> getGrid() 
         { return grid; }
-    public Location getLocation() 
-        { return location; }
 
     // Puts this actor into a grid. If there is another actor at the given location, it is removed.
     public void putSelfInGrid(Grid<Actor> gr, Location loc)

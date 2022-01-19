@@ -1,4 +1,4 @@
-package GridWorld;
+package GridWorld.Core;
 
 public class Vector2Int
 {

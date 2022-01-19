@@ -7,7 +7,8 @@
 
 package GridWorld.Actors;
 import java.awt.Color;
-import GridWorld.Location;
+
+import GridWorld.Core.Location;
 import GridWorld.Objects.Rock;
 import GridWorld.Viewport.Grid;
 
@@ -17,12 +18,12 @@ public class BoxBug extends Bug
     int boxSize = 5;
     int movesLeft;
 
-    // Overload
+    // Overload, some commented that clogged up menus but are useful.
     public BoxBug() 
     {
         super(Color.ORANGE);
     }
-    public BoxBug(Color bugColor) 
+    /*public BoxBug(Color bugColor) 
     {
         super(bugColor);
     }
@@ -30,7 +31,7 @@ public class BoxBug extends Bug
     {
         this.boxSize = boxSize;
         movesLeft = boxSize;
-    }
+    }*/
     public BoxBug(Color bugColor, int boxSize) 
     {
         super(bugColor);

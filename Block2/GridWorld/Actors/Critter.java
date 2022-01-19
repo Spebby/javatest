@@ -15,7 +15,8 @@
 package GridWorld.Actors;
 //import info.gridworld.grid.Location;
 import java.util.ArrayList;
-import GridWorld.Location;
+
+import GridWorld.Core.Location;
 import GridWorld.Objects.Rock;
 
 /**

@@ -15,7 +15,7 @@
 package GridWorld.Abstracts;
 import java.util.ArrayList;
 
-import GridWorld.Location;
+import GridWorld.Core.Location;
 import GridWorld.Viewport.Grid;
 
 // AbstractGrid contains the methods that are common to grid implementations

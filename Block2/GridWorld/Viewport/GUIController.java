@@ -14,7 +14,7 @@
  * @author Julie Zelenski
  * @author Cay Horstmann */
 
-package GridWorld;
+package GridWorld.Viewport;
 //import info.gridworld.grid.*;
 //import info.gridworld.world.World;
 import java.awt.Dimension;
@@ -32,11 +32,7 @@ import java.util.TreeSet;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
-import GridWorld.Viewport.DisplayMap;
-import GridWorld.Viewport.Grid;
-import GridWorld.Viewport.GridPanel;
-import GridWorld.Viewport.World;
-import GridWorld.Viewport.WorldFrame;
+import GridWorld.Core.Location;
 
 import javax.swing.*;
 

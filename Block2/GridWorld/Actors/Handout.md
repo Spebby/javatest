@@ -1,6 +1,6 @@
-https://lgsuhsd.instructure.com/courses/23640/files/3220718?wrap=1 // ref sheet, this markdown is a digital copy  
-https://lgsuhsd.instructure.com/courses/23640/files/3220717?wrap=1 // lab 17  
-https://lgsuhsd.instructure.com/courses/23640/files/3226842?wrap=1 // lab 18  
+https://lgsuhsd.instructure.com/courses/23640/files/3220718?wrap=1 // ref sheet, this markdown is a digital copy <br />
+https://lgsuhsd.instructure.com/courses/23640/files/3220717?wrap=1 // lab 17 <br />
+https://lgsuhsd.instructure.com/courses/23640/files/3226842?wrap=1 // lab 18 <br />
 
 # INFO
 This file is a summary of methods of essential classes. These are useful when writing instructions for bugs. (duh)
@@ -8,32 +8,32 @@ This file is a summary of methods of essential classes. These are useful when wr
 # Location *Class*
 
 ## Compass directions: 
-NORTH = 0  
-EAST = 90  
-SOUTH = 180  
-WEST = 270  
-NORTHEAST = 45  
-SOUTHEAST = 135  
-SOUTHWEST = 225  
-NORTHWEST = 315  
+NORTH = 0 <br />
+EAST = 90 <br />
+SOUTH = 180 <br />
+WEST = 270 <br />
+NORTHEAST = 45 <br />
+SOUTHEAST = 135 <br />
+SOUTHWEST = 225 <br />
+NORTHWEST = 315 <br />
 ## Turn angles: 
-LEFT = -90  
-RIGHT = 90  
-HALF_LEFT = -45  
-HALF_RIGHT = 45  
-FULL_CIRCLE = 360  
-HALF_CIRCLE = 180  
-AHEAD = 0  
+LEFT = -90 <br />
+RIGHT = 90 <br />
+HALF_LEFT = -45 <br />
+HALF_RIGHT = 45 <br />
+FULL_CIRCLE = 360 <br />
+HALF_CIRCLE = 180 <br />
+AHEAD = 0 <br />
 ## Board Locations:
-TOP = new (0, 4)  
-TOPRIGHT = (0, 9)  
-TOPLEFT = (0, 0)  
-CENTRE = (4, 4)  
-CENTRERIGHT = (4, 9)  
-CENTRELEFT = (4, 0)  
-BOTTOM = (9, 4)  
-BOTTOMRIGHT = (9, 9)  
-BOTTOMLEFT = (9, 0)  
+TOP = new (0, 4) <br />
+TOPRIGHT = (0, 9) <br />
+TOPLEFT = (0, 0) <br />
+CENTRE = (4, 4) <br />
+CENTRERIGHT = (4, 9) <br />
+CENTRELEFT = (4, 0) <br />
+BOTTOM = (9, 4) <br />
+BOTTOMRIGHT = (9, 9) <br />
+BOTTOMLEFT = (9, 0) <br />
 
 ### public Location(int r, int c)  
     constructs a location with given row and column coordinates  

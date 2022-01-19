@@ -23,7 +23,7 @@ import java.util.Set;
 import java.util.TreeSet;
 import javax.swing.JFrame;
 
-import GridWorld.Location;
+import GridWorld.Core.Location;
 
 // A World is the mediator between a grid and the GridWorld GUI. */
 public class World<T>

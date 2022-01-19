@@ -12,7 +12,7 @@
  * 
  * @author Cay Horstmann */
 
-package GridWorld;
+package GridWorld.Core;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Graphics;

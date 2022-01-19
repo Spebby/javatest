@@ -13,7 +13,7 @@
  * @author Cay Horstmann */
 
  
-package GridWorld;
+package GridWorld.Core;
 //import info.gridworld.grid.Location;
 import java.awt.Component;
 import java.beans.PropertyEditorSupport;

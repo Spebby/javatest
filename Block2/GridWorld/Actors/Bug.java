@@ -16,7 +16,8 @@ package GridWorld.Actors;
 //import info.gridworld.grid.Grid;
 //import info.gridworld.grid.Location;
 import java.awt.Color;
-import GridWorld.Location;
+
+import GridWorld.Core.Location;
 import GridWorld.Objects.Flower;
 import GridWorld.Viewport.Grid;
 

@@ -18,7 +18,7 @@
 package GridWorld.Viewport;
 import java.util.ArrayList;
 
-import GridWorld.Location;
+import GridWorld.Core.Location;
 
 // Grid provides an interface for a two-dimensional, grid-like environment containing arbitrary objects.
 public interface Grid<E>

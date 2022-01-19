@@ -18,8 +18,9 @@
 package GridWorld.Viewport;
 import java.util.ArrayList;
 
-import GridWorld.Location;
 import GridWorld.Abstracts.AbstractGrid;
+import GridWorld.Core.Location;
+
 import java.util.*;
 
 // An UnboundedGrid is a rectangular grid with an unbounded number of rows and columns

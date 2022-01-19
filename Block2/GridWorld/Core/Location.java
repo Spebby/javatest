@@ -16,7 +16,7 @@
  * @author APCS Development Committee
  * @author Cay Horstmann */
 
-package GridWorld;
+package GridWorld.Core;
 
 // A Location object represents the row and column of a location in a two-dimensional grid.
 public class Location implements Comparable

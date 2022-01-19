@@ -12,7 +12,9 @@
  * 
  * @author Cay Horstmann */
 
-package GridWorld.Actors;
+package GridWorld;
+import GridWorld.Actors.ActorWorld;
+import GridWorld.Actors.*;
 import GridWorld.Objects.Rock;
 
 /* This class runs a world that contains a bug and a rock, added at random
@@ -20,24 +22,24 @@ import GridWorld.Objects.Rock;
  * populated locations to invoke methods on their occupants.
  * To build your own worlds, define your own actors and a runner class. See the
  * BoxBugRunner (in the boxBug folder) for an example. */
-public class BugRunner
+public class Driver
 {
     public static void main(String[] args)
     {
         ActorWorld world = new ActorWorld();
         
         Bug bob = new Bug();
+        BoxBug boxxy = new BoxBug();
+        //SpiralBug spugsy = new SpiralBug();
+        ZBug zuggy = new ZBug();
         world.add(bob);
+        world.add(boxxy);
+        //world.add(spugsy);
+        world.add(zuggy);
         
-        Rock r = new Rock();
-        world.add( r );
+        Rock rocker = new Rock();
+        world.add(rocker);
     
         world.show();
     }
-    
-    
-    
-    
-    
-    
 }

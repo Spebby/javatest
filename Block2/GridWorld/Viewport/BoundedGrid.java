@@ -18,8 +18,8 @@
 package GridWorld.Viewport;
 import java.util.ArrayList;
 
-import GridWorld.Location;
 import GridWorld.Abstracts.AbstractGrid;
+import GridWorld.Core.Location;
 
 /* A BoundedGrid is a rectangular grid with a finite number of
  * rows and columns. */

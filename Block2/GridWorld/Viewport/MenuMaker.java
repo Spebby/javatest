@@ -12,7 +12,7 @@
  * 
  * @author Cay Horstmann */
 
-package GridWorld;
+package GridWorld.Viewport;
 //import info.gridworld.grid.Grid;
 //import info.gridworld.grid.Location;
 import java.awt.Color;
@@ -46,10 +46,10 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
-import GridWorld.Viewport.DisplayMap;
-import GridWorld.Viewport.FormLayout;
-import GridWorld.Viewport.Grid;
-import GridWorld.Viewport.WorldFrame;
+
+import GridWorld.Core.ColorEditor;
+import GridWorld.Core.Location;
+import GridWorld.Core.LocationEditor;
 
 // Makes the menus for constructing new occupants and grids, and for invoking methods on existing occupants.
 public class MenuMaker<T>
