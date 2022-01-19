@@ -36,12 +36,13 @@ Let me break down specifically why this code sucks.
 2. Overuse of Switch statements when a Hashmap would be better
 3. Use of For Loops instead of inbuilt functions for simple tasks (ex. IndexOf/Substring)
 4. Overly long lines and God Objects
-5. Obsession with making short classes have less lines no matter how much it destroys readability (i have stopped doing this)
-6. Limited Cargo Cult Programming (cobbled together from stack overflow results online, modified a fair amount of it myself or rewrote it, but there are some cases in the code)
-7. God Objects/Managers
-8. Feeder Classes to side step Static restrictions
-9. Never using Static (even when it would be beneficial to use them)
-10. Misuse of Inheritance
-11. someother stuff idk
+5. Obsession with making short classes even shorter, readability be damned (I have stopped doing this)
+6. God Objects/Managers
+7. "Feeder Classes" which only exist because of poor planning regarding side stepping static limitations.
+8. Static neglect (been using it more in Semiester 2)
+9. Misuse of Inheritance
+10. someother stuff idk
+11. Leaving Raws (mostly from Gridworld)
+12. Lack of Anon Functions
 
 Originally programmed in BlueJ & VSCode.
