@@ -44,7 +44,7 @@ public class Bug extends Actor
 
     public void turn()
     {
-        setDirection(getDirection() + Location.HALF_RIGHT);
+        setDirection(getDirection() + Location.HALFRIGHT);
     }
 
     // Moves the bug forward, putting a flower into the location it previously occupied.

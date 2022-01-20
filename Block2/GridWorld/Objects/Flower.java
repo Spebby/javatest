@@ -21,16 +21,13 @@ import GridWorld.Actors.Actor;
 
 public class Flower extends Actor
 {
-    private static final Color DEFAULT_COLOR = Color.PINK;
-    private static final double DARKENING_FACTOR = 0.05;
+    private static final Color _DEFAULT_COLOR = Color.PINK;
+    private static final double _DARKENING_FACTOR = 0.05;
 
     public Flower()
     {
-        setColor(DEFAULT_COLOR);
+        setColor(_DEFAULT_COLOR);
     }
-
-    /* Constructs a flower of a given color.
-     * @param initialColor the initial color of this flower */
     public Flower(Color initialColor)
     {
         setColor(initialColor);
@@ -40,10 +37,13 @@ public class Flower extends Actor
     public void act()
     {
         Color c = getColor();
-        int red = (int) (c.getRed() * (1 - DARKENING_FACTOR));
-        int green = (int) (c.getGreen() * (1 - DARKENING_FACTOR));
-        int blue = (int) (c.getBlue() * (1 - DARKENING_FACTOR));
-
+        int red = (int) (c.getRed() * (1 - _DARKENING_FACTOR));
+        int green = (int) (c.getGreen() * (1 - _DARKENING_FACTOR));
+        int blue = (int) (c.getBlue() * (1 - _DARKENING_FACTOR));
+        if(red < 20 && green < 20 && blue < 20)
+        {
+            removeSelfFromGrid();
+        }
         setColor(new Color(red, green, blue));
     }
 }

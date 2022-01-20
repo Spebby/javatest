@@ -45,16 +45,19 @@ public class Actor
         { return direction; }
     public void setDirection(int newDirection)
     {
-        direction = newDirection % Location.FULL_CIRCLE;
+        direction = newDirection % Location.FULLCIRCLE;
         if (direction < 0)
-            direction += Location.FULL_CIRCLE;
+            direction += Location.FULLCIRCLE;
     }
     public Location getLocation() 
         { return location; }
     public void setLocation(Vector2Int loc)
         { 
             Location newLoc = new Location(loc.x, loc.y);
-            grid.put(newLoc, this);
+            Grid<Actor> gr = getGrid();
+            if (gr == null)
+                return;
+            gr.put(newLoc, this);
         }
 
     public Grid<Actor> getGrid() 
@@ -118,7 +121,7 @@ public class Actor
 
     // Reverses the direction of this actor. Override this method in subclasses of Actor to define types of actors with different behavior
     public void act() 
-        { setDirection(getDirection() + Location.HALF_CIRCLE); }
+        { setDirection(getDirection() + Location.HALFCIRCLE); }
 
     // Creates a string that describes this actor. @return a string with the location, direction, and color of this actor
     public String toString()

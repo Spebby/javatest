@@ -34,12 +34,12 @@ public abstract class AbstractGrid<E> implements Grid<E>
         ArrayList<Location> locs = new ArrayList<Location>();
 
         int d = Location.NORTH;
-        for (int i = 0; i < Location.FULL_CIRCLE / Location.HALF_RIGHT; i++)
+        for (int i = 0; i < Location.FULLCIRCLE / Location.HALFRIGHT; i++)
         {
             Location neighborLoc = loc.getAdjacentLocation(d);
             if (isValid(neighborLoc))
                 locs.add(neighborLoc);
-            d = d + Location.HALF_RIGHT;
+            d = d + Location.HALFRIGHT;
         }
         return locs;
     }

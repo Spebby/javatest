@@ -75,7 +75,12 @@ public class ActorWorld extends World<Actor>
     public void add(Actor occupant)
     {
         Location loc = getRandomEmptyLocation();
-        if (loc != null)
+        if(loc != null)
+            add(loc, occupant);
+    }
+    public void add(Actor occupant, Location loc)
+    {
+        if(loc != null)
             add(loc, occupant);
     }
 

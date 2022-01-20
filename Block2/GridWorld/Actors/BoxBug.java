@@ -7,9 +7,7 @@
 
 package GridWorld.Actors;
 import java.awt.Color;
-
 import GridWorld.Core.Location;
-import GridWorld.Objects.Rock;
 import GridWorld.Viewport.Grid;
 
 // create class "BoxBug" that inherets from "Bug"
@@ -53,14 +51,13 @@ public class BoxBug extends Bug
             return;
         Location loc = getLocation();
         Location next = loc.getAdjacentLocation(getDirection());
-        if (gr.get(next) instanceof Rock)
-            turn();
-
-        else if(gr.isValid(next))
+        if(gr.isValid(next))
         {
             moveTo(next);
             movesLeft--;
         }
+        else
+            turn();
     }
     
     public void turn() 

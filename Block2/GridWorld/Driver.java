@@ -17,6 +17,7 @@ import GridWorld.Actors.ActorWorld;
 import GridWorld.Actors.*;
 import GridWorld.Objects.Rock;
 
+// formerly bugrunner
 /* This class runs a world that contains a bug and a rock, added at random
  * locations. Click on empty locations to add additional actors. Click on
  * populated locations to invoke methods on their occupants.
@@ -30,12 +31,12 @@ public class Driver
         
         Bug bob = new Bug();
         BoxBug boxxy = new BoxBug();
-        //SpiralBug spugsy = new SpiralBug();
-        ZBug zuggy = new ZBug();
+        SpiralBug spugsy = new SpiralBug();
+        //ZBug zuggy = new ZBug();
         world.add(bob);
         world.add(boxxy);
-        //world.add(spugsy);
-        world.add(zuggy);
+        world.add(spugsy, spugsy.getLocation());
+        //world.add(zuggy);
         
         Rock rocker = new Rock();
         world.add(rocker);

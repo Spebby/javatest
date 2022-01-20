@@ -27,10 +27,10 @@ public class Location implements Comparable
     // The turn angles
     public static final int LEFT = -90; // 90 to left
     public static final int RIGHT = 90; // 90 to right
-    public static final int HALF_LEFT = -45; // 45 to left
-    public static final int HALF_RIGHT = 45; // 45 to right
-    public static final int FULL_CIRCLE = 360; // 360 degrees
-    public static final int HALF_CIRCLE = 180; // 180 degrees
+    public static final int HALFLEFT = -45; // 45 to left
+    public static final int HALFRIGHT = 45; // 45 to right
+    public static final int FULLCIRCLE = 360; // 360 degrees
+    public static final int HALFCIRCLE = 180; // 180 degrees
     public static final int AHEAD = 0; // no turn
 
     // The compass directions
@@ -81,11 +81,11 @@ public class Location implements Comparable
     public Location getAdjacentLocation(int direction)
     {
         // reduce mod 360 and round to closest multiple of 45
-        int adjustedDirection = (direction + HALF_RIGHT / 2) % FULL_CIRCLE;
+        int adjustedDirection = (direction + HALFRIGHT / 2) % FULLCIRCLE;
         if (adjustedDirection < 0)
-            adjustedDirection += FULL_CIRCLE;
+            adjustedDirection += FULLCIRCLE;
 
-        adjustedDirection = (adjustedDirection / HALF_RIGHT) * HALF_RIGHT;
+        adjustedDirection = (adjustedDirection / HALFRIGHT) * HALFRIGHT;
         int dc = 0;
         int dr = 0;
         if (adjustedDirection == EAST)
@@ -134,12 +134,12 @@ public class Location implements Comparable
         // compass angle is clockwise from y-axis
         int compassAngle = RIGHT - angle;
         // prepare for truncating division by 45 degrees
-        compassAngle += HALF_RIGHT / 2;
+        compassAngle += HALFRIGHT / 2;
         // wrap negative angles
         if (compassAngle < 0)
-            compassAngle += FULL_CIRCLE;
+            compassAngle += FULLCIRCLE;
         // round to nearest multiple of 45
-        return (compassAngle / HALF_RIGHT) * HALF_RIGHT;
+        return (compassAngle / HALFRIGHT) * HALFRIGHT;
     }
 
     /* Indicates whether some other Location object is "equal to" this one.

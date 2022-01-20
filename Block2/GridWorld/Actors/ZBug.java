@@ -65,7 +65,7 @@ public class ZBug extends Bug
     
     public void turn()
     {
-        setDirection(getDirection() + Location.HALF_RIGHT);
+        setDirection(getDirection() + Location.HALFRIGHT);
     }
     public void turn(int direction)
     {

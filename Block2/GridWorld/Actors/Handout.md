@@ -7,7 +7,7 @@ This file is a summary of methods of essential classes. These are useful when wr
 
 # Location *Class*
 
-## Compass directions: 
+## Compass directions: *Int*
 NORTH = 0 <br />
 EAST = 90 <br />
 SOUTH = 180 <br />
@@ -16,15 +16,15 @@ NORTHEAST = 45 <br />
 SOUTHEAST = 135 <br />
 SOUTHWEST = 225 <br />
 NORTHWEST = 315 <br />
-## Turn angles: 
+## Turn angles: *Int*
 LEFT = -90 <br />
 RIGHT = 90 <br />
-HALF_LEFT = -45 <br />
-HALF_RIGHT = 45 <br />
-FULL_CIRCLE = 360 <br />
-HALF_CIRCLE = 180 <br />
+HALFLEFT = -45 <br />
+HALFRIGHT = 45 <br />
+FULLCIRCLE = 360 <br />
+HALFCIRCLE = 180 <br />
 AHEAD = 0 <br />
-## Board Locations:
+## Board Locations: *Vector2Int*
 TOP = new (0, 4) <br />
 TOPRIGHT = (0, 9) <br />
 TOPLEFT = (0, 0) <br />
