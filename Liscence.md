@@ -21,4 +21,4 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 ## tl:dr
-do what you want with this i don't care
+do what you want with this i don't care, no need to credit.
