@@ -5,27 +5,46 @@ I've divided these up into Semiester blocks.
 
 ## Semiester 1
 1. RudimentaryCalculator
+As the name would imply. A bad double calculator.
 2. ChangeMaker
+Returns change.
 3. OK I Guess
+A simple game where a player can enter 3 guesses and guess a 1-100 chance. Closest wins.
 4. If it ships it fits
+Checks if a package based on dimensions is ok to ship, must not be too big or too heavy.
 5. Fairground
+A bunch of text based minigames.
 6. Looping for Awhile
+Intro to loops. Each method utalizes a loop.
 7. APCSLand
+A weird dice game.
 8. Array of Light
+Intro to Arrays. Input an array and get it analyzed on a few different things.
 9. Spheres
+Intro to Java graphics using JFrame as a base. Just some bouncing balls.
 10. Terraria Name Generator
+This one wasn't actually required I just did this for giggles one morning. Ironically I could reuse this for a later project.
 11. Baby Game
+Making a game out of intro graphics knowledge. Hated this one.
 12. Dreamscape
+Spheres on steroids.
 13. Franken Scentence
+Intro to Strings. Terraria Name Generator but after Terraria Name Generator but a bit more complex and actually required.
 14. Fauxku
+Janky Haiku generator. Follows the fake "5, 7, 5" but has no checks for coherancy.
 15. Pig Latin Palindrome
+Translates English into Pig Latin. Also checks if it's a Palindrome.
 16. Text Analyzer
+Imports a formated text file and analyzes it.
 
 ## Semiester 2
 1. ThreeSorts
-2. Gridworld (bugs)
-
-### These will not be updated after they're done unless something really bothers me.
+Generates a random Array and then sorts it with the 3 worst sorting methods. Bubble, Selection and Insertion Sort.
+2. Gridworld (bugs) 
+Intro to inheritance. Built off of an existing framework, the requirement is to make new types of bug behaviour.
+3. Recursion
+A few basic methods that uses Recursion to solve some Math Equations.
+4. 
 
 This is public as I hope to detail my "journey" from a fairly incompitent programmer, to a competent programmer. And who knows, maybe you'll learn something too.  
 
