@@ -17,6 +17,7 @@
  * @author Cay Horstmann */
 
 package GridWorld.Core;
+import Common.Vector2Int;
 
 // A Location object represents the row and column of a location in a two-dimensional grid.
 public class Location implements Comparable
@@ -53,7 +54,6 @@ public class Location implements Comparable
     public static final Vector2Int BOTTOM = new Vector2Int(9, 4);
     public static final Vector2Int BOTTOMRIGHT = new Vector2Int(9, 9);
     public static final Vector2Int BOTTOMLEFT = new Vector2Int(9, 0);
-
 
     /* Constructs a location with given row and column coordinates.
      * @param r the row

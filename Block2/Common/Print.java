@@ -1,4 +1,4 @@
-package ThreeSorts;
+package Common;
 
 public class Print 
 {

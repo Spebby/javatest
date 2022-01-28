@@ -18,7 +18,7 @@ package GridWorld.Actors;
 import java.awt.Color;
 
 import GridWorld.Core.Location;
-import GridWorld.Core.Vector2Int;
+import Common.Vector2Int;
 import GridWorld.Viewport.Grid;
 
 // An Actor is an entity with a color and direction that can act.

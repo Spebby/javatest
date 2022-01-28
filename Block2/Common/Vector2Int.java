@@ -2,15 +2,15 @@ package Common;
 
 public class Vector2Int 
 {
-    public double x;
-    public double y;
+    public int x;
+    public int y;
 
-    public Vector2Int(double x, double y) 
+    public Vector2Int(int x, int y) 
     {
         this.x = x;
         this.y = y;
     }
-    public Vector2Int(double x) 
+    public Vector2Int(int x) 
     {
         this.x = x;
         this.y = x;

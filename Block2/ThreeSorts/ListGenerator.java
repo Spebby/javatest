@@ -1,5 +1,7 @@
 package ThreeSorts;
 
+import Common.Print;
+
 public class ListGenerator
 {
     public static int[] GenerateList(int size)

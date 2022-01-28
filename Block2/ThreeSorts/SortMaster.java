@@ -4,6 +4,9 @@ import java.util.*;
 import java.util.HashMap;
 import java.util.Map;
 
+import Common.HashCommand;
+import Common.Print;
+
 public class SortMaster extends HashCommand
 {
     String[] appName = new String[]{"Bubble Sort", "Selection Sort", "Insertion Sort"};

@@ -7,7 +7,6 @@
 package GridWorld.Actors;
 import java.awt.Color;
 import GridWorld.Core.Location;
-import GridWorld.Core.Vector2Int;
 import GridWorld.Viewport.Grid;
 
 public class SpiralBug extends Bug

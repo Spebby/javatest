@@ -2,23 +2,23 @@ package Common;
 
 public class Vector3Int 
 {
-    public double x;
-    public double y;
-    public double z;
+    public int x;
+    public int y;
+    public int z;
 
-    public Vector3Int(double x, double y, double z) 
+    public Vector3Int(int x, int y, int z) 
     {
         this.x = x;
         this.y = y;
         this.z = z;
     }
-    public Vector3Int(double x, double y) 
+    public Vector3Int(int x, int y) 
     {
         this.x = x;
         this.y = y;
         this.z = 0;
     }
-    public Vector3Int(double x) 
+    public Vector3Int(int x) 
     {
         this.x = x;
         this.y = x;

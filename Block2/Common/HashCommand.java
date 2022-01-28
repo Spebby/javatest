@@ -1,8 +1,8 @@
-package ThreeSorts;
+package Common;
 
 public class HashCommand 
 {
-    interface Command
+    public interface Command
     { 
         void _Command(); 
     }
