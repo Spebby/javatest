@@ -6,12 +6,12 @@ public class comFunc
     * @param "Number of iterations."
     * @return "The product of the first x Integers."
     */
-    public static int sumOfNumbs(int x)
+    public static int SumOfNumbs(int x)
     {
         if(x == 1)
             return 1;
         else
-            return x + sumOfNumbs(x - 1);
+            return x + SumOfNumbs(x - 1);
     }
     /**
     * @param "Location on the in the Fibonacci Sequence."

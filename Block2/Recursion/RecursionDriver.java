@@ -1,9 +1,6 @@
 package Recursion;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
-import Common.HashCommand.Command;
 import Common.Print;
 import Common.comFunc;
 
@@ -12,14 +9,12 @@ import static java.lang.System.out; // literally only have this so my classes ar
 public class RecursionDriver
 {
     String[] appList = new String[]{"Sums of Numbers", "Factorial", "Fibonacci", "Collatz"};
-    Map<Character, Command> options = new HashMap<Character, Command>();
     int x;
     Scanner scan = new Scanner(System.in);
 
     public static void main(String[] args)
     {
         RecursionDriver rc = new RecursionDriver();
-        rc.Awake();
         rc.Input();
     }
 
@@ -43,9 +38,27 @@ public class RecursionDriver
                 c = 'A';
             }
         }
-
-        options.get((c))._Command();
-        out.println("Result: " + x);
+        
+        // originally a hashmap but I can't cleanly get return values.
+        switch(c)
+        {
+            case 'A':
+                out.println("Factorial: " + comFunc.Fact(x));
+                break;
+            case 'I':
+                out.println("Fibonacci: " + comFunc.Fibonacci(x));
+                break;
+            case 'C':
+                out.println("Collatz: " + comFunc.collatz(x));
+                break;
+            case 'S':
+                out.println("Sums of Numbers: " + comFunc.SumOfNumbs(x));
+                break;
+            default:
+                out.println("Invalid input. Falling back on Factorial.");
+                out.println("Factorial: " + comFunc.Fact(x));
+                break;
+        }
 
         System.out.println("Loop? Y/N");
         in = scan.nextLine(); in = in.toUpperCase(); c = in.charAt(0);
@@ -54,18 +67,5 @@ public class RecursionDriver
         else 
             System.out.println("Goodbye!"); // end program
             
-    }
-
-    void Awake()
-    {
-        options.put('N', () -> comFunc.sumOfNumbs(x));
-        options.put('I', () -> comFunc.Fibonacci(x)); 
-        options.put('A', () -> comFunc.Fact(x));
-        options.put('C', () -> comFunc.collatz(x));
-    }
-
-    void tab()
-    {
-
     }
 }
