@@ -6,7 +6,7 @@ import GridWorld.Objects.Rock;
 import GridWorld.Viewport.Grid;
 
 // create class "ZBug" that extends "Bug"
-public class ZBug extends Bug
+public class ZBug extends JumpBug
 {
     int width = 3;
     int height = (width * 5/3);

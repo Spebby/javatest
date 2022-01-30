@@ -29,6 +29,7 @@ public class comFunc
 
     /**
      * @deprecated This method can return unrespected results. Double Factorials are usually not used.
+     * @param num : Number of iterations.
      */
     public static double Fact(double num) 
     {

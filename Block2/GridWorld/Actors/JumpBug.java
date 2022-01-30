@@ -13,8 +13,6 @@
  * @author Cay Horstmann */
  
 package GridWorld.Actors;
-//import info.gridworld.grid.Grid;
-//import info.gridworld.grid.Location;
 import java.awt.Color;
 
 import GridWorld.Core.Location;
@@ -22,83 +20,66 @@ import GridWorld.Objects.Flower;
 import GridWorld.Viewport.Grid;
 
 // A Bug is an actor that can move and turn. It drops flowers as it moves.
-public class Bug extends Actor
+public class JumpBug extends Bug
 {
     Grid<Actor> gr = getGrid();
     Location loc = getLocation();
 
     // Overload
-    public Bug()
+    public JumpBug()
     {
         setColor(Color.RED);
     }
-    public Bug(Color bugColor)
+    public JumpBug(Color bugColor)
     {
         setColor(bugColor);
     }
 
     /**
     * Called every step. <p>
-    * If the Bug can move, it moves. If it can't, it turns.
+    * If the Bug can move, it moves. If it can't, it tries to Jump, if that fails, it turns.
     */
     public void act()
     {
         if (canMove())
             move();
+        else if(canJump())
+            jump();
         else
             turn();
     }
 
-    /**
-    * Turns the bug 90 degrees to the right without changing its location. <p>
-    * <b>Overload Avaliable.</b>
-    */
-    public void turn()
-    {
-        setDirection(getDirection() + Location.HALFRIGHT);
-    }
-    /**
-    * Turns the bug the inputed degrees to the left without changing its location.
-    * @param degrees the number of degrees to turn the bug to the left.
-    */
-    public void turn(int degrees)
-    {
-        setDirection(getDirection() + degrees);
-    }
-
-    /**
-    * Moves the bug forward, putting a flower into the location it previously occupied.
-    */
-    public void move()
+    public void jump()
     {
         if (gr == null)
             return;
             
         Location next = loc.getAdjacentLocation(getDirection());
-        if (gr.isValid(next))
-            moveTo(next);
+        Location next2 = next.getAdjacentLocation(getDirection()); // this is stupid but im lazy rn
+        if (gr.isValid(next2))
+            moveTo(next2);
         else
             removeSelfFromGrid();
         Flower flower = new Flower(getColor());
         flower.putSelfInGrid(gr, loc);
     }
 
-    /**
-    * Tests whether this bug can move forward into a location that is empty or contains a flower.
-    * @return true if this bug can move.
-    */
-    public boolean canMove()
+    public boolean canJump()
     {
         if (gr == null) 
             return false;
-
+        
         Location next = loc.getAdjacentLocation(getDirection());
+        Location next2 = next.getAdjacentLocation(getDirection()); // this is stupid but im lazy rn
+        if(!gr.isValid(next2))
+        {
+            jump();
+            return true;
+        }
         if (!gr.isValid(next))
             return false;
-        
+            
         Actor neighbor = gr.get(next);
         return (neighbor == null) || (neighbor instanceof Flower);
-        // ok to move into empty location or onto flower
-        // not ok to move onto any other actor
     }
 }

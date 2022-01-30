@@ -9,7 +9,7 @@ import java.awt.Color;
 import GridWorld.Core.Location;
 import GridWorld.Viewport.Grid;
 
-public class SpiralBug extends Bug
+public class SpiralBug extends JumpBug
 {
     boolean attemptTurnAgain = false;
     int _turnAgain = 0;
@@ -109,6 +109,7 @@ public class SpiralBug extends Bug
                 moveCounter--;
         }
     }
+    
     public void turn()
     {
         setDirection(getDirection() + Location.RIGHT);

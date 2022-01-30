@@ -23,7 +23,7 @@ import GridWorld.Objects.Rock;
  * populated locations to invoke methods on their occupants.
  * To build your own worlds, define your own actors and a runner class. See the
  * BoxBugRunner (in the boxBug folder) for an example. */
-public class Driver
+public class BugDriver
 {
     public static void main(String[] args)
     {
@@ -32,10 +32,12 @@ public class Driver
         Bug bob = new Bug();
         BoxBug boxxy = new BoxBug();
         SpiralBug spugsy = new SpiralBug();
+        JumpBug juggy = new JumpBug();
         //ZBug zuggy = new ZBug();
         world.add(bob);
         world.add(boxxy);
         world.add(spugsy, spugsy.getLocation());
+        world.add(juggy);
         //world.add(zuggy);
         
         Rock rocker = new Rock();
