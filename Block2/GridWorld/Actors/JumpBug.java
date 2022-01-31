@@ -25,7 +25,7 @@ public class JumpBug extends Bug
     // Overload
     public JumpBug()
     {
-        setColor(Color.RED);
+        setColor(new Color(230, 230, 250)); // lavender
     }
     public JumpBug(Color bugColor)
     {

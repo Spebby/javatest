@@ -36,7 +36,7 @@ public class BugDriver
         //ZBug zuggy = new ZBug();
         world.add(bob);
         world.add(boxxy);
-        world.add(spugsy, spugsy.getLocation());
+        world.add(spugsy);
         world.add(juggy);
         //world.add(zuggy);
         

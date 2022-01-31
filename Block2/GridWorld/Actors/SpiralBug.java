@@ -11,8 +11,7 @@ import GridWorld.Viewport.Grid;
 
 public class SpiralBug extends JumpBug
 {
-    boolean attemptTurnAgain = false;
-    int _turnAgain = 0;
+    int _turnCounter = 0;
     int moveCounter = 9;
     int movesAllowed = 9;
 
@@ -63,51 +62,57 @@ public class SpiralBug extends JumpBug
 
     public void act()
     {
-        if(canMove())
+        turnCheck();
+
+        if(canMove() && _turnCounter <= 4)
             move();
+        else if(canJump() && _turnCounter <= 4 && moveCounter <= 1)
+            jump();
         else
             turn();
     }
 
     public void move()
     {
+        super.move();
+        moveCounter--;
+    }
+
+    public void jump()
+    {
         Grid<Actor> gr = getGrid();
-        if(gr == null)
+        if (gr == null)
             return;
+        
         Location loc = getLocation();
         Location next = loc.getAdjacentLocation(getDirection());
-        
-        if(attemptTurnAgain && gr.isValid(loc.getAdjacentLocation(Location.LEFT)))
-        {
-            attemptTurnAgain = false;
-            turn(Location.LEFT);
-            _turnAgain = 2;
-        }
-
-        // if rock is in the way, try to move around it.
-        if(!gr.isValid(next))
-        {
-            if(_turnAgain > 0)
-                _turnAgain = 0;
-            
-            attemptTurnAgain = true;
-            turn();
-            return;
+        Location next2 = next.getAdjacentLocation(getDirection()); // this is stupid but im lazy rn
+        if (gr.isValid(next2) && moveCounter > 2)
+            moveTo(next2);
+        else if(moveCounter >= 2 && gr.isValid(next2.getAdjacentLocation(getDirection() + Location.HALFRIGHT)))
+        {    
+            _turnCounter++;
+            turnCheck();
+            moveTo(next2.getAdjacentLocation(getDirection() + Location.HALFRIGHT));
         }
         else
-        {
-            if(_turnAgain == 0 && !attemptTurnAgain)
-            {
-                if(gr.isValid(loc.getAdjacentLocation(Location.LEFT)))
-                    turn(Location.LEFT);
+            removeSelfFromGrid();
+    }
 
-                return;
-            }
-            moveTo(next);
-            _turnAgain--;
-            if(_turnAgain == 0 || !attemptTurnAgain)
-                moveCounter--;
-        }
+    public boolean canJump()
+    {
+        Grid<Actor> gr = getGrid();
+        if (gr == null) 
+            return false;
+        
+        Location loc = getLocation();
+        Location next = loc.getAdjacentLocation(getDirection());
+        Location next2 = next.getAdjacentLocation(getDirection()); // this is stupid but im lazy rn
+        if(!gr.isValid(next2))
+            return false;
+            
+        Actor neighbor = gr.get(next2);
+        return (neighbor == null);
     }
     
     public void turn()
@@ -117,5 +122,15 @@ public class SpiralBug extends JumpBug
     public void turn(int direction)
     {
         setDirection(getDirection() + direction);
+    }
+
+    void turnCheck()
+    {
+        if(_turnCounter <= 4 && movesAllowed > 0)
+        {
+            _turnCounter = 0;
+            movesAllowed--;
+            moveCounter = movesAllowed;
+        }
     }
 }
