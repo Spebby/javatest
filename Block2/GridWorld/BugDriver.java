@@ -43,7 +43,7 @@ public class BugDriver
         //world.add(zuggy);
         
         Rock rocker = new Rock();
-        world.add(rocker, new Location(5, 5));
+        world.add(rocker);
     
         world.show();
     }
