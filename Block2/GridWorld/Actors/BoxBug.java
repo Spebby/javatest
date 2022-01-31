@@ -44,6 +44,7 @@ public class BoxBug extends Bug
         else 
             turn();
     }
+    
     public void move() 
     {
         Grid<Actor> gr = getGrid();

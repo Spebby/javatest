@@ -22,9 +22,6 @@ import GridWorld.Viewport.Grid;
 // A Bug is an actor that can move and turn. It drops flowers as it moves.
 public class JumpBug extends Bug
 {
-    Grid<Actor> gr = getGrid();
-    Location loc = getLocation();
-
     // Overload
     public JumpBug()
     {
@@ -51,9 +48,11 @@ public class JumpBug extends Bug
 
     public void jump()
     {
+        Grid<Actor> gr = getGrid();
         if (gr == null)
             return;
-            
+        
+        Location loc = getLocation();
         Location next = loc.getAdjacentLocation(getDirection());
         Location next2 = next.getAdjacentLocation(getDirection()); // this is stupid but im lazy rn
         if (gr.isValid(next2))
@@ -66,20 +65,17 @@ public class JumpBug extends Bug
 
     public boolean canJump()
     {
+        Grid<Actor> gr = getGrid();
         if (gr == null) 
             return false;
         
+        Location loc = getLocation();
         Location next = loc.getAdjacentLocation(getDirection());
         Location next2 = next.getAdjacentLocation(getDirection()); // this is stupid but im lazy rn
         if(!gr.isValid(next2))
-        {
-            jump();
-            return true;
-        }
-        if (!gr.isValid(next))
             return false;
             
-        Actor neighbor = gr.get(next);
+        Actor neighbor = gr.get(next2);
         return (neighbor == null) || (neighbor instanceof Flower);
     }
 }
