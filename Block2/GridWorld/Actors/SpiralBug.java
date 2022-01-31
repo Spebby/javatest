@@ -58,11 +58,10 @@ public class SpiralBug extends JumpBug
             moveCounter -= 2;
             moveTo(next2);
         }
-        else if(moveCounter >= 2 && gr.isValid(next2.getAdjacentLocation(getDirection() + Location.HALFRIGHT)))
+        else if(moveCounter == 1 && gr.isValid(next.getAdjacentLocation(getDirection() + Location.RIGHT)))
         {
-            _turnCounter++;
-            spiralCheck();
-            moveTo(next2.getAdjacentLocation(getDirection() + Location.HALFRIGHT));
+            moveTo(next.getAdjacentLocation(getDirection() + Location.RIGHT));
+            turn();
         }
         else
             removeSelfFromGrid();
