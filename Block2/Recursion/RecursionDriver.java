@@ -21,7 +21,7 @@ public class RecursionDriver
     void Input()
     {
         System.out.print("Programs available: "); 
-        Print.PrintGenericList(appList);
+        Print.PrintList(appList);
 
         out.println(); System.out.print("Enter a number: ");
         x = scan.nextInt(); String in = scan.nextLine(); // java bug workaround

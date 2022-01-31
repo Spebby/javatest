@@ -2,7 +2,7 @@ package Common;
 
 public class Print 
 {
-    public static <T> void PrintGenericList(T[] array)
+    public static <T> void PrintList(T[] array)
     {
         int j = array.length;
 
@@ -15,7 +15,7 @@ public class Print
         }
     }
 
-    public static void PrintIntList(int[] array)
+    public static void PrintList(int[] array)
     {
         int j = array.length - 1;
 

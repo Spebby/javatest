@@ -24,7 +24,7 @@ public class SortMaster extends HashCommand
         int size = scan.nextInt(); in = scan.nextLine(); // java bug workaround
         list = ListGenerator.GenerateList(size);
 
-        System.out.print("Programs available: "); Print.PrintGenericList(appName);
+        System.out.print("Programs available: "); Print.PrintList(appName);
 
         System.out.println(); System.out.print("Input your choice: ");
         in = scan.nextLine(); in = in.toUpperCase();
@@ -35,7 +35,7 @@ public class SortMaster extends HashCommand
 
         int steps = list[list.length - 1];
         System.out.println("This sort took " + steps + " steps to sort " + (list.length - 1) + " numbers");
-        Print.PrintIntList(list);
+        Print.PrintList(list);
     }
 
     void Awake()
