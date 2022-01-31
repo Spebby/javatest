@@ -11,6 +11,7 @@ import GridWorld.Viewport.Grid;
 
 public class SpiralBug extends JumpBug
 {
+    int requiredTurns = 2;
     int _turnCounter = 0;
     int moveCounter = 9;
     int movesAllowed = 9;
@@ -18,56 +19,21 @@ public class SpiralBug extends JumpBug
     public SpiralBug()
     {
         super(Color.GREEN);
-        switch((int)(Math.random() * 4)) {
-            case 0:
-                setLocation(Location.TOPRIGHT); 
-                setDirection(Location.SOUTH);
-                break;
-            case 1:
-                setLocation(Location.TOPLEFT); 
-                setDirection(Location.EAST);
-                break;
-            case 2:
-                setLocation(Location.BOTTOMRIGHT); 
-                setDirection(Location.EAST);
-                break;
-            case 3:
-                setLocation(Location.BOTTOMLEFT); 
-                setDirection(Location.NORTH);
-                break;
-        }
     }
     public SpiralBug(Color bugColor)
     {
         super(bugColor);
-        switch((int)(Math.random() * 4)) {
-            case 0:
-                setLocation(Location.TOPRIGHT); 
-                setDirection(Location.SOUTH);
-                break;
-            case 1:
-                setLocation(Location.TOPLEFT); 
-                setDirection(Location.EAST);
-                break;
-            case 2:
-                setLocation(Location.BOTTOMRIGHT); 
-                setDirection(Location.EAST);
-                break;
-            case 3:
-                setLocation(Location.BOTTOMLEFT); 
-                setDirection(Location.NORTH);
-                break;
-        }
     }
 
     public void act()
     {
-        turnCheck();
-
-        if(canMove() && _turnCounter <= 4)
+        if(canMove() && moveCounter > 0)
             move();
-        else if(canJump() && _turnCounter <= 4 && moveCounter <= 1)
+        else if(canJump() && moveCounter > 0)
+        {
+            System.out.println("Attempt jump.");
             jump();
+        }
         else
             turn();
     }
@@ -87,12 +53,15 @@ public class SpiralBug extends JumpBug
         Location loc = getLocation();
         Location next = loc.getAdjacentLocation(getDirection());
         Location next2 = next.getAdjacentLocation(getDirection()); // this is stupid but im lazy rn
-        if (gr.isValid(next2) && moveCounter > 2)
+        if (gr.isValid(next2) && moveCounter > 1)
+        {
+            moveCounter -= 2;
             moveTo(next2);
+        }
         else if(moveCounter >= 2 && gr.isValid(next2.getAdjacentLocation(getDirection() + Location.HALFRIGHT)))
-        {    
+        {
             _turnCounter++;
-            turnCheck();
+            spiralCheck();
             moveTo(next2.getAdjacentLocation(getDirection() + Location.HALFRIGHT));
         }
         else
@@ -117,20 +86,27 @@ public class SpiralBug extends JumpBug
     
     public void turn()
     {
+        _turnCounter++;
+        spiralCheck();
         setDirection(getDirection() + Location.RIGHT);
     }
     public void turn(int direction)
     {
+        _turnCounter++;
+        spiralCheck();
         setDirection(getDirection() + direction);
     }
 
-    void turnCheck()
+    void spiralCheck()
     {
-        if(_turnCounter <= 4 && movesAllowed > 0)
+        if(_turnCounter > requiredTurns && movesAllowed > 0)
         {
+            if(requiredTurns == 2)
+                requiredTurns--;
+
             _turnCounter = 0;
             movesAllowed--;
-            moveCounter = movesAllowed;
         }
+        moveCounter = movesAllowed;
     }
 }

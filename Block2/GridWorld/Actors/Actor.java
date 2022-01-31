@@ -50,15 +50,7 @@ public class Actor
             direction += Location.FULLCIRCLE;
     }
     public Location getLocation() 
-        { return location; }
-    public void setLocation(Vector2Int loc)
-        { 
-            Location newLoc = new Location(loc.x, loc.y);
-            Grid<Actor> gr = getGrid();
-            if (gr == null)
-                return;
-            gr.put(newLoc, this);
-        }
+    { return location; }
 
     public Grid<Actor> getGrid() 
         { return grid; }
@@ -95,6 +87,15 @@ public class Actor
         location = null;
     }
 
+    public void moveTo(Vector2Int loc)
+    { 
+        Location newLoc = new Location(loc.x, loc.y);
+        Grid<Actor> gr = getGrid();
+        if (gr == null)
+            return;
+            
+        moveTo(newLoc);
+    }
     // Moves this actor to a new location. If there is another actor at the given location, it is removed.
     public void moveTo(Location newLocation)
     {

@@ -14,6 +14,7 @@
 
 package GridWorld;
 import GridWorld.Actors.ActorWorld;
+import GridWorld.Core.Location;
 import GridWorld.Actors.*;
 import GridWorld.Objects.Rock;
 
@@ -33,15 +34,16 @@ public class BugDriver
         BoxBug boxxy = new BoxBug();
         SpiralBug spugsy = new SpiralBug();
         JumpBug juggy = new JumpBug();
-        //ZBug zuggy = new ZBug();
+        ZBug zuggy = new ZBug();
         world.add(bob);
         world.add(boxxy);
-        world.add(spugsy);
+        world.add(spugsy, new Location(9, 9));
+        spugsy.setDirection(Location.WEST);
         world.add(juggy);
         //world.add(zuggy);
         
         Rock rocker = new Rock();
-        world.add(rocker);
+        world.add(rocker, new Location(5, 5));
     
         world.show();
     }

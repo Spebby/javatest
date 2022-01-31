@@ -33,8 +33,8 @@ public class ActorWorld extends World<Actor>
 
     }
 
-    /* Constructs an actor world with a given grid.
-     * @param grid the grid for this world. */
+    /** Constructs an actor world with a given grid.
+      * @param grid the grid for this world. */
     public ActorWorld(Grid<Actor> grid)
     {
         super(grid);
@@ -62,32 +62,36 @@ public class ActorWorld extends World<Actor>
         }
     }
 
-    /* Adds an actor to this world at a given location.
+    /** Adds an actor to this world at a given location.
      * @param loc the location at which to add the actor
      * @param occupant the actor to add */
     public void add(Location loc, Actor occupant)
     {
-        occupant.putSelfInGrid(getGrid(), loc);
+        if(loc != null)
+            occupant.putSelfInGrid(getGrid(), loc);
     }
 
-    /* Adds an occupant at a random empty location.
-     * @param occupant the occupant to add */
+    /** Adds an occupant at a random empty location.
+      * @param occupant the occupant to add. */
     public void add(Actor occupant)
     {
         Location loc = getRandomEmptyLocation();
         if(loc != null)
             add(loc, occupant);
     }
+    /** Adds an occupant at a random empty location.
+      * @param occupant the occupant to add 
+      * @param loc the location on the board. */
     public void add(Actor occupant, Location loc)
     {
         if(loc != null)
             add(loc, occupant);
     }
 
-    /* Removes an actor from this world.
-     * @param loc the location from which to remove an actor
-     * @return the removed actor, or null if there was no actor at the given
-     * location. */
+    /** Removes an actor from this world.
+      * @param loc the location from which to remove an actor
+      * @return the removed actor, or null if there was no actor at the given
+      * location. */
     public Actor remove(Location loc)
     {
         Actor occupant = getGrid().get(loc);
