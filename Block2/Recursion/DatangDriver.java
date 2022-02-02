@@ -2,7 +2,6 @@ package Recursion;
 
 import static java.lang.System.out; 
 import java.util.Scanner;
-import Common.Datang;
 import Common.comFunc;
 
 public class DatangDriver 
@@ -10,9 +9,18 @@ public class DatangDriver
     public static void main(String[] args)
     {
         Scanner scan = new Scanner(System.in);
-        out.println("Enter a word: ");
-        String palin = scan.nextLine();
-        out.println("Is " + palin + " a Palindrome? : " + Datang.Palindrome(comFunc.spaceRemover(palin)));
+
+        // Palindrome
+        out.print("Enter a String: "); String input = scan.nextLine();
+        String _word = comFunc.spaceRemover(input);
+        out.println("Is " + input + " a Palindrome? : " + comFunc.Palindrome(_word));
+
+
+        // Alphabetical
+        out.print(input + " is ");
+        if(!comFunc.AlphaCheck(_word)) 
+            out.print("not ");
+        out.println("Alphabetical.");
 
         scan.close();
     }

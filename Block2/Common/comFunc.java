@@ -2,10 +2,8 @@ package Common;
 
 public class comFunc
 {
-    /**
-    * @param "Number of iterations."
-    * @return "The product of the first x Integers."
-    */
+    /** @param x : Number of iterations.
+      * @return The product of the first {@code x} Integers. */
     public static int SumOfNumbs(int x)
     {
         if(x == 1)
@@ -13,10 +11,8 @@ public class comFunc
         else
             return x + SumOfNumbs(x - 1);
     }
-    /**
-    * @param "Location on the in the Fibonacci Sequence."
-    * @return "The Fibonacci number at the location."
-    */
+    /** @param location on the in the Fibonacci Sequence.
+      * @return The Fibonacci number at the {@code location}. */
     public static int Fibonacci(int location)
     {
         if(location == 1)
@@ -27,10 +23,8 @@ public class comFunc
             return Fibonacci(location - 1) + Fibonacci(location - 2);
     }
 
-    /**
-     * @deprecated This method can return unrespected results. Double Factorials are usually not used.
-     * @param num : Number of iterations.
-     */
+    /** @deprecated This method can return unrespected results. Double Factorials are usually not used.
+      * @param num : {@code Number} of iterations. */
     public static double Fact(double num) 
     {
         return num <= 1 ? 1 : num * Fact(num - 1);
@@ -99,17 +93,13 @@ public class comFunc
     }
 
 
-    /**
-     * @param   in    The unclamped Vector.
-     * @param   min   The mininum value of any point.
-     * @param   max   The maximum value of any point.
-     * 
-     * @return  the clamped {@code Vector}.
-     *
-     * @throws  IndexOutOfBoundsException
-     *          if the {@code maximum} argument is smaller or equal to the
-     *          {@code mininum} argument.
-     */
+    /** @param   in    The unclamped Vector.
+      * @param   min   The mininum value of any point.
+      * @param   max   The maximum value of any point.
+      * @return  the clamped {@code Vector}.
+      * @throws  IndexOutOfBoundsException
+      *          if the {@code maximum} argument is smaller or equal to the
+      *          {@code mininum} argument. */
     public static Vector2Int Clamp(Vector2Int in, int min, int max) throws IndexOutOfBoundsException
     {
         if(min >= max)
@@ -127,6 +117,10 @@ public class comFunc
         return in;
     }
 
+    /** Removes the spaces from a String. <P>
+      * ex: Race Car returns as RaceCar.
+      * @param input : The String evaluated.
+      * @return the {@code Input} without spaces. */
     public static String spaceRemover(String input)
     {
         for(int i = 0; i < input.length(); i++)
@@ -139,5 +133,64 @@ public class comFunc
         }
 
         return input;
+    }
+
+    /** Checks if a String is a Palindrome.
+      * @param input : The String evaluated.
+      * @return true or false. */
+    public static boolean Palindrome(String input)
+    {
+        input = input.toLowerCase();
+        final var first = input.charAt(0);
+        final var last = input.charAt(input.length() - 1);
+
+        if(input.length() > 2)
+        {
+            final var _output = input.substring(1, input.length() - 1);
+            Palindrome(_output);
+        }
+
+        return first == last ? true : false;
+    }
+    /** Checks if a Char Array is a Palindrome. <P>
+      * <b> Overload </b>
+      * @param input : The Char Array evaluated.
+      * @return true or false. */
+    public static boolean Palindrome(char[] input)
+    {
+        String str = input.toString();
+        Palindrome(str);
+        return false; // never can return false
+    }
+    
+
+    /** Checks if a String is in Alphabetical order.
+      * @param input : The String evaluated.
+      * @return true or false. */
+    public static boolean AlphaCheck(String input)
+    {
+        input = input.toLowerCase();
+        final var first = input.charAt(0);
+        final var second = input.charAt(1);
+        // A = 65, B = 66
+        boolean x = first < second ? true : false; 
+
+        if(x && input.length() > 2)
+        {
+            final var _output = input.substring(1);
+            AlphaCheck(_output);
+        }
+
+        return x;
+    }
+    /** Checks if a Char Array is in Alphabetical order. <P>
+      * <b> Overload </b>
+      * @param input : The Char Array evaluated.
+      * @return true or false. */
+    public static boolean AlphaCheck(char[] input)
+    {
+        String str = input.toString();
+        AlphaCheck(str);
+        return false; // never can return false
     }
 }
