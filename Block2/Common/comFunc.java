@@ -126,4 +126,18 @@ public class comFunc
 
         return in;
     }
+
+    public static String spaceRemover(String input)
+    {
+        for(int i = 0; i < input.length(); i++)
+        {
+            if(input.charAt(i) == ' ')
+            {
+                input = input.substring(0, i) + input.substring(i + 1);
+                i--;
+            }
+        }
+
+        return input;
+    }
 }
