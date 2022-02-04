@@ -22,6 +22,10 @@ public class DatangDriver
             out.print("not ");
         out.println("Alphabetical.");
 
+        // Datang
+        out.println("Enter a number: "); int n = scan.nextInt();
+        DatangDisk.Datang(n);
+
         scan.close();
     }
 }
