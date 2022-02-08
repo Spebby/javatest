@@ -1,6 +1,6 @@
 package ArraysOfLight;
 
-public class Food 
+public class Food extends Entity
 {
     
 }
