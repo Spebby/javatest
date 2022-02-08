@@ -10,9 +10,14 @@ public class DatangDriver
     {
         Scanner scan = new Scanner(System.in);
 
+        // Datang
+        out.println("Enter a number: "); int n = scan.nextInt();
+        DatangDisk.Datang(n);
+        String _word = scan.nextLine(); // clear buffer
+
         // Palindrome
         out.print("Enter a String: "); String input = scan.nextLine();
-        String _word = comFunc.spaceRemover(input);
+        _word = comFunc.spaceRemover(input);
         out.println("Is " + input + " a Palindrome? : " + comFunc.Palindrome(_word));
 
 
@@ -21,10 +26,6 @@ public class DatangDriver
         if(!comFunc.AlphaCheck(_word)) 
             out.print("not ");
         out.println("Alphabetical.");
-
-        // Datang
-        out.println("Enter a number: "); int n = scan.nextInt();
-        DatangDisk.Datang(n);
 
         scan.close();
     }
