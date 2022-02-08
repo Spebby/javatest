@@ -55,8 +55,13 @@ public class GameBoard
       * @return The entity at the given position. */
     public void moveEntity(Vector2Int from, Vector2Int to)
     {
-        if(getEntity(to) == Food.class)
+        // if an entity is already at the desired position, return
+        if(!(getEntity(to) instanceof Food))
             return;
+        // but if that entity is food, and the moving entity is Bacteria, eat the food
+        else if(getEntity(from) instanceof Bacteria)
+            ((Bacteria) getEntity(from)).eat((Food) getEntity(to));
+        
         board[to.x][to.y] = board[from.x][from.y];
         board[from.x][from.y] = null;
     }
