@@ -159,8 +159,7 @@ public class comFunc
     public static boolean Palindrome(char[] input)
     {
         String str = input.toString();
-        Palindrome(str);
-        return false; // never can return false
+        return Palindrome(str);
     }
     
 
@@ -190,7 +189,6 @@ public class comFunc
     public static boolean AlphaCheck(char[] input)
     {
         String str = input.toString();
-        AlphaCheck(str);
-        return false; // never can return false
+        return AlphaCheck(str);
     }
 }

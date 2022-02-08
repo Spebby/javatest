@@ -1,9 +1,10 @@
 package ArraysOfLight;
-import javax.swing.text.Position;
 
 import Common.Vector2Int;
 
-public class Entity 
+public abstract class Entity 
 {
     Vector2Int position = new Vector2Int();
+
+    public abstract void Logic();
 }
