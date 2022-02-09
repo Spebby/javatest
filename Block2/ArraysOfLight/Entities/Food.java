@@ -1,4 +1,4 @@
-package ArraysOfLight;
+package ArraysOfLight.Entities;
 
 public class Food extends Entity
 {

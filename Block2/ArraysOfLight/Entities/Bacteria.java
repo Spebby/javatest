@@ -1,4 +1,6 @@
-package ArraysOfLight;
+package ArraysOfLight.Entities;
+
+import ArraysOfLight.GameBoard;
 
 public class Bacteria extends Entity
 {
@@ -6,9 +8,12 @@ public class Bacteria extends Entity
 
     public int health;
     public int maxHealth;
+    public int damage; // amount of damage the bacteria deals
 
-    public boolean isAlive;
+    public boolean isAlive = true;
     boolean isStarving;
+    boolean inCombat;
+    boolean shouldFlee;
     int fights; // the number of fights the bacteria has had
 
     public Bacteria(int health) 
@@ -20,30 +25,42 @@ public class Bacteria extends Entity
     {
         this.maxHealth = health;
         this.health = health;
+
+        if(fights > 0 && (int)Math.random() * 10 >= 9)
+            this.fights = fights;
+        else
+            this.fights = 0;
     }
 
     public void Logic()
     {
-        if(health <= 0)
-            die();
+        if(isStarving && inCombat)
+            shouldFlee = true;
 
         if(isStarving)
             health -= (int)maxHealth/6;
+
+        if(health <= 0)
+        {
+            Die();
+            return;
+        }
+        
             // this makes starvation an equal threat to all bacteria, regardless of health.
     }
 
-    public void takeDamage(int damage) 
+    public void TakeDamage(int damage) 
     {
         this.health -= damage;
     }
 
-    public void eat(Food food) 
+    public void Eat(Food food) 
     {
         this.health = maxHealth;
         GameBoard.removeEntity(food);
     }
 
-    public void die()
+    public void Die()
     {
         isAlive = false;
         GameBoard.removeEntity(position);
@@ -51,7 +68,7 @@ public class Bacteria extends Entity
 
     public void reproduce()
     {
-        die();
+        Die();
         GameBoard.addEntity(new Bacteria(maxHealth), this.position);
     }
 }

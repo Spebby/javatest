@@ -1,4 +1,6 @@
 package ArraysOfLight;
+
+import ArraysOfLight.Entities.*;
 import Common.Vector2Int;
 
 public class GameBoard 
@@ -81,7 +83,7 @@ public class GameBoard
       return;
     // but if that entity is food, and the moving entity is Bacteria, eat the food
     else if(getEntity(from) instanceof Bacteria)
-      ((Bacteria) getEntity(from)).eat((Food) getEntity(to));
+      ((Bacteria) getEntity(from)).Eat((Food) getEntity(to));
         
     board[to.x][to.y] = board[from.x][from.y];
     board[from.x][from.y] = null;
