@@ -25,9 +25,7 @@ public class Bacteria extends Entity
     public void Logic()
     {
         if(health <= 0)
-        {
             die();
-        }
 
         if(isStarving)
             health -= (int)maxHealth/6;
@@ -42,6 +40,7 @@ public class Bacteria extends Entity
     public void eat(Food food) 
     {
         this.health = maxHealth;
+        GameBoard.removeEntity(food);
     }
 
     public void die()
