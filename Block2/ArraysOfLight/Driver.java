@@ -14,6 +14,16 @@ public class Driver
         String _fileName = scan.nextLine();
         new BacteriaSpawner(_fileName);
 
+        while(GameBoard.Generation < 5)
+        {
+            out.println("Generation: " + GameBoard.Generation);
+            
+            GameBoard.Generation();
+            PrintPetri.PrintDish(GameBoard.board);
+            
+            GameBoard.Generation++;
+        }
+
         scan.close();
     }
 }

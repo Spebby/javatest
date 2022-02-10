@@ -6,6 +6,14 @@ public class GameBoard
   public static int Generation = 0;
   public static Entity[][] board = new Entity[19][19];
 
+  public static void Generation()
+  {
+    
+    Generation++;
+  }
+
+
+
   /** Adds an enetiy to the board at the given position.
     * @param entity : The entity to be added.
     * @param position : The position for the entity to be added. */

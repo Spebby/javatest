@@ -27,4 +27,20 @@ public class Print
                 System.out.print(array[i]);
         }
     }
+
+    public static void PrintRow(int[] row) 
+    {
+        for (int i : row) 
+        {
+            System.out.print(i);
+            System.out.print("\t");
+        }
+        System.out.println();
+    }
+
+    public static void PrintTable(int[][] array)
+    {
+        for(int[] row : array)
+            PrintRow(row);
+    }
 }
