@@ -6,13 +6,7 @@ public class Bacteria extends Entity
 {
     public void Logic()
     {
-        if(GetNeighbors() < 2)
-        {
-            removeEntity(this);
-            return;
-        }
-
-        if(GetNeighbors() > 3)
+        if(GetNeighbors() < 2 || GetNeighbors() > 3)
         {
             removeEntity(this);
             return;

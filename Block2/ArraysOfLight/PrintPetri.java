@@ -11,6 +11,7 @@ public class PrintPetri
             else
                 System.out.print(' ');
         }
+        System.out.println();
     }
 
     public static void PrintDish(Entity[][] array)

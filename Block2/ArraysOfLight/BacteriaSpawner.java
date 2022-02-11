@@ -8,11 +8,11 @@ import Common.Vector2Int;
 
 public final class BacteriaSpawner 
 {
-    public BacteriaSpawner(String fileName)
+    public BacteriaSpawner()
     {
         try
         {
-            Scanner scan = new Scanner(new File(fileName + ".txt"));
+            Scanner scan = new Scanner(new File("ArraysOfLight/life100.txt"));
             while(scan.hasNext())
             {
                 String line = scan.nextLine();
