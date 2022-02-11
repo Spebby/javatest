@@ -5,9 +5,22 @@ public class GameBoard
 {
   public static int Generation = 0;
   public static Entity[][] board = new Entity[20][20];
+  public static Vector2Int[][] eggs = new Vector2Int[20][20];
 
-  public static void Generation()
+  public void Iteration()
   {
+    // spawns bacteria at the beginning of each generation. skipped gen 0 & 1
+    if(Generation > 1)
+      for (int row = 0; row < eggs.length; row++)
+      {
+        for (int col = 0; col < eggs[row].length; col++)
+        {
+          Vector2Int pos = eggs[row][col];
+          if (pos != null)
+            addEntity(new Bacteria(), pos);
+        }
+      }
+
     // loop through every element of the board
     for (int row = 0; row < board.length; row++)
     {
@@ -19,9 +32,9 @@ public class GameBoard
 
         if(empty)
         {
-          if(GetNeighbors(pos) == 2)
-            addEntity(new Bacteria(), pos);
-          System.out.println(pos.x + " " + pos.y);
+          if(GetNeighbors(pos) == 3)
+            eggs[row][col] = pos;
+          //System.out.println(pos.x + " " + pos.y);
           
           break;
         }

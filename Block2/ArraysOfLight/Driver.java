@@ -6,7 +6,7 @@ public class Driver
 {
     public static void main(String[] args) throws InterruptedException
     {
-        new GameBoard();
+        GameBoard gm = new GameBoard();
         new BacteriaSpawner();
 
         // Prints the initial state of the board.
@@ -23,7 +23,7 @@ public class Driver
             out.println("Generation: " + GameBoard.Generation);
             out.println("---------------------");
             
-            GameBoard.Generation();
+            gm.Iteration();
             PrintPetri.PrintDish(GameBoard.board);
             Thread.sleep(4000);
             out.println();
