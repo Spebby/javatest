@@ -5,17 +5,23 @@ import static ArraysOfLight.GameBoard.*;
 
 public abstract class Entity 
 {
-    Vector2Int pos = new Vector2Int();
+    protected Vector2Int pos = new Vector2Int();
+
+    public Entity(Vector2Int pos)
+    {
+        this.pos = pos;
+    }
 
     public abstract void Logic();
-    public int GetNeighbors()
+    protected int GetNeighbors()
     {
         int neighbors = 0;
         for(int x = pos.x - 1; x <= pos.x + 1; x++)
         {
             for(int y = pos.y - 1; y <= pos.y + 1; y++)
             {
-                if(getEntity(x, y) != null)
+                boolean isValid = (getEntity(x, y) != null) && (x != pos.x || y != pos.y);
+                if(isValid)
                     neighbors++;
             }
         }

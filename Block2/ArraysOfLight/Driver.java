@@ -9,22 +9,14 @@ public class Driver
         GameBoard gm = new GameBoard();
         new BacteriaSpawner();
 
-        // Prints the initial state of the board.
-        out.println("Generation: " + GameBoard.Generation);
-        out.println("---------------------");
-        PrintPetri.PrintDish(GameBoard.board);
-        // Prepares for the first generation. 
-        GameBoard.Generation++;
-        Thread.sleep(2000);
-        out.println();
-
         while(GameBoard.Generation < 6)
         {
             out.println("Generation: " + GameBoard.Generation);
-            out.println("---------------------");
             
             gm.Iteration();
             PrintPetri.PrintDish(GameBoard.board);
+            //out.println("Eggs: ");
+            //PrintPetri.PrintDish(GameBoard.eggs);
             Thread.sleep(4000);
             out.println();
         }

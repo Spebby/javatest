@@ -9,7 +9,7 @@ public class PrintPetri
             if(row[i] != null)
                 System.out.print('*');
             else
-                System.out.print(' ');
+                System.out.print('-');
         }
         System.out.println();
     }

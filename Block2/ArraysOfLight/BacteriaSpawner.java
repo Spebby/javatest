@@ -36,7 +36,7 @@ public final class BacteriaSpawner
         int x = Integer.parseInt(str.substring(0, space0)) - 1;
         str = comFunc.spaceRemover(str.substring(space0)); // clears spaces.
         int y = Integer.parseInt(str) - 1;
-
-        GameBoard.addEntity(new Bacteria(), new Vector2Int(x, y));
+        Vector2Int pos = new Vector2Int(x, y);
+        GameBoard.addEntity(new Bacteria(pos), GameBoard.board);
     }
 }

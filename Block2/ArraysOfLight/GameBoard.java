@@ -1,25 +1,39 @@
 package ArraysOfLight;
+import java.util.ArrayList;
+
 import Common.Vector2Int;
 
 public class GameBoard 
 {
   public static int Generation = 0;
   public static Entity[][] board = new Entity[20][20];
-  public static Vector2Int[][] eggs = new Vector2Int[20][20];
-
+  public static ArrayList<Vector2Int> marked = new ArrayList<Vector2Int>(); 
+  public static Entity[][] eggs = new Entity[20][20];
+ 
   public void Iteration()
   {
-    // spawns bacteria at the beginning of each generation. skipped gen 0 & 1
-    if(Generation > 1)
+    if(Generation > 0)
+    {
+      while(marked.size() > 0)
+      {
+        Vector2Int pos = marked.get(0);
+        board[pos.x][pos.y] = null;
+
+        marked.remove(0);
+      }
+
       for (int row = 0; row < eggs.length; row++)
       {
-        for (int col = 0; col < eggs[row].length; col++)
+        for (Entity ent : eggs[row])
         {
-          Vector2Int pos = eggs[row][col];
-          if (pos != null)
-            addEntity(new Bacteria(), pos);
+          if(ent != null)
+          {
+            board[row][ent.pos.y] = new Bacteria(ent.pos);
+            eggs[row][ent.pos.y] = null;
+          }
         }
       }
+    }
 
     // loop through every element of the board
     for (int row = 0; row < board.length; row++)
@@ -27,22 +41,19 @@ public class GameBoard
       for (int col = 0; col < board[row].length; col++)
       {
         Entity cell = board[row][col];
-        boolean empty = cell == null;
         Vector2Int pos = new Vector2Int(row, col);
-
-        if(empty)
+        
+        if(cell == null)
         {
           if(GetNeighbors(pos) == 3)
-            eggs[row][col] = pos;
+            eggs[row][col] = new Bacteria(pos);
           //System.out.println(pos.x + " " + pos.y);
-          
-          break;
         }
-
-        //System.out.println("test");
         
         if(cell instanceof Bacteria)
+        {
           cell.Logic();
+        }
       }
     }
     Generation++;
@@ -53,18 +64,18 @@ public class GameBoard
   /** Adds an enetiy to the board at the given position.
     * @param entity : The entity to be added.
     * @param position : The position for the entity to be added. */
-  public static void addEntity(Entity entity, Vector2Int position)
+  public static void addEntity(Entity entity, Entity[][] board)
   {
-    if(getEntity(position) != null)
+    if(getEntity(entity.pos) != null)
       return;
 
-    try { board[position.x][position.y] = entity; }
+    try { board[entity.pos.x][entity.pos.y] = entity; }
     catch (ArrayIndexOutOfBoundsException e) { }
   }
   /** Removes an entity from the board at the given position.
     * @param position : The position of the entity to be removed.
     * @return The entity that was removed. */
-  public static void removeEntity(Vector2Int position)
+  public static void removeEntity(Vector2Int position, Entity[][] board)
   {
     try { board[position.x][position.y] = null; }
     catch (ArrayIndexOutOfBoundsException e) { }
@@ -74,7 +85,7 @@ public class GameBoard
     * @param x : The x position of the entity to be removed.
     * @param y : The y position of the entity to be removed.
     * @return The entity that was removed. */
-  public static void removeEntity(int x, int y)
+  public static void removeEntity(int x, int y, Entity[][] board)
   {
     try { board[x][y] = null; }
     catch (ArrayIndexOutOfBoundsException e) { }
@@ -83,7 +94,7 @@ public class GameBoard
     * <b> Overload </b>
     * @param e : The entity to be removed.
     * @return The entity that was removed. */
-  public static void removeEntity(Entity ent)
+  public static void removeEntity(Entity ent, Entity[][] board)
   {
     try { board[ent.pos.x][ent.pos.y] = null; }
     catch (ArrayIndexOutOfBoundsException e) {}
