@@ -1,4 +1,4 @@
-package ArraysOfLight;
+package ClumpGone;
 
 import static java.lang.System.out;
 import java.util.Scanner;
@@ -8,7 +8,7 @@ public class Driver
     public static void main(String[] args) throws InterruptedException
     {
         GameBoard gm = new GameBoard();
-        new BacteriaSpawner();
+        new BlobSpawner();
         Scanner scan = new Scanner(System.in);
         
         out.print("How many iterations? ");
@@ -21,9 +21,7 @@ public class Driver
             out.println("Generation: " + GameBoard.Generation);
             
             gm.Iteration();
-            PrintPetri.PrintBoard(GameBoard.board);
-            //out.println("Eggs: ");
-            //PrintPetri.PrintDish(GameBoard.eggs);
+            PrintClump.PrintBoard(GameBoard.board);
             Thread.sleep(4000);
             out.println();
         }

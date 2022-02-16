@@ -1,7 +1,6 @@
-package ArraysOfLight;
+package ClumpGone;
 
-
-public class PrintPetri
+public class PrintClump
 {
     public static void PrintRow(Entity[] row)
     {
