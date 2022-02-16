@@ -1,6 +1,7 @@
 package ArraysOfLight;
 
 import static java.lang.System.out;
+import java.util.Scanner;
 
 public class Driver 
 {
@@ -8,8 +9,14 @@ public class Driver
     {
         GameBoard gm = new GameBoard();
         new BacteriaSpawner();
+        Scanner scan = new Scanner(System.in);
+        
+        out.print("How many iterations? ");
+        int iterations = scan.nextInt();
+        out.println();
+        scan.close();
 
-        while(GameBoard.Generation < 6)
+        while(GameBoard.Generation < iterations)
         {
             out.println("Generation: " + GameBoard.Generation);
             
