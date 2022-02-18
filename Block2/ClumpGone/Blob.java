@@ -5,7 +5,6 @@ import Common.Vector2Int;
 
 public class Blob extends Entity
 {
-    public boolean isClump = false;
 
     public Blob(Vector2Int pos)
     {
@@ -14,10 +13,12 @@ public class Blob extends Entity
 
     public void Logic()
     {
-        for (Entity entity : GetNeighbors() ) 
+        removeEntity(this);
+        Entity[] entities = GetNeighbors().toArray(Entity[] :: new);
+        for (int i = 0; i < entities.length; i++)
         {
-            entity.Logic();
-            removeEntity(entity);
-        } 
+            entities[i].Logic();
+            removeEntity(entities[i]);
+        }
     }
 }

@@ -17,24 +17,10 @@ public class Driver
         {
             while(true)
             {
-                // loop through board and print Vector2Int coordinates of all blobs
-                int i = 0;
-                for(Entity[] row : board)
-                {
-                    out.print(i + ": ");
-                    for(Entity ent : row)
-                    {
-                        if(ent != null)
-                            out.print(ent.pos.x + "," + ent.pos.y + " ");
-                    }
-                    i++;
-                    out.println();
-                }
-
                 out.println("Enter Coordinates (X & Y vals): ");
                 int x = scan.nextInt(); int y = scan.nextInt();
                 
-                Vector2Int pos = new Vector2Int(x, y);
+                Vector2Int pos = new Vector2Int(y, x); // sketty mode :(
                 Entity entity = getEntity(pos);
                 if(entity != null)
                     entity.Logic();

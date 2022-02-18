@@ -8,9 +8,9 @@ public class PrintPetri
         for (int i = 0; i < row.length; i++)
         {
             if(row[i] != null)
-                System.out.print('*');
+                System.out.print("* ");
             else
-                System.out.print('-');
+                System.out.print("- ");
         }
         System.out.println();
     }
