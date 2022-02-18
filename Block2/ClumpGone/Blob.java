@@ -1,10 +1,12 @@
 package ClumpGone;
 
-import static ArraysOfLight.GameBoard.*;
+import static ClumpGone.GameBoard.*;
 import Common.Vector2Int;
 
 public class Blob extends Entity
 {
+    public boolean isClump = false;
+
     public Blob(Vector2Int pos)
     {
         super(pos);
@@ -12,10 +14,6 @@ public class Blob extends Entity
 
     public void Logic()
     {
-        if(GetNeighbors() < 2 || GetNeighbors() > 3)
-        {
-            marked.add(pos);
-            return;
-        }
+        
     }
 }

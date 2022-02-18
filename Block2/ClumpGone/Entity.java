@@ -18,7 +18,12 @@ public abstract class Entity
         int neighbors = 0;
         for(int x = pos.x - 1; x <= pos.x + 1; x++)
         {
-
+            for(int y = pos.y - 1; y <= pos.y + 1; y++)
+            {
+                boolean isValid = (getEntity(x, y) != null) && (x != pos.x || y != pos.y);
+                if(isValid)
+                    neighbors++;
+            }
         }
         return neighbors;
     }
