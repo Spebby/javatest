@@ -38,6 +38,6 @@ public final class BlobSpawner
         int y = Integer.parseInt(str) - 1;
         Vector2Int pos = new Vector2Int(x, y);
         
-        GameBoard.addEntity(new Blob(pos), GameBoard.board);
+        GameBoard.addEntity(new Blob(pos));
     }
 }

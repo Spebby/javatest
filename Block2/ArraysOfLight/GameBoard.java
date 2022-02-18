@@ -45,7 +45,7 @@ public class GameBoard
         
         if(cell == null)
         {
-          if(GetNeighbors(pos) == 3)
+          if(GetNeighbors(pos, board) == 3)
             eggs[row][col] = new Bacteria(pos);
           //System.out.println(pos.x + " " + pos.y);
         }
@@ -66,7 +66,7 @@ public class GameBoard
     * @param position : The position for the entity to be added. */
   public static void addEntity(Entity entity, Entity[][] board)
   {
-    if(getEntity(entity.pos) != null)
+    if(getEntity(entity.pos, board) != null)
       return;
 
     try { board[entity.pos.x][entity.pos.y] = entity; }
@@ -103,7 +103,7 @@ public class GameBoard
   /** Gets the entity at the given position.
     * @param position : The position of the entity to be retrieved.
     * @return The entity at the given position. */
-  public static Entity getEntity(Vector2Int position)
+  public static Entity getEntity(Vector2Int position, Entity[][] board)
   {
     try { return board[position.x][position.y]; }
     catch(ArrayIndexOutOfBoundsException e) { return null; }
@@ -113,7 +113,7 @@ public class GameBoard
     * @param x : The x position of the entity to be retrieved.
     * @param y : The y position of the entity to be retrieved.
     * @return The entity at the given position. */
-  public static Entity getEntity(int x, int y)
+  public static Entity getEntity(int x, int y, Entity[][] board)
   {
     try { return board[x][y]; }
     catch(ArrayIndexOutOfBoundsException e) { return null; }
@@ -122,7 +122,7 @@ public class GameBoard
   /** Returns an open position in the immediate radius of the position.
     * @param pos The given position.
     * @return An open space, as a Vector2Int. */
-  public static Vector2Int getOpenSpace(Vector2Int pos)
+  public static Vector2Int getOpenSpace(Vector2Int pos, Entity[][] board)
   {
     for (int i = -1; i <= 1; i++)
     { try
@@ -130,7 +130,7 @@ public class GameBoard
         for (int j = -1; j <= 1; j++)
         { try
           {
-            if(getEntity(pos.x + i, pos.y + j) == null)
+            if(getEntity(pos.x + i, pos.y + j, board) == null)
               return new Vector2Int(pos.x + i, pos.y + j);
           } catch(ArrayIndexOutOfBoundsException e) { continue; }
         }
@@ -143,9 +143,9 @@ public class GameBoard
     * <b> Overload </b>
     * @param entity : The entity to find an open space for.
     * @return An open space, as a Vector2Int. */
-  public static Vector2Int getOpenSpace(Entity entity)
+  public static Vector2Int getOpenSpace(Entity entity, Entity[][] board)
   {
-    try { return getOpenSpace(entity.pos); }
+    try { return getOpenSpace(entity.pos, board); }
     catch(NullPointerException e) { return null; }
   }
 
@@ -153,15 +153,15 @@ public class GameBoard
     * <b> Overload </b>
     * @param entity : The entity that serves as the center of the search.
     * @return The number of surrounding entities. */
-  public static int GetNeighbors(Entity entity)
+  public static int GetNeighbors(Entity entity, Entity[][] board)
   {
-    try { return GetNeighbors(entity.pos) ;} 
+    try { return GetNeighbors(entity.pos, board) ;} 
     catch (NullPointerException e) { return 0; }
   }
   /** Returns the number of surrounding entities.
     * @param pos : The centre of the search.
     * @return The number of surrounding entities. */
-  public static int GetNeighbors(Vector2Int pos)
+  public static int GetNeighbors(Vector2Int pos, Entity[][] board)
   {
     int neighbors = 0;
 
@@ -171,7 +171,7 @@ public class GameBoard
         for(int y = pos.y - 1; y <= pos.y + 1; y++)
         { try
           {
-            if(getEntity(x, y) != null)
+            if(getEntity(x, y, board) != null)
               neighbors++;
           } catch(ArrayIndexOutOfBoundsException e) { continue; }
         }

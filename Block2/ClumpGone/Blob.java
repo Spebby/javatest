@@ -14,6 +14,10 @@ public class Blob extends Entity
 
     public void Logic()
     {
-        
+        for (Entity entity : GetNeighbors() ) 
+        {
+            entity.Logic();
+            removeEntity(entity);
+        } 
     }
 }

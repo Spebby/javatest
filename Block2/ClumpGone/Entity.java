@@ -2,6 +2,7 @@ package ClumpGone;
 
 import Common.Vector2Int;
 import static ClumpGone.GameBoard.*;
+import java.util.ArrayList;
 
 public abstract class Entity
 {
@@ -13,16 +14,17 @@ public abstract class Entity
     }
 
     public abstract void Logic();
-    protected int GetNeighbors()
+    protected ArrayList<Entity> GetNeighbors()
     {
-        int neighbors = 0;
+        var neighbors = new ArrayList<Entity>();
         for(int x = pos.x - 1; x <= pos.x + 1; x++)
         {
             for(int y = pos.y - 1; y <= pos.y + 1; y++)
             {
-                boolean isValid = (getEntity(x, y) != null) && (x != pos.x || y != pos.y);
+                Entity ent = getEntity(x, y);
+                boolean isValid = (ent != null) && (x != pos.x || y != pos.y);
                 if(isValid)
-                    neighbors++;
+                    neighbors.add(ent);
             }
         }
         return neighbors;

@@ -1,5 +1,4 @@
 package ClumpGone;
-import java.util.ArrayList;
 
 import Common.Vector2Int;
 
@@ -7,29 +6,11 @@ public class GameBoard
 {
   public static int Generation = 0;
   public static Entity[][] board = new Entity[20][20];
- 
-  public void Iteration()
-  {
-    // loop through every element of the board
-    for (int row = 0; row < board.length; row++)
-    {
-      for (int col = 0; col < board[row].length; col++)
-      {
-        Entity blob = board[row][col];
-        Vector2Int pos = new Vector2Int(row, col);
-        
-        
-      }
-    }
-    Generation++;
-  }
-
-
 
   /** Adds an enetiy to the board at the given position.
     * @param entity : The entity to be added.
     * @param position : The position for the entity to be added. */
-  public static void addEntity(Entity entity, Entity[][] board)
+  public static void addEntity(Entity entity)
   {
     if(getEntity(entity.pos) != null)
       return;
@@ -40,7 +21,7 @@ public class GameBoard
   /** Removes an entity from the board at the given position.
     * @param position : The position of the entity to be removed.
     * @return The entity that was removed. */
-  public static void removeEntity(Vector2Int position, Entity[][] board)
+  public static void removeEntity(Vector2Int position)
   {
     try { board[position.x][position.y] = null; }
     catch (ArrayIndexOutOfBoundsException e) { }
@@ -50,7 +31,7 @@ public class GameBoard
     * @param x : The x position of the entity to be removed.
     * @param y : The y position of the entity to be removed.
     * @return The entity that was removed. */
-  public static void removeEntity(int x, int y, Entity[][] board)
+  public static void removeEntity(int x, int y)
   {
     try { board[x][y] = null; }
     catch (ArrayIndexOutOfBoundsException e) { }
@@ -59,7 +40,7 @@ public class GameBoard
     * <b> Overload </b>
     * @param e : The entity to be removed.
     * @return The entity that was removed. */
-  public static void removeEntity(Entity ent, Entity[][] board)
+  public static void removeEntity(Entity ent)
   {
     try { board[ent.pos.x][ent.pos.y] = null; }
     catch (ArrayIndexOutOfBoundsException e) {}

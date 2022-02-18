@@ -20,7 +20,7 @@ public abstract class Entity
         {
             for(int y = pos.y - 1; y <= pos.y + 1; y++)
             {
-                boolean isValid = (getEntity(x, y) != null) && (x != pos.x || y != pos.y);
+                boolean isValid = (getEntity(x, y, board) != null) && (x != pos.x || y != pos.y);
                 if(isValid)
                     neighbors++;
             }
