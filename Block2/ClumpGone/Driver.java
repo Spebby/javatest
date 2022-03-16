@@ -20,8 +20,7 @@ public class Driver
                 out.println("Enter Coordinates (X & Y vals): ");
                 int x = scan.nextInt(); int y = scan.nextInt();
                 
-                Vector2Int pos = new Vector2Int(y, x); // sketty mode :(
-                Entity entity = getEntity(pos);
+                Entity entity = getEntity(new Vector2Int(y, x));
                 if(entity != null)
                     entity.Logic();
 
