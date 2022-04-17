@@ -1,5 +1,5 @@
 # javatest
-A compilation of simple experiement born from playing with Java for the first few times in my Computer Science class. These are just my attempts at completing the labs.  
+A compilation of simple experiement born from playing with Java for my Computer Science class. The course has since concluded. These are my attempts at completing the assignments.  
 
 I've divided these up into Semiester blocks.  
 
