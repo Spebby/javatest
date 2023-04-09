@@ -1,9 +1,9 @@
 # javatest
-A compilation of simple experiement born from playing with Java for my Computer Science class. The course has since concluded. These are my attempts at completing the assignments.  
+A complilation of my High School AP Computer Science Class's assignments. The course has since concluded. These are my attempts at completing the assignments.
 
-I've divided these up into Semiester blocks.  
+I've divided these up into Semiester blocks.
 
-## Semiester 1
+## Semester 1
 1. RudimentaryCalculator  
 As the name would imply. A bad double calculator.  
   
@@ -52,7 +52,7 @@ Translates English into Pig Latin. Also checks if it's a Palindrome.
 16. Text Analyzer  
 Imports a formated text file and analyzes it.  
   
-## Semiester 2
+## Semester 2
 1. ThreeSorts  
 Generates a random Array and then sorts it with the 3 worst sorting methods. Bubble, Selection and Insertion Sort.  
   
@@ -61,8 +61,6 @@ Intro to inheritance. Built off of an existing framework, the requirement is to 
   
 3. Recursion  
 A few basic methods that uses Recursion to solve some Math Equations.  
-  
-4. 
 
 This is public as I hope to detail my "journey" from a fairly incompitent programmer, to a competent programmer. And who knows, maybe you'll learn something too.  
 
